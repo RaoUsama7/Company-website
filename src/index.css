@@ -1,0 +1,197 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700,400,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 195 76% 49%; /* Updated to match rgb(30, 174, 219) */
+    --primary-foreground: 355 100% 100%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 195 76% 49%; /* Updated to match rgb(30, 174, 219) */
+
+    --radius: 1rem;
+    
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 195 76% 49%; /* Updated to match rgb(30, 174, 219) */
+    --primary-foreground: 355 100% 100%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 195 76% 49%; /* Updated to match rgb(30, 174, 219) */
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .typewriter {
+    position: relative;
+  }
+  
+  .typewriter::before,
+  .typewriter::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  
+  .typewriter::before {
+    background: #1A1F2C;
+    animation: typewriter 3s steps(16) forwards;
+  }
+  
+  .typewriter::after {
+    width: 0.125em;
+    background: #1EAEDB;
+    animation: 
+      typewriter 3s steps(16) forwards,
+      blink 0.8s steps(16) infinite;
+  }
+  
+  @keyframes typewriter {
+    to {
+      left: 100%;
+    }
+  }
+  
+  .service-card {
+    @apply p-6 rounded-xl border border-border transition-all duration-300 bg-card text-card-foreground;
+  }
+  
+  .service-card:hover {
+    @apply shadow-md transform -translate-y-1 border-tribe-blue;
+  }
+
+  .service-icon {
+    @apply w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-tribe-blue mb-4;
+  }
+  
+  .nav-item {
+    @apply relative flex items-center gap-2 px-3 py-2 rounded-lg transition-all;
+  }
+  
+  .advantage-card {
+    @apply p-6 rounded-xl border border-tribe-blue/20 bg-white shadow-md transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .advantage-card.animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  
+  .advantage-icon {
+    @apply w-16 h-16 rounded-full bg-tribe-blue/10 flex items-center justify-center text-tribe-blue mb-4 text-2xl;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .story-card {
+    @apply relative overflow-hidden rounded-xl transition-all duration-300;
+  }
+
+  .story-card:hover .story-card-overlay {
+    @apply opacity-100;
+  }
+
+  .story-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-earth-900 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6;
+  }
+}
