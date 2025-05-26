@@ -39,9 +39,10 @@ const navItems = [
   },
   {
     name: "Contact",
-    path: "#contact",
+    path: "/",
     icon: PhoneCall,
     subtitle: "Start a Fire",
+    onClick: () => window.location.href = '/#contact'
   },
 ];
 
@@ -96,6 +97,7 @@ const Navbar = () => {
                 "flex items-center px-3 py-2 rounded-lg group relative transition-all duration-300",
                 scrolled ? "text-black" : "text-white"
               )}
+              onClick={item.onClick}
             >
               <span className="flex items-center space-x-2 relative transition-all duration-300">
                 <item.icon size={18} className="mr-2" />
@@ -125,6 +127,9 @@ const Navbar = () => {
             variant="default"
             size="sm"
             className="bg-tribe-blue hover:bg-tribe-blue/90 ml-2"
+            onClick={() => {
+              window.location.href = '/#contact';
+            }}
           >
             Build With Us
           </Button>
@@ -153,7 +158,12 @@ const Navbar = () => {
               key={item.name}
               to={item.path}
               className="flex items-center gap-3 text-lg font-medium py-3 hover:text-tribe-blue transition-colors border-b border-gray-100"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                if (item.onClick) {
+                  item.onClick();
+                }
+              }}
             >
               <item.icon size={20} />
               <div className="flex flex-col">
@@ -166,7 +176,10 @@ const Navbar = () => {
           ))}
           <Button
             className="mt-4 bg-tribe-blue hover:bg-tribe-blue/90"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false);
+              window.location.href = '/#contact';
+            }}
           >
             Build With Us
           </Button>

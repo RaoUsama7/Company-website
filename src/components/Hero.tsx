@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsVisible(true);
@@ -66,6 +68,7 @@ const Hero = () => {
             <Button
               size="lg"
               className="bg-tribe-blue hover:bg-tribe-blue/90 text-white"
+              onClick={() => navigate('/what-we-build')}
             >
               Explore Our Craft
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -74,6 +77,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               className="border-white/20 hover:bg-white/10 text-black hover:text-white"
+              onClick={() => navigate('/trail-stories')}
             >
               See Our Trailmarks
             </Button>

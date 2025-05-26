@@ -45,7 +45,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Explore</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="hover:text-tribe-blue transition-colors">
+                <Link to="/" className="hover:text-tribe-blue transition-colors" onClick={() => window.scrollTo(0, 0)}>
                   Welcome to the Tribe
                 </Link>
               </li>
@@ -53,6 +53,7 @@ const Footer = () => {
                 <Link
                   to="/what-we-build"
                   className="hover:text-tribe-blue transition-colors"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   What We Build
                 </Link>
@@ -61,6 +62,7 @@ const Footer = () => {
                 <Link
                   to="/trail-stories"
                   className="hover:text-tribe-blue transition-colors"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   Trail Stories
                 </Link>
@@ -69,6 +71,7 @@ const Footer = () => {
                 <Link
                   to="/the-tribe"
                   className="hover:text-tribe-blue transition-colors"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   The Tribe
                 </Link>
@@ -77,17 +80,21 @@ const Footer = () => {
                 <Link
                   to="/careers"
                   className="hover:text-tribe-blue transition-colors"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   Join Us
                 </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  to="/#contact"
                   className="hover:text-tribe-blue transition-colors"
+                  onClick={() => {
+                    window.location.href = '/#contact';
+                  }}
                 >
                   Let's Talk
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

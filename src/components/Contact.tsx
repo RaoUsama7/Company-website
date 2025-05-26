@@ -60,7 +60,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-12 md:py-24 bg-earth-900 text-white">
+    <section id="contact" className="py-12 md:py-24 bg-earth-900 text-white scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           <div className="space-y-6 md:space-y-8">
@@ -86,7 +86,7 @@ const Contact = () => {
                   <p className="text-sm md:text-base text-gray-300">
                     Innovista Cholistan, Sector A 
                     <br />
-                    DHA Bahawalpur
+                    DHA Bahawalpur, Pakistan
                   </p>
                 </div>
               </div>
@@ -99,6 +99,9 @@ const Contact = () => {
                   <h3 className="text-lg md:text-xl font-semibold mb-1">Send Signals</h3>
                   <p className="text-sm md:text-base text-gray-300">
                     ttt@the-tech-tribe.com
+                  </p>
+                  <p className="text-sm md:text-base text-gray-300">
+                    #92 340 7110 663
                   </p>
                 </div>
               </div>

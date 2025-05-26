@@ -30,10 +30,15 @@ const About = () => {
               matters—for those who dare to dream big.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-tribe-blue hover:bg-tribe-blue/90 text-white">
+              {/* <Button className="bg-tribe-blue hover:bg-tribe-blue/90 text-white">
                 Our Values
+              </Button> */}
+              <Button 
+                variant="outline" 
+                onClick={() => window.location.href = '/#contact'}
+              >
+                Join the Tribe
               </Button>
-              <Button variant="outline">Join the Tribe</Button>
             </div>
           </div>
           <div className="relative">
