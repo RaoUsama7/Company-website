@@ -35,7 +35,7 @@ const About = () => {
               </Button> */}
               <Button 
                 variant="outline" 
-                onClick={() => window.location.href = '/#contact'}
+                onClick={() => window.location.href = '/contact'}
               >
                 Join the Tribe
               </Button>

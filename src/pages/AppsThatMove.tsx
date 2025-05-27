@@ -314,7 +314,10 @@ const AppsThatMove = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg w-full sm:w-auto">
+                <Button 
+                  className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg w-full sm:w-auto"
+                  onClick={() => window.location.href = '/contact'}
+                >
                   Start a Project
                 </Button>
               </motion.div>
@@ -323,7 +326,7 @@ const AppsThatMove = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button variant="outline" className="border-white/20 hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto">
+                <Button variant="outline" className="border-white/20 hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto text-black">
                   View Case Studies
                 </Button>
               </motion.div>

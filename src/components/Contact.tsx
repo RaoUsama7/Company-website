@@ -101,7 +101,7 @@ const Contact = () => {
                     ttt@the-tech-tribe.com
                   </p>
                   <p className="text-sm md:text-base text-gray-300">
-                    #92 340 7110 663
+                    +92 340 7110 663
                   </p>
                 </div>
               </div>
@@ -184,7 +184,7 @@ const Contact = () => {
 
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm font-medium">
-                  Subject
+                  Estimated Budget
                 </label>
                 <Input
                   id="subject"
@@ -198,7 +198,7 @@ const Contact = () => {
 
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
-                  Message
+                  Project Details
                 </label>
                 <Textarea
                   id="message"

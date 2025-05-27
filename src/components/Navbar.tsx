@@ -43,7 +43,7 @@ const navItems = [
     path: "/",
     icon: PhoneCall,
     subtitle: "Start a Fire",
-    onClick: () => window.location.href = '/#contact'
+    onClick: () => window.location.href = '/contact'
   },
 ];
 
@@ -129,7 +129,7 @@ const Navbar = () => {
             size="sm"
             className="bg-tribe-blue hover:bg-tribe-blue/90 ml-2"
             onClick={() => {
-              window.location.href = '/#contact';
+              window.location.href = '/contact';
             }}
           >
             Build With Us
@@ -179,7 +179,7 @@ const Navbar = () => {
             className="mt-4 bg-tribe-blue hover:bg-tribe-blue/90"
             onClick={() => {
               setIsOpen(false);
-              window.location.href = '/#contact';
+              window.location.href = '/contact';
             }}
           >
             Build With Us

@@ -45,7 +45,7 @@ const jobOpenings = [
     department: "Design",
     location: "Bahawalpur / Remote",
     type: "Full-time",
-    salary: "PKR 80k - 120k",
+    salary: "Competitive",
     icon: Palette,
     description: "Create stunning designs that not only look great but also provide exceptional user experiences.",
     requirements: [
@@ -62,7 +62,7 @@ const jobOpenings = [
     department: "Mobile Development",
     location: "Bahawalpur / Remote",
     type: "Full-time",
-    salary: "PKR 100k - 150k",
+    salary: "Competitive",
     icon: Smartphone,
     description: "Build native and cross-platform mobile applications that users love to interact with.",
     requirements: [
@@ -79,7 +79,7 @@ const jobOpenings = [
     department: "Backend Development",
     location: "Bahawalpur / Remote",
     type: "Full-time",
-    salary: "PKR 120k - 180k",
+    salary: "Competitive",
     icon: Globe,
     description: "Work on both frontend and backend technologies to deliver complete solutions for our clients.",
     requirements: [

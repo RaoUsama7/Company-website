@@ -65,7 +65,7 @@ const MvpDevelopment = () => {
             <Button 
               size="lg" 
               className="bg-tribe-blue hover:bg-tribe-blue/90"
-              onClick={() => window.location.href = '/#contact'}
+              onClick={() => window.location.href = '/contact'}
             >
               Launch Your MVP
               <ArrowRight className="ml-2 h-4 w-4" />

@@ -67,7 +67,7 @@ const ECommerce = () => {
             <Button 
               size="lg" 
               className="bg-tribe-blue hover:bg-tribe-blue/90"
-              onClick={() => window.location.href = '/#contact'}
+              onClick={() => window.location.href = '/contact'}
             >
               Build Your Store
               <ArrowRight className="ml-2 h-4 w-4" />

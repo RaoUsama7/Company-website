@@ -63,7 +63,7 @@ const Cybersecurity = () => {
             <Button 
               size="lg" 
               className="bg-tribe-blue hover:bg-tribe-blue/90"
-              onClick={() => window.location.href = '/#contact'}
+              onClick={() => window.location.href = '/contact'}
             >
               Secure Your Assets
               <ArrowRight className="ml-2 h-4 w-4" />
