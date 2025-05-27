@@ -174,7 +174,7 @@ const CaseStudyLittleDreams = () => {
                   <div>
                     <h4 className="font-semibold text-earth-900 mb-3">Frontend</h4>
                     <ul className="space-y-1 text-sm text-earth-700">
-                      <li>• React Native (iOS/Android)</li>
+                      <li>• Flutter (iOS/Android)</li>
                       <li>• TypeScript</li>
                       <li>• Redux Toolkit</li>
                       <li>• React Query</li>

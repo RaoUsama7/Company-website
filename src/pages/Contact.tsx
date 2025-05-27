@@ -16,10 +16,10 @@ const ContactPage = () => {
   }, []);
 
   const budgetRanges = [
-    { value: '5k-15k', label: '$5K - $15K', description: 'Small projects & MVPs' },
-    { value: '15k-50k', label: '$15K - $50K', description: 'Medium complexity apps' },
-    { value: '50k-100k', label: '$50K - $100K', description: 'Enterprise solutions' },
-    { value: '100k+', label: '$100K+', description: 'Large-scale platforms' },
+    { value: '2k-6k', label: '$2K - $6K', description: 'Small projects & MVPs' },
+    { value: '6k-15k', label: '$6K - $15K', description: 'Medium complexity apps' },
+    { value: '15k-50k', label: '$15K - $50K', description: 'Enterprise solutions' },
+    { value: '50k-100k', label: '$50K - 100K', description: 'Large-scale platforms' },
     { value: 'discuss', label: 'Let\'s Discuss', description: 'Custom requirements' }
   ];
 

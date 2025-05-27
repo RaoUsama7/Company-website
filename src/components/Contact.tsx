@@ -68,7 +68,7 @@ const Contact = () => {
               Let's Talk
             </span>
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-display font-bold tracking-tight mb-4 md:mb-6">
-              Or just drop by the fire pit 🪵🔥
+              Or just drop by the fire pit 🔥
             </h2>
             <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8">
               Ready to start your journey with the Tech Trailblazers Tribe?

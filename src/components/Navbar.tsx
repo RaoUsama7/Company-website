@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Menu,
   X,
@@ -43,13 +42,14 @@ const navItems = [
     path: "/",
     icon: PhoneCall,
     subtitle: "Start a Fire",
-    onClick: () => window.location.href = '/contact'
+    onClick: () => window.location.href = '/#contact'
   },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,6 +63,16 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleContactClick = () => {
+    navigate('/');
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   return (
     <nav
@@ -102,10 +112,10 @@ const Navbar = () => {
             >
               <span className="flex items-center space-x-2 relative transition-all duration-300">
                 <item.icon size={18} className="mr-2" />
-                <span className="flex flex-col leading-tight font-display min-w-[80px] relative">
+                <span className="flex flex-col leading-tight font-display min-w-[100px] relative">
                   <span
                     className={cn(
-                      "text-sm transition-all duration-300 group-hover:underline group-hover:decoration-2 group-hover:decoration-tribe-blue group-hover:opacity-0",
+                      "text-sm transition-all duration-300 group-hover:opacity-0 whitespace-nowrap",
                       scrolled ? "text-black" : "text-white"
                     )}
                   >
@@ -113,7 +123,7 @@ const Navbar = () => {
                   </span>
                   <span
                     className={cn(
-                      "text-xs absolute top-0 opacity-0 group-hover:opacity-100 transition-all duration-300",
+                      "text-sm absolute top-0 opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap",
                       scrolled ? "text-black" : "text-white"
                     )}
                   >
@@ -128,9 +138,7 @@ const Navbar = () => {
             variant="default"
             size="sm"
             className="bg-tribe-blue hover:bg-tribe-blue/90 ml-2"
-            onClick={() => {
-              window.location.href = '/contact';
-            }}
+            onClick={handleContactClick}
           >
             Build With Us
           </Button>
@@ -179,7 +187,7 @@ const Navbar = () => {
             className="mt-4 bg-tribe-blue hover:bg-tribe-blue/90"
             onClick={() => {
               setIsOpen(false);
-              window.location.href = '/contact';
+              handleContactClick();
             }}
           >
             Build With Us

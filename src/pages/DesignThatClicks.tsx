@@ -133,7 +133,10 @@ const DesignThatClicks = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Button className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg">
+              <Button 
+                className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg"
+                onClick={() => document.getElementById('id1')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 See Our Design Process <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
@@ -256,7 +259,7 @@ const DesignThatClicks = () => {
       </section>
 
       {/* Process */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-24 bg-white overflow-hidden" id='id1'>
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center mb-16"
@@ -331,7 +334,7 @@ const DesignThatClicks = () => {
       </section>
 
       {/* Portfolio Preview */}
-      <section className="py-20 bg-earth-900 text-white">
+      {/* <section className="py-20 bg-earth-900 text-white">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center mb-12"
@@ -403,7 +406,7 @@ const DesignThatClicks = () => {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="py-16 bg-earth-100">
@@ -434,7 +437,10 @@ const DesignThatClicks = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg w-full sm:w-auto">
+                <Button 
+                  className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg w-full sm:w-auto"
+                  onClick={() => window.location.href = '/contact'}
+                >
                   Start Your Design Project
                 </Button>
               </motion.div>
@@ -443,9 +449,9 @@ const DesignThatClicks = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button variant="outline" className="border-earth-300 hover:bg-earth-100 px-8 py-6 text-lg w-full sm:w-auto">
+                {/* <Button variant="outline" className="border-earth-300 hover:bg-earth-100 px-8 py-6 text-lg w-full sm:w-auto">
                   View Our Process
-                </Button>
+                </Button> */}
               </motion.div>
             </motion.div>
           </motion.div>

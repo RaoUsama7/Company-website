@@ -198,7 +198,10 @@ const WhatWeBuild = () => {
               <p className="text-earth-600 mb-6 max-w-xl mx-auto">
                 Don't see exactly what you're looking for? Our tribe specializes in crafting custom solutions for unique challenges.
               </p>
-              <Button className="bg-tribe-blue hover:bg-tribe-blue/90">
+              <Button 
+                className="bg-tribe-blue hover:bg-tribe-blue/90"
+                onClick={() => navigate('/contact')}
+              >
                 Let's Talk About Your Needs
               </Button>
             </div>
