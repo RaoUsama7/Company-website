@@ -1,87 +1,136 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Filter } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const caseStudies = [
   {
     id: 1,
-    title: "RealVista",
-    category: "Real Estate",
-    description: "Crafted an AI-powered real estate platform that predicts market trends with 92% accuracy.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    tags: ["AI/ML", "Web App", "Mobile App"],
+    title: "Harmoniq",
+    category: "Social Media",
+    description: "From Lagging App to Scalable Product: How TTT Transformed a React Native iOS App Into a Modern, Future-Proof Platform.",
+    image: "/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png",
+    tags: ["React Native", "Social Media", "Performance"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true
+    featured: true,
+    slug: "harmoniq"
   },
   {
     id: 2,
-    title: "HealthPulse",
-    category: "Healthcare",
-    description: "Revolutionized patient care with a HIPAA-compliant platform connecting doctors and patients seamlessly.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    tags: ["Healthcare", "Security", "Web App"],
+    title: "Lively Pencil",
+    category: "Social Media",
+    description: "A Frontend Rebuild that Unlocked a Social Platform for Readers & Bloggers. Clean, scalable architecture for the literary community.",
+    image: "/lovable-uploads/eda53215-87db-46b6-9dc6-e564e4de3a33.png",
+    tags: ["React Native", "Social Platform", "Literary"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true
+    featured: true,
+    slug: "lively-pencil"
   },
   {
     id: 3,
-    title: "EcoTrack",
-    category: "Sustainability",
-    description: "Built an IoT platform for tracking and reducing corporate carbon footprints with gamification elements.",
-    image: "https://images.unsplash.com/photo-1473654729523-203e25dfda10?ixlib=rb-4.0.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    tags: ["IoT", "Mobile App", "Gamification"],
+    title: "Little Dreams",
+    category: "AI",
+    description: "AI-Powered Bedtime Magic: How TTT Engineered a Personalized Storytelling App That Scales Imagination and Revenue.",
+    image: "/lovable-uploads/f6b70bdc-127d-42e9-979e-4de34287c471.png",
+    tags: ["AI/ML", "Mobile App", "Storytelling"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: false
+    featured: true,
+    slug: "little-dreams"
   },
   {
     id: 4,
-    title: "FinLeap",
-    category: "Fintech",
-    description: "Developed a blockchain-based microfinance platform that's democratizing access to capital in underserved regions.",
-    image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-4.0.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    tags: ["Blockchain", "Fintech", "Web App"],
+    title: "Little Lingo",
+    category: "Education",
+    description: "Language Learning That Grows With Kids: How TTT Revamped a Buggy Codebase into a Vibrant, Multilingual EdTech Platform.",
+    image: "/lovable-uploads/ede72a27-07fd-482a-8246-02db292f3af7.png",
+    tags: ["Education", "Language Learning", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true
+    featured: false,
+    slug: "little-lingo"
   },
   {
     id: 5,
-    title: "EdSpark",
-    category: "Education",
-    description: "Created an adaptive learning platform that personalizes education for K-12 students based on their learning style.",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    tags: ["Education", "AI/ML", "Web App"],
+    title: "SnapPick",
+    category: "AR",
+    description: "Augmented Reality-Powered Warehouse Management System that revolutionizes logistics with AR-driven navigation and intelligent picking automation.",
+    image: "/lovable-uploads/2d410c50-cc88-4056-89c1-a15f0460509f.png",
+    tags: ["AR/VR", "Logistics", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: false
+    featured: true,
+    slug: "snappick"
   },
   {
     id: 6,
-    title: "FitSync",
-    category: "Fitness",
-    description: "Designed a fitness companion app that connects with wearables to provide personalized workout recommendations.",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    tags: ["Health Tech", "Mobile App", "IoT"],
+    title: "Calm Quest",
+    category: "Gamification",
+    description: "A Journey Into Digital Serenity: An immersive mobile wellness application that merges casual gaming with mindfulness and stress relief.",
+    image: "/lovable-uploads/7c42af98-a63c-4803-9f4f-5932f2da099e.png",
+    tags: ["Gaming", "Wellness", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: false
+    featured: true,
+    slug: "calm-quest"
+  },
+  {
+    id: 7,
+    title: "Divine Duelists",
+    category: "Gamification",
+    description: "Strategy Meets Power in a Tactical Card RPG: A deep, strategic deck-building experience with evolving AI battles and card synergies.",
+    image: "/lovable-uploads/6d4bd372-b964-406e-9f75-bbebf64cc458.png",
+    tags: ["Gaming", "Strategy", "Card Game"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: false,
+    slug: "divine-duelists"
+  },
+  {
+    id: 8,
+    title: "Ice Cream Roll",
+    category: "Gamification",
+    description: "A Delightful Dessert Simulation Game with engaging, visually rich gameplay that appeals to a broad audience from kids to casual players.",
+    image: "/lovable-uploads/0a80d8ac-9a2b-447d-9e61-23b6e38e5353.png",
+    tags: ["Gaming", "Simulation", "Unity"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "ice-cream-roll"
+  },
+  {
+    id: 9,
+    title: "Perfect Organizing",
+    category: "Gamification",
+    description: "Calming Sorting & Puzzle Game designed for stress relief with simple yet satisfying gameplay and mindful activities.",
+    image: "/lovable-uploads/e4002e94-9933-4886-a1d6-63e196bad607.png",
+    tags: ["Gaming", "Puzzle", "Relaxation"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: false,
+    slug: "perfect-organizing"
   }
 ];
 
-const categories = ["All", "Real Estate", "Healthcare", "Sustainability", "Fintech", "Education", "Fitness"];
-const tags = ["AI/ML", "Web App", "Mobile App", "IoT", "Blockchain", "Security", "Gamification", "Education", "Health Tech"];
+const categories = ["All", "Social Media", "AI", "Education", "Gamification", "AR"];
+const tags = ["React Native", "AI/ML", "Web App", "Mobile App", "Social Media", "Performance", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation"];
 
 const TrailStoriesPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [activeTags, setActiveTags] = useState([]);
   const [featuredOnly, setFeaturedOnly] = useState(false);
+  
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   
   const filteredStudies = caseStudies.filter(study => {
     // Filter by category
@@ -271,47 +320,49 @@ const TrailStoriesPage = () => {
                   }}
                   className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 group cursor-pointer"
                 >
-                  <div className="relative h-48 overflow-hidden">
-                    {study.featured && (
-                      <div className="absolute top-2 right-2 z-10 px-2 py-1 bg-tribe-blue text-white text-xs font-bold rounded-full">
-                        Featured
-                      </div>
-                    )}
-                    <img 
-                      src={study.image} 
-                      alt={study.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-earth-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className={`px-3 py-1 rounded-full ${study.color} ${study.textColor} text-xs font-medium`}>
-                        {study.category}
-                      </span>
+                  <Link to={`/case-study/${study.slug}`}>
+                    <div className="relative h-48 overflow-hidden">
+                      {study.featured && (
+                        <div className="absolute top-2 right-2 z-10 px-2 py-1 bg-tribe-blue text-white text-xs font-bold rounded-full">
+                          Featured
+                        </div>
+                      )}
+                      <img 
+                        src={study.image} 
+                        alt={study.title} 
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-earth-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     
-                    <h3 className="text-xl font-display font-semibold mb-2 group-hover:text-tribe-blue transition-colors">
-                      {study.title}
-                    </h3>
-                    
-                    <p className="text-earth-600 text-sm mb-4">
-                      {study.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {study.tags.map(tag => (
-                        <span key={tag} className="px-2 py-1 bg-earth-100 text-earth-600 rounded-full text-xs">
-                          {tag}
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className={`px-3 py-1 rounded-full ${study.color} ${study.textColor} text-xs font-medium`}>
+                          {study.category}
                         </span>
-                      ))}
+                      </div>
+                      
+                      <h3 className="text-xl font-display font-semibold mb-2 group-hover:text-tribe-blue transition-colors">
+                        {study.title}
+                      </h3>
+                      
+                      <p className="text-earth-600 text-sm mb-4">
+                        {study.description}
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {study.tags.map(tag => (
+                          <span key={tag} className="px-2 py-1 bg-earth-100 text-earth-600 rounded-full text-xs">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <div className="inline-flex items-center text-tribe-blue group-hover:underline">
+                        View Case Study <ArrowRight className="ml-1 h-3 w-3" />
+                      </div>
                     </div>
-                    
-                    <div className="inline-flex items-center text-tribe-blue group-hover:underline">
-                      View Case Study <ArrowRight className="ml-1 h-3 w-3" />
-                    </div>
-                  </div>
+                  </Link>
                 </motion.div>
               ))
             ) : (
@@ -353,9 +404,11 @@ const TrailStoriesPage = () => {
             <p className="text-earth-600 mb-8 max-w-2xl mx-auto">
               Let's talk about how we can help you build what matters. Whether you have a clear vision or just an inkling of an idea, we're ready to blaze a trail together.
             </p>
-            <Button className="bg-tribe-blue hover:bg-tribe-blue/90">
-              Start Your Journey <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link to="/contact">
+              <Button className="bg-tribe-blue hover:bg-tribe-blue/90">
+                Start Your Journey <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </motion.section>

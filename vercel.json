@@ -1,0 +1,32 @@
+{
+  "rewrites": [
+    { "source": "/the-tribe", "destination": "/index.html" },
+    { "source": "/what-we-build", "destination": "/index.html" },
+    { "source": "/trail-stories", "destination": "/index.html" },
+    { "source": "/careers", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    { "source": "/privacy-policy", "destination": "/index.html" },
+    { "source": "/terms-of-service", "destination": "/index.html" },
+    { "source": "/cookies-policy", "destination": "/index.html" },
+    { "source": "/services/:serviceId", "destination": "/index.html" },
+    { "source": "/services/apps-that-move", "destination": "/index.html" },
+    { "source": "/services/web-built-to-work", "destination": "/index.html" },
+    { "source": "/services/design-that-clicks", "destination": "/index.html" },
+    { "source": "/services/games-with-soul", "destination": "/index.html" },
+    { "source": "/services/code-that-floats", "destination": "/index.html" },
+    { "source": "/services/custom-solutions", "destination": "/index.html" },
+    { "source": "/services/mvp-development", "destination": "/index.html" },
+    { "source": "/services/cybersecurity", "destination": "/index.html" },
+    { "source": "/services/e-commerce", "destination": "/index.html" },
+    { "source": "/case-study/harmoniq", "destination": "/index.html" },
+    { "source": "/case-study/lively-pencil", "destination": "/index.html" },
+    { "source": "/case-study/little-dreams", "destination": "/index.html" },
+    { "source": "/case-study/little-lingo", "destination": "/index.html" },
+    { "source": "/case-study/snappick", "destination": "/index.html" },
+    { "source": "/case-study/calm-quest", "destination": "/index.html" },
+    { "source": "/case-study/divine-duelists", "destination": "/index.html" },
+    { "source": "/case-study/ice-cream-roll", "destination": "/index.html" },
+    { "source": "/case-study/perfect-organizing", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+} 

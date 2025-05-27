@@ -1,8 +1,10 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const serviceCategories = [
   {
@@ -95,6 +97,8 @@ const serviceCategories = [
 ];
 
 const ServiceGrid = () => {
+  const navigate = useNavigate();
+  
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -108,6 +112,16 @@ const ServiceGrid = () => {
   const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const handleServiceClick = (link: string) => {
+    navigate(link);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleContactClick = () => {
+    navigate('/contact');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -142,9 +156,10 @@ const ServiceGrid = () => {
               {category.services.map((service, index) => (
                 <motion.div
                   key={service.title}
-                  className="service-card group"
+                  className="service-card group cursor-pointer"
                   variants={item}
                   whileHover={{ y: -8, transition: { duration: 0.2 } }}
+                  onClick={() => handleServiceClick(service.link)}
                 >
                   <div className={cn("service-icon bg-tribe-blue/20")}>
                     <span className="text-2xl">{service.icon}</span>
@@ -153,12 +168,9 @@ const ServiceGrid = () => {
                     {service.title}
                   </h3>
                   <p className="text-earth-600 mb-4">{service.description}</p>
-                  <a
-                    href={service.link}
-                    className="inline-flex items-center text-tribe-blue hover:underline"
-                  >
+                  <div className="inline-flex items-center text-tribe-blue hover:underline">
                     Learn more <ArrowRight className="ml-1 h-3 w-3" />
-                  </a>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -174,7 +186,10 @@ const ServiceGrid = () => {
               Don't see exactly what you're looking for? Our tribe specializes
               in crafting custom solutions for unique challenges.
             </p>
-            <Button className="bg-tribe-blue hover:bg-tribe-blue/90">
+            <Button 
+              className="bg-tribe-blue hover:bg-tribe-blue/90"
+              onClick={handleContactClick}
+            >
               Let's Talk About Your Needs
             </Button>
           </div>

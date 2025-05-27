@@ -1,52 +1,80 @@
-
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const caseStudies = [
   {
     id: 1,
-    title: "RealVista",
-    category: "Real Estate",
-    description: "Crafted an AI-powered real estate platform that predicts market trends with 92% accuracy.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    tags: ["AI/ML", "Web App", "Mobile App"],
+    title: "Harmoniq",
+    category: "Social Media",
+    description: "From Lagging App to Scalable Product: How TTT Transformed a React Native iOS App Into a Modern, Future-Proof Platform.",
+    image: "/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png",
+    tags: ["React Native", "Social Media", "Performance"],
     color: "bg-tribe-blue/10",
-    icon: "🏙️"
+    icon: "🎵",
+    slug: "harmoniq"
   },
   {
     id: 2,
-    title: "HealthPulse",
-    category: "Healthcare",
-    description: "Revolutionized patient care with a HIPAA-compliant platform connecting doctors and patients seamlessly.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    tags: ["Healthcare", "Security", "Web App"],
+    title: "Lively Pencil",
+    category: "Social Media",
+    description: "A Frontend Rebuild that Unlocked a Social Platform for Readers & Bloggers. Clean, scalable architecture for the literary community.",
+    image: "/lovable-uploads/eda53215-87db-46b6-9dc6-e564e4de3a33.png",
+    tags: ["React Native", "Social Platform", "Literary"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    icon: "🏥"
+    icon: "✏️",
+    slug: "lively-pencil"
   },
   {
     id: 3,
-    title: "EcoTrack",
-    category: "Sustainability",
-    description: "Built an IoT platform for tracking and reducing corporate carbon footprints with gamification elements.",
-    image: "https://images.unsplash.com/photo-1473654729523-203e25dfda10?ixlib=rb-4.0.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    tags: ["IoT", "Mobile App", "Gamification"],
+    title: "Little Dreams",
+    category: "AI",
+    description: "AI-Powered Bedtime Magic: How TTT Engineered a Personalized Storytelling App That Scales Imagination and Revenue.",
+    image: "/lovable-uploads/f6b70bdc-127d-42e9-979e-4de34287c471.png",
+    tags: ["AI/ML", "Mobile App", "Storytelling"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    icon: "🌱"
+    icon: "🌙",
+    slug: "little-dreams"
   },
   {
     id: 4,
-    title: "FinLeap",
-    category: "Fintech",
-    description: "Developed a blockchain-based microfinance platform that's democratizing access to capital in underserved regions.",
-    image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?ixlib=rb-4.0.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    tags: ["Blockchain", "Fintech", "Web App"],
+    title: "Little Lingo",
+    category: "Education",
+    description: "Language Learning That Grows With Kids: How TTT Revamped a Buggy Codebase into a Vibrant, Multilingual EdTech Platform.",
+    image: "/lovable-uploads/ede72a27-07fd-482a-8246-02db292f3af7.png",
+    tags: ["Education", "Language Learning", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    icon: "💰"
+    icon: "🗣️",
+    slug: "little-lingo"
+  },
+  {
+    id: 5,
+    title: "Ice Cream Roll",
+    category: "Gamification",
+    description: "A Delightful Dessert Simulation Game with engaging, visually rich gameplay that appeals to a broad audience from kids to casual players.",
+    image: "/lovable-uploads/0a80d8ac-9a2b-447d-9e61-23b6e38e5353.png",
+    tags: ["Gaming", "Simulation", "Unity"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    icon: "🍦",
+    slug: "ice-cream-roll"
+  },
+  {
+    id: 6,
+    title: "Perfect Organizing",
+    category: "Gamification",
+    description: "Calming Sorting & Puzzle Game designed for stress relief with simple yet satisfying gameplay and mindful activities.",
+    image: "/lovable-uploads/e4002e94-9933-4886-a1d6-63e196bad607.png",
+    tags: ["Gaming", "Puzzle", "Relaxation"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    icon: "🧩",
+    slug: "perfect-organizing"
   }
 ];
 
@@ -209,16 +237,18 @@ const TrailStories = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button variant="outline" className="border-tribe-blue text-tribe-blue hover:bg-tribe-blue/10 group">
-                    View Full Case Study 
-                    <motion.span 
-                      initial={{ x: 0 }}
-                      whileHover={{ x: 5 }}
-                      className="ml-2 inline-flex"
-                    >
-                      <ArrowRight className="h-4 w-4" />
-                    </motion.span>
-                  </Button>
+                  <Link to={`/case-study/${caseStudies[activeIndex].slug}`}>
+                    <Button variant="outline" className="border-tribe-blue text-tribe-blue hover:bg-tribe-blue/10 group">
+                      View Full Case Study 
+                      <motion.span 
+                        initial={{ x: 0 }}
+                        whileHover={{ x: 5 }}
+                        className="ml-2 inline-flex"
+                      >
+                        <ArrowRight className="h-4 w-4" />
+                      </motion.span>
+                    </Button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>
@@ -236,16 +266,18 @@ const TrailStories = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button className="bg-tribe-blue hover:bg-tribe-blue/90 group">
-              See More Trail Stories
-              <motion.span 
-                initial={{ x: 0 }}
-                whileHover={{ x: 5 }}
-                className="ml-1 inline-flex"
-              >
-                <ArrowRight className="h-4 w-4" />
-              </motion.span>
-            </Button>
+            <Link to="/trail-stories">
+              <Button className="bg-tribe-blue hover:bg-tribe-blue/90 group">
+                See More Trail Stories
+                <motion.span 
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 5 }}
+                  className="ml-1 inline-flex"
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </motion.span>
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

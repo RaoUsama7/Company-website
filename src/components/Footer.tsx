@@ -1,8 +1,39 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const { toast } = useToast();
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      toast({
+        title: "Welcome to the Tribe!",
+        description: "You've successfully subscribed to our tribal wisdom. Get ready for insights, updates, and exclusive content straight to your inbox!",
+        duration: 4000,
+      });
+      setEmail('');
+    } else {
+      toast({
+        title: "Email Required",
+        description: "Please enter your email address to join our tribe and receive tribal wisdom.",
+        variant: "destructive",
+        duration: 3000,
+      });
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleServiceClick = (path: string) => {
+    window.location.href = path;
+  };
+
   return (
     <footer className="bg-earth-900 text-gray-300 pt-12 pb-6">
       <div className="container mx-auto px-4">
@@ -45,7 +76,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Explore</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="hover:text-tribe-blue transition-colors" onClick={() => window.scrollTo(0, 0)}>
+                <Link to="/" className="hover:text-tribe-blue transition-colors" onClick={scrollToTop}>
                   Welcome to the Tribe
                 </Link>
               </li>
@@ -53,7 +84,7 @@ const Footer = () => {
                 <Link
                   to="/what-we-build"
                   className="hover:text-tribe-blue transition-colors"
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={scrollToTop}
                 >
                   What We Build
                 </Link>
@@ -62,7 +93,7 @@ const Footer = () => {
                 <Link
                   to="/trail-stories"
                   className="hover:text-tribe-blue transition-colors"
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={scrollToTop}
                 >
                   Trail Stories
                 </Link>
@@ -71,7 +102,7 @@ const Footer = () => {
                 <Link
                   to="/the-tribe"
                   className="hover:text-tribe-blue transition-colors"
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={scrollToTop}
                 >
                   The Tribe
                 </Link>
@@ -80,18 +111,16 @@ const Footer = () => {
                 <Link
                   to="/careers"
                   className="hover:text-tribe-blue transition-colors"
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={scrollToTop}
                 >
                   Join Us
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/#contact"
+                  to="/contact"
                   className="hover:text-tribe-blue transition-colors"
-                  onClick={() => {
-                    window.location.href = '/#contact';
-                  }}
+                  onClick={scrollToTop}
                 >
                   Let's Talk
                 </Link>
@@ -103,29 +132,76 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services/apps-that-move" className="hover:text-tribe-blue transition-colors">
+                <button 
+                  onClick={() => handleServiceClick('/services/apps-that-move')}
+                  className="hover:text-tribe-blue transition-colors text-left"
+                >
                   Apps That Move
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/services/web-built-to-work" className="hover:text-tribe-blue transition-colors">
+                <button 
+                  onClick={() => handleServiceClick('/services/web-built-to-work')}
+                  className="hover:text-tribe-blue transition-colors text-left"
+                >
                   Web, but Built to Work
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/services/design-that-clicks" className="hover:text-tribe-blue transition-colors">
+                <button 
+                  onClick={() => handleServiceClick('/services/design-that-clicks')}
+                  className="hover:text-tribe-blue transition-colors text-left"
+                >
                   Design that Clicks
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/services/games-with-soul" className="hover:text-tribe-blue transition-colors">
+                <button 
+                  onClick={() => handleServiceClick('/services/games-with-soul')}
+                  className="hover:text-tribe-blue transition-colors text-left"
+                >
                   Games with Soul
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/services/code-that-floats" className="hover:text-tribe-blue transition-colors">
+                <button 
+                  onClick={() => handleServiceClick('/services/code-that-floats')}
+                  className="hover:text-tribe-blue transition-colors text-left"
+                >
                   Code That Floats
-                </Link>
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleServiceClick('/services/custom-solutions')}
+                  className="hover:text-tribe-blue transition-colors text-left"
+                >
+                  Custom Solutions
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleServiceClick('/services/mvp-development')}
+                  className="hover:text-tribe-blue transition-colors text-left"
+                >
+                  MVP Development
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleServiceClick('/services/cybersecurity')}
+                  className="hover:text-tribe-blue transition-colors text-left"
+                >
+                  Cybersecurity
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleServiceClick('/services/e-commerce')}
+                  className="hover:text-tribe-blue transition-colors text-left"
+                >
+                  E-commerce
+                </button>
               </li>
             </ul>
           </div>
@@ -137,13 +213,18 @@ const Footer = () => {
             <p className="mb-4">
               Subscribe to our newsletter for tech insights and tribal tales.
             </p>
-            <form className="flex">
+            <form className="flex" onSubmit={handleNewsletterSubmit}>
               <input
                 type="email"
                 placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="bg-earth-800 text-white border border-earth-700 rounded-l-md py-2 px-3 w-full focus:outline-none focus:border-tribe-blue"
               />
-              <button className="bg-tribe-blue text-white rounded-r-md px-3 hover:bg-tribe-blue/90 transition-colors">
+              <button 
+                type="submit"
+                className="bg-tribe-blue text-white rounded-r-md px-3 hover:bg-tribe-blue/90 transition-colors"
+              >
                 →
               </button>
             </form>
@@ -156,15 +237,15 @@ const Footer = () => {
             reserved.
           </p>
           <div className="flex gap-4 text-sm mt-2 md:mt-0">
-            <a href="#" className="hover:text-tribe-blue transition-colors">
+            <Link to="/privacy-policy" className="hover:text-tribe-blue transition-colors" onClick={scrollToTop}>
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-tribe-blue transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="hover:text-tribe-blue transition-colors" onClick={scrollToTop}>
               Terms of Service
-            </a>
-            <a href="#" className="hover:text-tribe-blue transition-colors">
+            </Link>
+            <Link to="/cookies-policy" className="hover:text-tribe-blue transition-colors" onClick={scrollToTop}>
               Cookies
-            </a>
+            </Link>
           </div>
         </div>
       </div>

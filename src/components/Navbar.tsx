@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -101,10 +102,10 @@ const Navbar = () => {
             >
               <span className="flex items-center space-x-2 relative transition-all duration-300">
                 <item.icon size={18} className="mr-2" />
-                <span className="flex flex-col leading-tight font-display min-w-[80px]">
+                <span className="flex flex-col leading-tight font-display min-w-[80px] relative">
                   <span
                     className={cn(
-                      "text-sm transition-all duration-300 group-hover:underline group-hover:decoration-2 group-hover:decoration-tribe-blue",
+                      "text-sm transition-all duration-300 group-hover:underline group-hover:decoration-2 group-hover:decoration-tribe-blue group-hover:opacity-0",
                       scrolled ? "text-black" : "text-white"
                     )}
                   >
@@ -112,7 +113,7 @@ const Navbar = () => {
                   </span>
                   <span
                     className={cn(
-                      "text-xs mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                      "text-xs absolute top-0 opacity-0 group-hover:opacity-100 transition-all duration-300",
                       scrolled ? "text-black" : "text-white"
                     )}
                   >
