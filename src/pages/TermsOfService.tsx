@@ -77,7 +77,7 @@ const TermsOfService = () => {
                 For questions about these Terms of Service, contact us at:
                 <br />
                 <a href="mailto:ttt@the-tech-tribe.com" className="text-tribe-blue hover:underline">
-                  ttt@the-tech-tribe.com
+                  info@the-tech-tribe.com
                 </a>
               </p>
 

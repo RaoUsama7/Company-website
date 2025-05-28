@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import path from 'path';
 
 const AppsThatMove = () => {
   const fadeIn = {
@@ -90,7 +91,7 @@ const AppsThatMove = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Button className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg">
+              <Button className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg" onClick={() => window.location.href = '/contact'}>
                 Start Your Journey <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>

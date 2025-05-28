@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
                 If you have any questions about this Privacy Policy, please contact us at:
                 <br />
                 <a href="mailto:ttt@the-tech-tribe.com" className="text-tribe-blue hover:underline">
-                  ttt@the-tech-tribe.com
+                  info@the-tech-tribe.com
                 </a>
               </p>
 

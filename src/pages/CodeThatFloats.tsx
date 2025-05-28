@@ -134,7 +134,10 @@ const CodeThatFloats = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Button className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg">
+              <Button 
+                className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg"
+                onClick={() => window.location.href = '/contact'}
+              >
                 Elevate Your Infrastructure <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
@@ -464,7 +467,10 @@ const CodeThatFloats = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg w-full sm:w-auto">
+                <Button 
+                className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg w-full sm:w-auto"
+                onClick={() => window.location.href = '/contact'}
+              >
                   Start Your Cloud Journey
                 </Button>
               </motion.div>
@@ -473,7 +479,11 @@ const CodeThatFloats = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button variant="outline" className="border-earth-300 hover:bg-earth-100 px-8 py-6 text-lg w-full sm:w-auto">
+                <Button 
+                variant="outline"
+                className="border-earth-300 hover:bg-earth-100 px-8 py-6 text-lg w-full sm:w-auto"
+                onClick={() => window.location.href = '/contact'}
+                >
                   Schedule a Cloud Assessment
                 </Button>
               </motion.div>

@@ -39,7 +39,7 @@ const navItems = [
   },
   {
     name: "Contact",
-    path: "/",
+    path: "/contact",
     icon: PhoneCall,
     subtitle: "Start a Fire",
     onClick: () => window.location.href = '/#contact'

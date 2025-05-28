@@ -235,7 +235,7 @@ const TrailStoriesPage = () => {
             </div>
             
             <div className="flex items-center gap-3">
-              <label className="flex items-center gap-2 text-sm font-medium cursor-pointer">
+              {/* <label className="flex items-center gap-2 text-sm font-medium cursor-pointer">
                 <input 
                   type="checkbox" 
                   className="rounded text-tribe-blue focus:ring-tribe-blue"
@@ -243,7 +243,7 @@ const TrailStoriesPage = () => {
                   onChange={() => setFeaturedOnly(!featuredOnly)}
                 />
                 Featured Only
-              </label>
+              </label> */}
             </div>
           </div>
           

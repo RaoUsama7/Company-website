@@ -116,7 +116,15 @@ const GamesWithSoul = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <Button className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg">
+              <Button 
+                className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg"
+                onClick={() => {
+                  const portfolioSection = document.getElementById('Portfolio');
+                  if (portfolioSection) {
+                    portfolioSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Explore Our Games <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
@@ -217,7 +225,7 @@ const GamesWithSoul = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-block bg-tribe-blue/10 text-tribe-blue px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+            <span className="inline-block bg-tribe-blue/10 text-tribe-blue px-4 py-1.5 rounded-full text-sm font-medium mb-4" id='Portfolio'>
               Our Portfolio
             </span>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
@@ -329,7 +337,7 @@ const GamesWithSoul = () => {
       </section>
 
       {/* Development Process */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white" id='Process'>
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-center mb-16"
@@ -426,7 +434,10 @@ const GamesWithSoul = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg w-full sm:w-auto">
+                <Button 
+                  className="bg-tribe-blue hover:bg-tribe-blue/90 px-8 py-6 text-lg w-full sm:w-auto"
+                  onClick={() => window.location.href = '/contact'}
+                >
                   Start Your Game Project
                 </Button>
               </motion.div>
@@ -435,7 +446,16 @@ const GamesWithSoul = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button variant="outline" className="border-white/20 hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto">
+                <Button 
+                  variant="outline" 
+                  className="border-white/20 hover:bg-white/10 px-8 py-6 text-lg w-full sm:w-auto text-black"
+                  onClick={() => {
+                    const processSection = document.getElementById('Process');
+                    if (processSection) {
+                      processSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
                   Explore Our Process
                 </Button>
               </motion.div>

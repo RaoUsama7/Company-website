@@ -73,7 +73,7 @@ const CookiesPolicy = () => {
                 If you have questions about our use of cookies, contact us at:
                 <br />
                 <a href="mailto:ttt@the-tech-tribe.com" className="text-tribe-blue hover:underline">
-                  ttt@the-tech-tribe.com
+                  info@the-tech-tribe.com
                 </a>
               </p>
 

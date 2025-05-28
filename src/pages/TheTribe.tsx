@@ -122,27 +122,32 @@ const TheTribe = () => {
                 Our Story
               </span>
               <h2 className="text-3xl md:text-4xl font-display font-bold tracking-tight mb-6">
-                Born from Frustration,{" "}
-                <span className="text-tribe-blue">Built for Impact</span>
+                Building What Matter,{" "}
+                <span className="text-tribe-blue">For Those Who Dare</span>
               </h2>
               <div className="prose prose-lg text-earth-700 max-w-none">
                 <p>
-                  Tech Trailblazers Tribe wasn't born in a boardroom—it was born
-                  from frustration. Frustration with digital agencies that
-                  prioritized flashy demos over functional products. Frustration
-                  with teams that talked big but delivered small.
+                Tech Tribe didn’t started with a shared mindset,
+                that building digital products should be about more than just clean code or clever design.
+                It should be about clarity, impact, and doing things the right way.
                 </p>
                 <p>
-                  In 2018, our founders—a designer, an engineer, and a product
-                  strategist—came together with a simple premise: what if we
-                  built a tribe of elite digital creators who cared as much
-                  about impact as they did about code?
+                We’re a close-knit team of makers, thinkers, and builders who came together to create something different.
+                No bloated processes. No overpromising. Just honest work, sharp execution, and a belief that small,
+                focused teams can do big things.
                 </p>
                 <p>
-                  Five years later, that tribe has grown, but our mission
-                  remains the same: to build what matters, for those who dare.
-                  We're not the biggest team, and we don't want to be. We're the
-                  team you call when you need it done right.
+                We were built on the same foundations that have powered every great collaboration in history, trust, clarity,
+                 craftsmanship, and the courage to do things differently. These are the principles that built civilizations,
+                launched revolutions, and continue to shape how bold ideas become real.
+                </p>
+                <p>
+                We're a modern team, who is not chasing trends. We’re channeling something older — 
+                the timeless drive to make meaningful things, with people who care, for causes that matter.
+                </p>
+                <p>
+                Our story isn’t about how long we’ve been around.
+                It’s about what we’ve chosen to carry forward and what we’re daring to build next.
                 </p>
               </div>
             </motion.div>

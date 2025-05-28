@@ -127,6 +127,7 @@ const ContactPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 * index, duration: 0.5 }}
+                    whileHover={{ scale: 1.02 }}
                     className="bg-earth-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300 cursor-pointer hover:bg-tribe-blue/5"
                   >
                     <h4 className="text-xl font-semibold mb-3 text-tribe-blue">{type.title}</h4>
@@ -153,20 +154,14 @@ const ContactPage = () => {
               <h3 className="text-2xl font-display font-semibold mb-8 text-center">What Services Do You Need?</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {serviceOptions.map((service) => (
-                  <motion.button
+                  <motion.div
                     key={service.id}
                     whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => toggleService(service.id)}
-                    className={`p-4 rounded-xl border-2 transition-all duration-300 ${
-                      selectedServices.includes(service.id)
-                        ? 'border-tribe-blue bg-tribe-blue/10 text-tribe-blue'
-                        : 'border-earth-200 hover:border-tribe-blue/50 hover:bg-earth-50'
-                    }`}
+                    className="p-4 rounded-xl border-2 border-earth-200 hover:border-tribe-blue/50 hover:bg-earth-50 transition-all duration-300"
                   >
                     <div className="text-2xl mb-2">{service.icon}</div>
                     <div className="text-sm font-medium">{service.name}</div>
-                  </motion.button>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -176,20 +171,14 @@ const ContactPage = () => {
               <h3 className="text-2xl font-display font-semibold mb-8 text-center">What's Your Estimated Budget?</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {budgetRanges.map((budget) => (
-                  <motion.button
+                  <motion.div
                     key={budget.value}
                     whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => setSelectedBudget(budget.value)}
-                    className={`p-4 rounded-xl border-2 transition-all duration-300 text-left ${
-                      selectedBudget === budget.value
-                        ? 'border-tribe-blue bg-tribe-blue/10'
-                        : 'border-earth-200 hover:border-tribe-blue/50 hover:bg-earth-50'
-                    }`}
+                    className="p-4 rounded-xl border-2 border-earth-200 hover:border-tribe-blue/50 hover:bg-earth-50 transition-all duration-300 text-left"
                   >
                     <div className="font-semibold text-lg mb-1">{budget.label}</div>
                     <div className="text-sm text-earth-600">{budget.description}</div>
-                  </motion.button>
+                  </motion.div>
                 ))}
               </div>
             </div>
