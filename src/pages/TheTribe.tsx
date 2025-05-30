@@ -127,7 +127,7 @@ const TheTribe = () => {
               </h2>
               <div className="prose prose-lg text-earth-700 max-w-none">
                 <p>
-                Tech Tribe didn’t started with a shared mindset,
+                Tech Tribe didn’t start with a shared mindset,
                 that building digital products should be about more than just clean code or clever design.
                 It should be about clarity, impact, and doing things the right way.
                 </p>
@@ -163,7 +163,7 @@ const TheTribe = () => {
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-tribe-blue/10 rounded-lg"></div>
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-tribe-orange/10 rounded-lg"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.1&auto=format&fit=crop&w=800&q=60"
+                  src="/dual logo.jpeg"
                   alt="Our team collaborating"
                   className="w-full h-auto rounded-xl shadow-lg relative z-10"
                 />
