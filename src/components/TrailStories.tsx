@@ -54,6 +54,30 @@ const caseStudies = [
   },
   {
     id: 5,
+    title: "Calories Counter",
+    category: "Health & Wellness",
+    description: "Your Smart Guide to Food & Fitness: AI-powered calorie tracking with personalized nutrition insights and recipe recommendations.",
+    image: "/lovable-uploads/800ed702-a0aa-4553-877a-29a576fd7a09.png",
+    tags: ["React Native", "AI/ML", "Health", "Firebase"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    icon: "🥗",
+    slug: "calories-counter"
+  },
+  {
+    id: 6,
+    title: "Latte Delivery",
+    category: "Food & Beverage",
+    description: "End-to-End Food Delivery Ecosystem: Complete multi-app platform with real-time tracking and seamless vendor management.",
+    image: "/lovable-uploads/7ee4e9e3-9210-4950-a3cc-ed8e05e2e10a.png",
+    tags: ["Flutter", "Laravel", "Food Delivery", "Real-time"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    icon: "🚚",
+    slug: "latte-delivery"
+  },
+  {
+    id: 7,
     title: "Ice Cream Roll",
     category: "Gamification",
     description: "A Delightful Dessert Simulation Game with engaging, visually rich gameplay that appeals to a broad audience from kids to casual players.",
@@ -65,7 +89,7 @@ const caseStudies = [
     slug: "ice-cream-roll"
   },
   {
-    id: 6,
+    id: 8,
     title: "Perfect Organizing",
     category: "Gamification",
     description: "Calming Sorting & Puzzle Game designed for stress relief with simple yet satisfying gameplay and mindful activities.",

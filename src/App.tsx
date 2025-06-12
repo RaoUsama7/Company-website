@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -33,6 +34,8 @@ import CaseStudyCalmQuest from "./pages/CaseStudyCalmQuest";
 import CaseStudyDivineDuelists from "./pages/CaseStudyDivineDuelists";
 import CaseStudyIceCreamRoll from "./pages/CaseStudyIceCreamRoll";
 import CaseStudyPerfectOrganizing from "./pages/CaseStudyPerfectOrganizing";
+import CaseStudyCaloriesCounter from "./pages/CaseStudyCaloriesCounter";
+import CaseStudyLatteDelivery from "./pages/CaseStudyLatteDelivery";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +72,8 @@ const AppRoutes = () => {
       <Route path="/case-study/divine-duelists" element={<CaseStudyDivineDuelists />} />
       <Route path="/case-study/ice-cream-roll" element={<CaseStudyIceCreamRoll />} />
       <Route path="/case-study/perfect-organizing" element={<CaseStudyPerfectOrganizing />} />
+      <Route path="/case-study/calories-counter" element={<CaseStudyCaloriesCounter />} />
+      <Route path="/case-study/latte-delivery" element={<CaseStudyLatteDelivery />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

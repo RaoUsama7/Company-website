@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Filter } from 'lucide-react';
 import Navbar from '@/components/Navbar';
@@ -59,6 +58,30 @@ const caseStudies = [
   },
   {
     id: 5,
+    title: "Calories Counter",
+    category: "Health & Wellness",
+    description: "Your Smart Guide to Food & Fitness: AI-powered calorie tracking with personalized nutrition insights and recipe recommendations.",
+    image: "/lovable-uploads/800ed702-a0aa-4553-877a-29a576fd7a09.png",
+    tags: ["React Native", "AI/ML", "Health", "Firebase"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "calories-counter"
+  },
+  {
+    id: 6,
+    title: "Latte Delivery",
+    category: "Food & Beverage",
+    description: "End-to-End Food Delivery Ecosystem: Complete multi-app platform with real-time tracking and seamless vendor management.",
+    image: "/lovable-uploads/7ee4e9e3-9210-4950-a3cc-ed8e05e2e10a.png",
+    tags: ["Flutter", "Laravel", "Food Delivery", "Real-time"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "latte-delivery"
+  },
+  {
+    id: 7,
     title: "SnapPick",
     category: "AR",
     description: "Augmented Reality-Powered Warehouse Management System that revolutionizes logistics with AR-driven navigation and intelligent picking automation.",
@@ -70,7 +93,7 @@ const caseStudies = [
     slug: "snappick"
   },
   {
-    id: 6,
+    id: 8,
     title: "Calm Quest",
     category: "Gamification",
     description: "A Journey Into Digital Serenity: An immersive mobile wellness application that merges casual gaming with mindfulness and stress relief.",
@@ -82,7 +105,7 @@ const caseStudies = [
     slug: "calm-quest"
   },
   {
-    id: 7,
+    id: 9,
     title: "Divine Duelists",
     category: "Gamification",
     description: "Strategy Meets Power in a Tactical Card RPG: A deep, strategic deck-building experience with evolving AI battles and card synergies.",
@@ -94,7 +117,7 @@ const caseStudies = [
     slug: "divine-duelists"
   },
   {
-    id: 8,
+    id: 10,
     title: "Ice Cream Roll",
     category: "Gamification",
     description: "A Delightful Dessert Simulation Game with engaging, visually rich gameplay that appeals to a broad audience from kids to casual players.",
@@ -106,7 +129,7 @@ const caseStudies = [
     slug: "ice-cream-roll"
   },
   {
-    id: 9,
+    id: 11,
     title: "Perfect Organizing",
     category: "Gamification",
     description: "Calming Sorting & Puzzle Game designed for stress relief with simple yet satisfying gameplay and mindful activities.",
@@ -119,8 +142,8 @@ const caseStudies = [
   }
 ];
 
-const categories = ["All", "Social Media", "AI", "Education", "Gamification", "AR"];
-const tags = ["React Native", "AI/ML", "Web App", "Mobile App", "Social Media", "Performance", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation"];
+const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "Gamification", "AR"];
+const tags = ["React Native", "AI/ML", "Web App", "Mobile App", "Social Media", "Performance", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Food Delivery", "Real-time"];
 
 const TrailStoriesPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
