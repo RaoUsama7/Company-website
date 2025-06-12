@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -36,6 +35,7 @@ import CaseStudyIceCreamRoll from "./pages/CaseStudyIceCreamRoll";
 import CaseStudyPerfectOrganizing from "./pages/CaseStudyPerfectOrganizing";
 import CaseStudyCaloriesCounter from "./pages/CaseStudyCaloriesCounter";
 import CaseStudyLatteDelivery from "./pages/CaseStudyLatteDelivery";
+import CaseStudyTalkieTotz from "./pages/CaseStudyTalkieTotz";
 
 const queryClient = new QueryClient();
 
@@ -74,6 +74,7 @@ const AppRoutes = () => {
       <Route path="/case-study/perfect-organizing" element={<CaseStudyPerfectOrganizing />} />
       <Route path="/case-study/calories-counter" element={<CaseStudyCaloriesCounter />} />
       <Route path="/case-study/latte-delivery" element={<CaseStudyLatteDelivery />} />
+      <Route path="/case-study/talkie-totz" element={<CaseStudyTalkieTotz />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

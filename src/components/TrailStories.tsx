@@ -18,6 +18,18 @@ const caseStudies = [
   },
   {
     id: 2,
+    title: "TalkieTotz",
+    category: "Education",
+    description: "Launching a Lesson-Based App for Parents: From Figma to Functional MVP. A complete educational platform for bilingual families.",
+    image: "/lovable-uploads/826c450a-5486-4505-a9cd-ab9a1726fb62.png",
+    tags: ["React Native", "Education", "MVP", "NestJS"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    icon: "🗣️",
+    slug: "talkie-totz"
+  },
+  {
+    id: 3,
     title: "Lively Pencil",
     category: "Social Media",
     description: "A Frontend Rebuild that Unlocked a Social Platform for Readers & Bloggers. Clean, scalable architecture for the literary community.",
@@ -29,7 +41,7 @@ const caseStudies = [
     slug: "lively-pencil"
   },
   {
-    id: 3,
+    id: 4,
     title: "Little Dreams",
     category: "AI",
     description: "AI-Powered Bedtime Magic: How TTT Engineered a Personalized Storytelling App That Scales Imagination and Revenue.",
@@ -41,7 +53,7 @@ const caseStudies = [
     slug: "little-dreams"
   },
   {
-    id: 4,
+    id: 5,
     title: "Little Lingo",
     category: "Education",
     description: "Language Learning That Grows With Kids: How TTT Revamped a Buggy Codebase into a Vibrant, Multilingual EdTech Platform.",
@@ -53,7 +65,7 @@ const caseStudies = [
     slug: "little-lingo"
   },
   {
-    id: 5,
+    id: 6,
     title: "Calories Counter",
     category: "Health & Wellness",
     description: "Your Smart Guide to Food & Fitness: AI-powered calorie tracking with personalized nutrition insights and recipe recommendations.",
@@ -65,7 +77,7 @@ const caseStudies = [
     slug: "calories-counter"
   },
   {
-    id: 6,
+    id: 7,
     title: "Latte Delivery",
     category: "Food & Beverage",
     description: "End-to-End Food Delivery Ecosystem: Complete multi-app platform with real-time tracking and seamless vendor management.",
@@ -77,7 +89,7 @@ const caseStudies = [
     slug: "latte-delivery"
   },
   {
-    id: 7,
+    id: 8,
     title: "Ice Cream Roll",
     category: "Gamification",
     description: "A Delightful Dessert Simulation Game with engaging, visually rich gameplay that appeals to a broad audience from kids to casual players.",
@@ -87,18 +99,6 @@ const caseStudies = [
     textColor: "text-tribe-blue",
     icon: "🍦",
     slug: "ice-cream-roll"
-  },
-  {
-    id: 8,
-    title: "Perfect Organizing",
-    category: "Gamification",
-    description: "Calming Sorting & Puzzle Game designed for stress relief with simple yet satisfying gameplay and mindful activities.",
-    image: "/lovable-uploads/e4002e94-9933-4886-a1d6-63e196bad607.png",
-    tags: ["Gaming", "Puzzle", "Relaxation"],
-    color: "bg-tribe-blue/10",
-    textColor: "text-tribe-blue",
-    icon: "🧩",
-    slug: "perfect-organizing"
   }
 ];
 

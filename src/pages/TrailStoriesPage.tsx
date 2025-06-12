@@ -22,6 +22,18 @@ const caseStudies = [
   },
   {
     id: 2,
+    title: "TalkieTotz",
+    category: "Education",
+    description: "Launching a Lesson-Based App for Parents: From Figma to Functional MVP. A complete educational platform for bilingual families.",
+    image: "/lovable-uploads/826c450a-5486-4505-a9cd-ab9a1726fb62.png",
+    tags: ["React Native", "Education", "MVP", "NestJS"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "talkie-totz"
+  },
+  {
+    id: 3,
     title: "Lively Pencil",
     category: "Social Media",
     description: "A Frontend Rebuild that Unlocked a Social Platform for Readers & Bloggers. Clean, scalable architecture for the literary community.",
@@ -33,7 +45,7 @@ const caseStudies = [
     slug: "lively-pencil"
   },
   {
-    id: 3,
+    id: 4,
     title: "Little Dreams",
     category: "AI",
     description: "AI-Powered Bedtime Magic: How TTT Engineered a Personalized Storytelling App That Scales Imagination and Revenue.",
@@ -45,7 +57,7 @@ const caseStudies = [
     slug: "little-dreams"
   },
   {
-    id: 4,
+    id: 5,
     title: "Little Lingo",
     category: "Education",
     description: "Language Learning That Grows With Kids: How TTT Revamped a Buggy Codebase into a Vibrant, Multilingual EdTech Platform.",
@@ -57,7 +69,7 @@ const caseStudies = [
     slug: "little-lingo"
   },
   {
-    id: 5,
+    id: 6,
     title: "Calories Counter",
     category: "Health & Wellness",
     description: "Your Smart Guide to Food & Fitness: AI-powered calorie tracking with personalized nutrition insights and recipe recommendations.",
@@ -69,7 +81,7 @@ const caseStudies = [
     slug: "calories-counter"
   },
   {
-    id: 6,
+    id: 7,
     title: "Latte Delivery",
     category: "Food & Beverage",
     description: "End-to-End Food Delivery Ecosystem: Complete multi-app platform with real-time tracking and seamless vendor management.",
@@ -81,7 +93,7 @@ const caseStudies = [
     slug: "latte-delivery"
   },
   {
-    id: 7,
+    id: 8,
     title: "SnapPick",
     category: "AR",
     description: "Augmented Reality-Powered Warehouse Management System that revolutionizes logistics with AR-driven navigation and intelligent picking automation.",
@@ -93,7 +105,7 @@ const caseStudies = [
     slug: "snappick"
   },
   {
-    id: 8,
+    id: 9,
     title: "Calm Quest",
     category: "Gamification",
     description: "A Journey Into Digital Serenity: An immersive mobile wellness application that merges casual gaming with mindfulness and stress relief.",
@@ -105,7 +117,7 @@ const caseStudies = [
     slug: "calm-quest"
   },
   {
-    id: 9,
+    id: 10,
     title: "Divine Duelists",
     category: "Gamification",
     description: "Strategy Meets Power in a Tactical Card RPG: A deep, strategic deck-building experience with evolving AI battles and card synergies.",
@@ -117,7 +129,7 @@ const caseStudies = [
     slug: "divine-duelists"
   },
   {
-    id: 10,
+    id: 11,
     title: "Ice Cream Roll",
     category: "Gamification",
     description: "A Delightful Dessert Simulation Game with engaging, visually rich gameplay that appeals to a broad audience from kids to casual players.",
@@ -129,7 +141,7 @@ const caseStudies = [
     slug: "ice-cream-roll"
   },
   {
-    id: 11,
+    id: 12,
     title: "Perfect Organizing",
     category: "Gamification",
     description: "Calming Sorting & Puzzle Game designed for stress relief with simple yet satisfying gameplay and mindful activities.",
@@ -143,7 +155,7 @@ const caseStudies = [
 ];
 
 const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "Gamification", "AR"];
-const tags = ["React Native", "AI/ML", "Web App", "Mobile App", "Social Media", "Performance", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Food Delivery", "Real-time"];
+const tags = ["React Native", "AI/ML", "Web App", "Mobile App", "Social Media", "Performance", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Food Delivery", "Real-time", "MVP", "NestJS"];
 
 const TrailStoriesPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");

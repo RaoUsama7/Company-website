@@ -1,3 +1,4 @@
+
 {
   "rewrites": [
     { "source": "/the-tribe", "destination": "/index.html" },
@@ -27,6 +28,9 @@
     { "source": "/case-study/divine-duelists", "destination": "/index.html" },
     { "source": "/case-study/ice-cream-roll", "destination": "/index.html" },
     { "source": "/case-study/perfect-organizing", "destination": "/index.html" },
+    { "source": "/case-study/calories-counter", "destination": "/index.html" },
+    { "source": "/case-study/latte-delivery", "destination": "/index.html" },
+    { "source": "/case-study/talkie-totz", "destination": "/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
-} 
+}
