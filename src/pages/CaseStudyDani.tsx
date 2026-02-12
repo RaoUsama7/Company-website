@@ -49,12 +49,12 @@ const CaseStudyDani = () => {
                             A premium, custom-built Shopify e-commerce platform designed to bridge the gap between artisan jewelry craftsmanship and high-performance digital retail.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700 flex items-center justify-center border border-white/10 group">
-                            <div className="absolute inset-0 bg-gradient-to-t from-earth-900/80 to-transparent z-10" />
-                            <div className="text-center relative z-20 transition-transform group-hover:scale-110 duration-500">
-                                <Gem className="h-16 w-16 text-tribe-blue/40 mx-auto mb-4" />
-                                <p className="text-earth-500 font-display font-medium uppercase tracking-widest">Luxury Boutique Experience</p>
-                            </div>
+                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700">
+                            <img
+                                src="/dani.jpeg"
+                                alt="DANI by Daniel K Storefront"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
                 </div>
