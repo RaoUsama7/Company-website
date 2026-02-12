@@ -49,11 +49,12 @@ const CaseStudyLumeReader = () => {
                             A production-ready MVP designed to deliver a clean, fast, and consistent reading experience across iOS and Android.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700 flex items-center justify-center border border-white/10">
-                            <div className="text-center">
-                                <BookOpen className="h-16 w-16 text-tribe-blue/20 mx-auto mb-4" />
-                                <p className="text-earth-500 font-display font-medium uppercase tracking-widest">Lume Reader Experience</p>
-                            </div>
+                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700">
+                            <img
+                                src="/Lume Reader.png"
+                                alt="Lume Reader Interface"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
                 </div>

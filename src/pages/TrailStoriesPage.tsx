@@ -181,7 +181,7 @@ const caseStudies = [
     title: "Lume Reader",
     category: "Social Media",
     description: "The Distraction-Free Reading App: A production-ready Flutter MVP solving usability gaps with a reader-first UI and offline-first sync.",
-    image: "",
+    image: "/Lume Reader.png",
     tags: ["Flutter", "MVP", "Offline-First", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
