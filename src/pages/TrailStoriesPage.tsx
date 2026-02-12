@@ -179,10 +179,10 @@ const caseStudies = [
   {
     id: 15,
     title: "Lume Reader",
-    category: "Social Media",
+    category: "Education",
     description: "The Distraction-Free Reading App: A production-ready Flutter MVP solving usability gaps with a reader-first UI and offline-first sync.",
     image: "/Lume Reader.png",
-    tags: ["Flutter", "MVP", "Offline-First", "Mobile App"],
+    tags: ["Study", "Education", "Flutter", "MVP"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -203,7 +203,7 @@ const caseStudies = [
 ];
 
 const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports"];
-const tags = ["React Native", "AI/ML", "Web App", "Mobile App", "Social Media", "Performance", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Food Delivery", "Real-time", "MVP", "NestJS", "Enterprise", "Collaboration", "Shopify", "E-commerce", "Sports", "Community", "SaaS"];
+const tags = ["React Native", "AI/ML", "Web App", "Mobile App", "Social Media", "Performance", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Food Delivery", "Real-time", "MVP", "NestJS", "Enterprise", "Collaboration", "Shopify", "E-commerce", "Sports", "Community", "SaaS", "Study", "Luxury"];
 
 const TrailStoriesPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");

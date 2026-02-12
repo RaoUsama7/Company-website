@@ -31,13 +31,13 @@ const CaseStudyLumeReader = () => {
 
                         <div className="flex flex-wrap gap-2 mb-6">
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Mobile App
+                                Study
+                            </span>
+                            <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
+                                Education
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
                                 Flutter
-                            </span>
-                            <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                MVP
                             </span>
                         </div>
 
