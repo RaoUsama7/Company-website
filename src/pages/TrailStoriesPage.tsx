@@ -166,9 +166,9 @@ const caseStudies = [
   },
   {
     id: 14,
-    title: "Venlushop",
+    title: "VenluShop",
     category: "Food & Beverage",
-    description: "A high-performance Shopify Plus storefront designed for seamless scaling, premium user experience, and optimized conversion pathways.",
+    description: "Anime-Inspired Global Retail: A dynamic Shopify Plus storefront bridging the gap between anime culture and high-performance activewear.",
     image: "",
     tags: ["Shopify", "E-commerce", "Performance"],
     color: "bg-tribe-blue/10",
