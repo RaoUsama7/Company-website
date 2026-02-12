@@ -169,7 +169,7 @@ const caseStudies = [
     title: "VenluShop",
     category: "E-commerce",
     description: "Anime-Inspired Global Retail: A dynamic Shopify Plus storefront bridging the gap between anime culture and high-performance activewear.",
-    image: "/tec/t2c main.png",
+    image: "/venlushop.jpeg",
     tags: ["Shopify", "E-commerce", "Performance"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",

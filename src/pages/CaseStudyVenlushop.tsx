@@ -49,11 +49,12 @@ const CaseStudyVenlushop = () => {
                             A dynamic e-commerce platform bridging the gap between anime culture and high-performance activewear through a compelling, immersive storefront.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700 flex items-center justify-center border border-white/10">
-                            <div className="text-center">
-                                <ShoppingBag className="h-16 w-16 text-tribe-blue/20 mx-auto mb-4" />
-                                <p className="text-earth-500 font-display font-medium uppercase tracking-widest">VenluShop Storefront</p>
-                            </div>
+                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700">
+                            <img
+                                src="/venlushop.jpeg"
+                                alt="VenluShop Storefront"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
                 </div>
