@@ -49,11 +49,12 @@ const CaseStudyTeam2Challenge = () => {
                             A comprehensive digital ecosystem built to simplify how clubs, coaches, parents, and players connect, organize, and grow together.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700 flex items-center justify-center">
-                            <div className="text-earth-500 flex flex-col items-center">
-                                <Rocket className="h-20 w-20 mb-4 opacity-20" />
-                                <p className="text-lg font-medium opacity-30 uppercase tracking-widest">Project Visual Space</p>
-                            </div>
+                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700">
+                            <img
+                                src="/tec/t2c main.png"
+                                alt="T2C Project Banner"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
                 </div>
@@ -111,6 +112,20 @@ const CaseStudyTeam2Challenge = () => {
                                 </div>
                             </div>
 
+                            {/* Image Placeholder 1 */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="my-16 relative aspect-video rounded-2xl overflow-hidden border border-earth-100 shadow-lg"
+                            >
+                                <img
+                                    src="/tec/1 (2).png"
+                                    alt="Onboarding and Roles"
+                                    className="w-full h-full object-cover"
+                                />
+                            </motion.div>
+
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Profile Management</h2>
 
                             <div className="grid md:grid-cols-2 gap-8 my-12">
@@ -140,6 +155,20 @@ const CaseStudyTeam2Challenge = () => {
                                 </div>
                             </div>
 
+                            {/* Image Placeholder 2 */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="my-16 relative aspect-video rounded-2xl overflow-hidden border border-earth-100 shadow-lg"
+                            >
+                                <img
+                                    src="/tec/1 (3).png"
+                                    alt="User Dashboard"
+                                    className="w-full h-full object-cover"
+                                />
+                            </motion.div>
+
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Content Creation & Engagement</h2>
 
                             <div className="grid md:grid-cols-2 gap-8 my-12">
@@ -164,6 +193,20 @@ const CaseStudyTeam2Challenge = () => {
                                     <p className="text-earth-600 text-sm">Admins define who can see and interact with content—keeping communication targeted and efficient.</p>
                                 </div>
                             </div>
+
+                            {/* Image Placeholder 3 */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="my-16 relative aspect-video rounded-2xl overflow-hidden border border-earth-100 shadow-lg"
+                            >
+                                <img
+                                    src="/tec/1 (4).png"
+                                    alt="Engagement and Events"
+                                    className="w-full h-full object-cover"
+                                />
+                            </motion.div>
 
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Mobile Frontend & Architecture</h2>
 
@@ -202,6 +245,24 @@ const CaseStudyTeam2Challenge = () => {
                                 </div>
                             </div>
 
+                            {/* Image Placeholder 4 - Mobile Showcase */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="my-16 grid grid-cols-2 md:grid-cols-3 gap-4"
+                            >
+                                <div className="aspect-[9/16] rounded-xl overflow-hidden border border-earth-100 shadow-sm transition-transform hover:scale-[1.02]">
+                                    <img src="/tec/1 (5).png" alt="App Screen 1" className="w-full h-full object-cover" />
+                                </div>
+                                <div className="aspect-[9/16] rounded-xl overflow-hidden border border-earth-100 shadow-sm transition-transform hover:scale-[1.02]">
+                                    <img src="/tec/1 (1).png" alt="App Screen 2" className="w-full h-full object-cover" />
+                                </div>
+                                <div className="hidden md:block aspect-[9/16] rounded-xl overflow-hidden border border-earth-100 shadow-sm transition-transform hover:scale-[1.02]">
+                                    <img src="/tec/1 (2).png" alt="App Screen 3" className="w-full h-full object-cover" />
+                                </div>
+                            </motion.div>
+
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Web Frontend & Architecture</h2>
 
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
@@ -231,13 +292,68 @@ const CaseStudyTeam2Challenge = () => {
                                 </div>
                             </div>
 
+                            {/* Image Placeholder 5 - Web Dashboard */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.98 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="my-16 aspect-video rounded-2xl bg-earth-900 flex items-center justify-center border border-earth-800 shadow-2xl relative overflow-hidden"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-tr from-tribe-blue/10 to-transparent" />
+                                <p className="text-earth-500 font-display font-medium relative z-10 uppercase tracking-widest">Web Dashboard Ecosystem</p>
+                            </motion.div>
+
+                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Backend & Infrastructure</h2>
+
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
+                                <div className="p-6 bg-earth-50 rounded-xl border border-earth-100">
+                                    <h4 className="font-bold text-earth-900 mb-2">NestJS (TypeScript)</h4>
+                                    <p className="text-earth-600 text-xs">Modular, scalable architecture for high-performance REST APIs and services.</p>
+                                </div>
+                                <div className="p-6 bg-earth-50 rounded-xl border border-earth-100">
+                                    <h4 className="font-bold text-earth-900 mb-2">TypeORM & PostgreSQL</h4>
+                                    <p className="text-earth-600 text-xs">Strong data integrity and automated migrations across all environments.</p>
+                                </div>
+                                <div className="p-6 bg-earth-50 rounded-xl border border-earth-100">
+                                    <h4 className="font-bold text-earth-900 mb-2">Redis & RabbitMQ</h4>
+                                    <p className="text-earth-600 text-xs">Caching and message queuing for low-latency, real-time background tasks.</p>
+                                </div>
+                                <div className="p-6 bg-earth-50 rounded-xl border border-earth-100">
+                                    <h4 className="font-bold text-earth-900 mb-2">JWT & RBAC Security</h4>
+                                    <p className="text-earth-600 text-xs">Secure multi-level authorization for admins, parents, and players.</p>
+                                </div>
+                                <div className="p-6 bg-earth-50 rounded-xl border border-earth-100">
+                                    <h4 className="font-bold text-earth-900 mb-2">Logging & Monitoring</h4>
+                                    <p className="text-earth-600 text-xs">Transparent debugging and error tracking via Sentry, CloudWatch, and Pino.</p>
+                                </div>
+                                <div className="p-6 bg-earth-50 rounded-xl border border-earth-100">
+                                    <h4 className="font-bold text-earth-900 mb-2">Automated Testing</h4>
+                                    <p className="text-earth-600 text-xs">Comprehensive Jest/Supertest suite integrated into the CI/CD pipeline.</p>
+                                </div>
+                            </div>
+
+                            {/* Image Placeholder 6 - Infrastructure */}
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                className="my-16 p-12 rounded-2xl bg-earth-50 border border-dashed border-earth-200 flex flex-col items-center justify-center"
+                            >
+                                <div className="flex gap-4 mb-4">
+                                    <div className="h-2 w-12 rounded-full bg-tribe-blue/20" />
+                                    <div className="h-2 w-24 rounded-full bg-tribe-blue/40" />
+                                    <div className="h-2 w-8 rounded-full bg-tribe-blue/10" />
+                                </div>
+                                <p className="text-earth-400 font-display text-sm uppercase tracking-widest">Scalable Cloud Architecture</p>
+                            </motion.div>
+
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Technologies Used</h2>
 
                             <div className="flex flex-wrap gap-3 mb-12">
                                 {[
-                                    'React Native', 'Expo SDK', 'Next.js', 'TypeScript', 'Node.js',
-                                    'Redux Toolkit', 'React Query', 'PostgreSQL', 'Sanity CMS',
-                                    'Stream Chat', 'Firebase', 'PostHog', 'AWS', 'Tailwind CSS'
+                                    'React Native', 'Expo SDK', 'Next.js 15', 'NestJS', 'TypeScript',
+                                    'TypeORM', 'Redis', 'RabbitMQ', 'PostgreSQL', 'Sanity CMS',
+                                    'Stream Chat', 'Firebase', 'PostHog', 'Sentry', 'AWS'
                                 ].map((tech) => (
                                     <span key={tech} className="px-4 py-2 bg-earth-100 text-earth-700 rounded-full text-sm font-medium">
                                         {tech}
