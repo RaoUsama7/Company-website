@@ -175,6 +175,18 @@ const caseStudies = [
     textColor: "text-tribe-blue",
     featured: true,
     slug: "venlushop"
+  },
+  {
+    id: 15,
+    title: "Lume Reader",
+    category: "Social Media",
+    description: "Illuminating the Literary World: A next-generation social reading platform designed to connect readers, authors, and critics.",
+    image: "",
+    tags: ["Social Platform", "Reading", "Mobile App"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "lume-reader"
   }
 ];
 
