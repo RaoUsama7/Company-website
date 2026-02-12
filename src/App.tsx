@@ -36,12 +36,14 @@ import CaseStudyPerfectOrganizing from "./pages/CaseStudyPerfectOrganizing";
 import CaseStudyCaloriesCounter from "./pages/CaseStudyCaloriesCounter";
 import CaseStudyLatteDelivery from "./pages/CaseStudyLatteDelivery";
 import CaseStudyTalkieTotz from "./pages/CaseStudyTalkieTotz";
+import CaseStudyTeam2Challenge from "./pages/CaseStudyTeam2Challenge";
+
 
 const queryClient = new QueryClient();
 
 const AppRoutes = () => {
   useScrollToTop();
-  
+
   return (
     <Routes>
       <Route path="/" element={<Index />} />
@@ -75,6 +77,8 @@ const AppRoutes = () => {
       <Route path="/case-study/calories-counter" element={<CaseStudyCaloriesCounter />} />
       <Route path="/case-study/latte-delivery" element={<CaseStudyLatteDelivery />} />
       <Route path="/case-study/talkie-totz" element={<CaseStudyTalkieTotz />} />
+      <Route path="/case-study/team2challenge" element={<CaseStudyTeam2Challenge />} />
+
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

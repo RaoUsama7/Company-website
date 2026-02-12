@@ -15,11 +15,11 @@ const CaseStudyHarmoniq = () => {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -29,7 +29,7 @@ const CaseStudyHarmoniq = () => {
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Case Studies
             </Link>
-            
+
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
                 Social Media
@@ -41,19 +41,19 @@ const CaseStudyHarmoniq = () => {
                 Performance Optimization
               </span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
               <span className="text-tribe-blue">Harmoniq:</span> From Lagging App to Scalable Product
             </h1>
-            
+
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               How TTT Transformed a React Native iOS App Into a Modern, Future-Proof Platform
             </p>
-            
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png" 
-                alt="Harmoniq App" 
+              <img
+                src="/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png"
+                alt="Harmoniq App"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -79,7 +79,7 @@ const CaseStudyHarmoniq = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">The Situation: Quick Fix? Not Quite.</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 The client came to us with a simple ask: improve some screens and boost performance. The app worked—but just barely. Users were frustrated by slow load times, clunky transitions, and unexpected crashes. The backend hadn't been touched in years, and the team struggled to build confidently or ship quickly.
               </p>
@@ -127,7 +127,7 @@ const CaseStudyHarmoniq = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Our Solution</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 We implemented a comprehensive modernization strategy that included:
               </p>
@@ -159,7 +159,7 @@ const CaseStudyHarmoniq = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Technologies Used</h2>
-              
+
               <div className="flex flex-wrap gap-3 mb-12">
                 {['React Native', 'TypeScript', 'Redux', 'Node.js', 'PostgreSQL', 'AWS', 'Jest', 'Detox'].map((tech) => (
                   <span key={tech} className="px-4 py-2 bg-earth-100 text-earth-700 rounded-full text-sm font-medium">
@@ -175,7 +175,7 @@ const CaseStudyHarmoniq = () => {
       {/* CTA Section */}
       <section className="py-16 bg-earth-100">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
@@ -202,7 +202,7 @@ const CaseStudyHarmoniq = () => {
           </motion.div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );
