@@ -167,9 +167,9 @@ const caseStudies = [
   {
     id: 14,
     title: "VenluShop",
-    category: "Food & Beverage",
+    category: "E-commerce",
     description: "Anime-Inspired Global Retail: A dynamic Shopify Plus storefront bridging the gap between anime culture and high-performance activewear.",
-    image: "",
+    image: "/tec/t2c main.png",
     tags: ["Shopify", "E-commerce", "Performance"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
@@ -178,8 +178,8 @@ const caseStudies = [
   }
 ];
 
-const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "Gamification", "AR", "Sports"];
-const tags = ["React Native", "AI/ML", "Web App", "Mobile App", "Social Media", "Performance", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Food Delivery", "Real-time", "MVP", "NestJS", "Enterprise", "Collaboration"];
+const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports"];
+const tags = ["React Native", "AI/ML", "Web App", "Mobile App", "Social Media", "Performance", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Food Delivery", "Real-time", "MVP", "NestJS", "Enterprise", "Collaboration", "Shopify", "E-commerce", "Sports", "Community", "SaaS"];
 
 const TrailStoriesPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
