@@ -163,6 +163,18 @@ const caseStudies = [
     textColor: "text-tribe-blue",
     featured: true,
     slug: "team2challenge"
+  },
+  {
+    id: 14,
+    title: "Venlushop",
+    category: "Food & Beverage",
+    description: "A high-performance Shopify Plus storefront designed for seamless scaling, premium user experience, and optimized conversion pathways.",
+    image: "",
+    tags: ["Shopify", "E-commerce", "Performance"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "venlushop"
   }
 ];
 
