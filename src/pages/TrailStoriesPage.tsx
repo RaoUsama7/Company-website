@@ -187,6 +187,18 @@ const caseStudies = [
     textColor: "text-tribe-blue",
     featured: true,
     slug: "lume-reader"
+  },
+  {
+    id: 16,
+    title: "DANI by Daniel K",
+    category: "E-commerce",
+    description: "Luxury Jewelry E-Commerce: A custom-built Shopify Plus storefront with internationalization and conversion-driven UI/UX.",
+    image: "",
+    tags: ["Shopify", "Luxury", "E-commerce", "SaaS"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "dani"
   }
 ];
 
