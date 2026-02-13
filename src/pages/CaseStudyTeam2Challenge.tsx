@@ -51,7 +51,7 @@ const CaseStudyTeam2Challenge = () => {
 
                         <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700">
                             <img
-                                src="/tec/t2c main.png"
+                                src="/t2c latest.png"
                                 alt="T2C Project Banner"
                                 className="w-full h-full object-cover"
                             />
@@ -112,19 +112,7 @@ const CaseStudyTeam2Challenge = () => {
                                 </div>
                             </div>
 
-                            {/* Image Placeholder 1 */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="my-16 relative aspect-video rounded-2xl overflow-hidden border border-earth-100 shadow-lg"
-                            >
-                                <img
-                                    src="/tec/1 (2).png"
-                                    alt="Onboarding and Roles"
-                                    className="w-full h-full object-cover"
-                                />
-                            </motion.div>
+
 
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Profile Management</h2>
 
@@ -155,19 +143,7 @@ const CaseStudyTeam2Challenge = () => {
                                 </div>
                             </div>
 
-                            {/* Image Placeholder 2 */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="my-16 relative aspect-video rounded-2xl overflow-hidden border border-earth-100 shadow-lg"
-                            >
-                                <img
-                                    src="/tec/1 (3).png"
-                                    alt="User Dashboard"
-                                    className="w-full h-full object-cover"
-                                />
-                            </motion.div>
+
 
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Content Creation & Engagement</h2>
 
@@ -194,19 +170,7 @@ const CaseStudyTeam2Challenge = () => {
                                 </div>
                             </div>
 
-                            {/* Image Placeholder 3 */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="my-16 relative aspect-video rounded-2xl overflow-hidden border border-earth-100 shadow-lg"
-                            >
-                                <img
-                                    src="/tec/1 (4).png"
-                                    alt="Engagement and Events"
-                                    className="w-full h-full object-cover"
-                                />
-                            </motion.div>
+
 
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Mobile Frontend & Architecture</h2>
 
@@ -245,23 +209,7 @@ const CaseStudyTeam2Challenge = () => {
                                 </div>
                             </div>
 
-                            {/* Image Placeholder 4 - Mobile Showcase */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="my-16 grid grid-cols-2 md:grid-cols-3 gap-4"
-                            >
-                                <div className="aspect-[9/16] rounded-xl overflow-hidden border border-earth-100 shadow-sm transition-transform hover:scale-[1.02]">
-                                    <img src="/tec/1 (5).png" alt="App Screen 1" className="w-full h-full object-cover" />
-                                </div>
-                                <div className="aspect-[9/16] rounded-xl overflow-hidden border border-earth-100 shadow-sm transition-transform hover:scale-[1.02]">
-                                    <img src="/tec/1 (1).png" alt="App Screen 2" className="w-full h-full object-cover" />
-                                </div>
-                                <div className="hidden md:block aspect-[9/16] rounded-xl overflow-hidden border border-earth-100 shadow-sm transition-transform hover:scale-[1.02]">
-                                    <img src="/tec/1 (2).png" alt="App Screen 3" className="w-full h-full object-cover" />
-                                </div>
-                            </motion.div>
+
 
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Web Frontend & Architecture</h2>
 
@@ -292,16 +240,7 @@ const CaseStudyTeam2Challenge = () => {
                                 </div>
                             </div>
 
-                            {/* Image Placeholder 5 - Web Dashboard */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.98 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                className="my-16 aspect-video rounded-2xl bg-earth-900 flex items-center justify-center border border-earth-800 shadow-2xl relative overflow-hidden"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-tr from-tribe-blue/10 to-transparent" />
-                                <p className="text-earth-500 font-display font-medium relative z-10 uppercase tracking-widest">Web Dashboard Ecosystem</p>
-                            </motion.div>
+
 
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Backend & Infrastructure</h2>
 
@@ -332,20 +271,7 @@ const CaseStudyTeam2Challenge = () => {
                                 </div>
                             </div>
 
-                            {/* Image Placeholder 6 - Infrastructure */}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                className="my-16 p-12 rounded-2xl bg-earth-50 border border-dashed border-earth-200 flex flex-col items-center justify-center"
-                            >
-                                <div className="flex gap-4 mb-4">
-                                    <div className="h-2 w-12 rounded-full bg-tribe-blue/20" />
-                                    <div className="h-2 w-24 rounded-full bg-tribe-blue/40" />
-                                    <div className="h-2 w-8 rounded-full bg-tribe-blue/10" />
-                                </div>
-                                <p className="text-earth-400 font-display text-sm uppercase tracking-widest">Scalable Cloud Architecture</p>
-                            </motion.div>
+
 
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Technologies Used</h2>
 
