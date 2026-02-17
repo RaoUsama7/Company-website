@@ -43,6 +43,8 @@ import CaseStudyDani from "./pages/CaseStudyDani";
 import CaseStudyRenee from "./pages/CaseStudyRenee";
 import CaseStudyRentigo from "./pages/CaseStudyRentigo";
 import CaseStudyFundreef from "./pages/CaseStudyFundreef";
+import CaseStudyFreecer from "./pages/CaseStudyFreecer";
+
 
 
 
@@ -93,6 +95,8 @@ const AppRoutes = () => {
       <Route path="/case-study/renee" element={<CaseStudyRenee />} />
       <Route path="/case-study/rentigo" element={<CaseStudyRentigo />} />
       <Route path="/case-study/fundreef" element={<CaseStudyFundreef />} />
+      <Route path="/case-study/freecer" element={<CaseStudyFreecer />} />
+
 
 
 

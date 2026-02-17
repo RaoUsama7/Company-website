@@ -235,6 +235,18 @@ const caseStudies = [
     textColor: "text-tribe-blue",
     featured: true,
     slug: "fundreef"
+  },
+  {
+    id: 20,
+    title: "Freecer.at",
+    category: "E-commerce",
+    description: "Premium Luxury E-commerce: A high-performance Shopify storefront with advanced SEO, global reach, and conversion-focused design.",
+    image: null,
+    tags: ["Shopify", "E-commerce", "MERN", "SEO"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "freecer"
   }
 ];
 
