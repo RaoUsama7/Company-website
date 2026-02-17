@@ -274,10 +274,12 @@ const caseStudies = [
   }
 ];
 
-const categories = ["All", "App", "Web", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports", "PropTech", "Agency"];
+const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports", "PropTech", "Agency"];
+const platforms = ["All", "App", "Web"];
 const tags = ["React Native", "AI/ML", "AI", "Web App", "Mobile App", "Social Media", "Performance Optimization", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Laravel 10", "Food Delivery", "Real-time", "MVP", "NestJS", "Enterprise", "Collaboration", "Shopify", "E-commerce", "Sports", "Community", "SaaS", "Study", "Luxury", "Internationalization", "Next.js 15", "Next.js", "Prismic CMS", "Sanity CMS", "PropTech", "FinTech", "DocuSign", "Marketplace", "Meilisearch", "MERN Stack", "SEO Optimization", "SEO", "Agency", "Multilingual", "Liquid", "UX/UI"];
 
 const TrailStoriesPage = () => {
+  const [activePlatform, setActivePlatform] = useState("All");
   const [activeCategory, setActiveCategory] = useState("All");
   const [activeTags, setActiveTags] = useState([]);
   const [featuredOnly, setFeaturedOnly] = useState(false);
@@ -288,9 +290,17 @@ const TrailStoriesPage = () => {
   }, []);
 
   const filteredStudies = caseStudies.filter(study => {
-    // Filter by category
-    if (activeCategory !== "All" && study.category !== activeCategory) {
+    // Filter by platform
+    if (activePlatform !== "All" && study.category !== activePlatform) {
       return false;
+    }
+
+    // Filter by industry (we reuse tags for industry mapping in some cases, or just specific grouping)
+    if (activeCategory !== "All") {
+      // If we find the category in tags, we filter by that
+      if (!study.tags.includes(activeCategory) && study.category !== activeCategory) {
+        return false;
+      }
     }
 
     // Filter by tags
@@ -367,9 +377,30 @@ const TrailStoriesPage = () => {
       >
         <div className="container mx-auto px-4 relative z-10">
           <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-6 md:p-8">
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-10">
+              {/* Platform Toggle - High Level */}
+              <div className="flex flex-col items-center justify-center text-center">
+                <div className="inline-flex p-1.5 bg-earth-100/50 rounded-2xl border border-earth-100 shadow-inner mb-4">
+                  {platforms.map(platform => (
+                    <button
+                      key={platform}
+                      className={cn(
+                        "px-10 py-3 rounded-xl text-sm font-bold transition-all duration-400 relative z-10",
+                        activePlatform === platform
+                          ? "bg-white text-tribe-blue shadow-lg scale-105 border border-earth-100/50"
+                          : "text-earth-500 hover:text-earth-700"
+                      )}
+                      onClick={() => setActivePlatform(platform)}
+                    >
+                      {platform}
+                    </button>
+                  ))}
+                </div>
+                <p className="text-earth-400 text-xs font-medium uppercase tracking-[0.2em]">Select Your Interest Platform</p>
+              </div>
+
               {/* Category Filter */}
-              <div>
+              <div className="pt-8 border-t border-earth-100/50">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="bg-tribe-blue/10 p-2 rounded-lg">
                     <Filter size={20} className="text-tribe-blue" />
