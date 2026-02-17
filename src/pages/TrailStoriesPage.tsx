@@ -259,6 +259,18 @@ const caseStudies = [
     textColor: "text-tribe-blue",
     featured: true,
     slug: "exre"
+  },
+  {
+    id: 22,
+    title: "Avenir",
+    category: "E-commerce",
+    description: "Luxury Home Decor E-commerce: A premium Shopify storefront with curated collection designs, performance tuning, and high-conversion UX.",
+    image: null,
+    tags: ["Shopify", "E-commerce", "Liquid", "Luxury"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "avenir"
   }
 ];
 
