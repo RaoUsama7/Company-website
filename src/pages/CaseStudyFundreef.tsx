@@ -17,7 +17,7 @@ const CaseStudyFundreef = () => {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="py-20 bg-gradient-to-b from-teal-900 via-emerald-900 to-earth-900 text-white">
+            <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
