@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Filter } from 'lucide-react';
+import { ArrowRight, Filter, Layout } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -11,7 +11,7 @@ const caseStudies = [
   {
     id: 1,
     title: "Harmoniq",
-    category: "Social Media",
+    category: "App",
     description: "From Lagging App to Scalable Product: How TTT Transformed a React Native iOS App Into a Modern, Future-Proof Platform.",
     image: "/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png",
     tags: ["React Native", "Social Media", "Performance Optimization"],
@@ -23,7 +23,7 @@ const caseStudies = [
   {
     id: 2,
     title: "TalkieTotz",
-    category: "Education",
+    category: "App",
     description: "Launching a Lesson-Based App for Parents: From Figma to Functional MVP. A complete educational platform for bilingual families.",
     image: "/lovable-uploads/826c450a-5486-4505-a9cd-ab9a1726fb62.png",
     tags: ["React Native", "Education", "MVP", "NestJS"],
@@ -35,7 +35,7 @@ const caseStudies = [
   {
     id: 3,
     title: "Lively Pencil",
-    category: "Social Media",
+    category: "App",
     description: "A Frontend Rebuild that Unlocked a Social Platform for Readers & Bloggers. Clean, scalable architecture for the literary community.",
     image: "/lovable-uploads/eda53215-87db-46b6-9dc6-e564e4de3a33.png",
     tags: ["React Native", "Social Platform", "Literary"],
@@ -47,7 +47,7 @@ const caseStudies = [
   {
     id: 4,
     title: "Little Dreams",
-    category: "AI",
+    category: "App",
     description: "AI-Powered Bedtime Magic: How TTT Engineered a Personalized Storytelling App That Scales Imagination and Revenue.",
     image: "/lovable-uploads/f6b70bdc-127d-42e9-979e-4de34287c471.png",
     tags: ["AI/ML", "Mobile App", "Storytelling"],
@@ -59,7 +59,7 @@ const caseStudies = [
   {
     id: 5,
     title: "Little Lingo",
-    category: "Education",
+    category: "App",
     description: "Language Learning That Grows With Kids: How TTT Revamped a Buggy Codebase into a Vibrant, Multilingual EdTech Platform.",
     image: "/lovable-uploads/ede72a27-07fd-482a-8246-02db292f3af7.png",
     tags: ["Education", "Language Learning", "Mobile App"],
@@ -71,7 +71,7 @@ const caseStudies = [
   {
     id: 6,
     title: "Calories Counter",
-    category: "Health & Wellness",
+    category: "App",
     description: "Your Smart Guide to Food & Fitness: AI-powered calorie tracking with personalized nutrition insights and recipe recommendations.",
     image: "/lovable-uploads/800ed702-a0aa-4553-877a-29a576fd7a09.png",
     tags: ["React Native", "AI/ML", "Health", "Firebase"],
@@ -83,7 +83,7 @@ const caseStudies = [
   {
     id: 7,
     title: "Latte Delivery",
-    category: "Food & Beverage",
+    category: "App",
     description: "End-to-End Food Delivery Ecosystem: Complete multi-app platform with real-time tracking and seamless vendor management.",
     image: "/lovable-uploads/7ee4e9e3-9210-4950-a3cc-ed8e05e2e10a.png",
     tags: ["Flutter", "Laravel", "Food Delivery", "Real-time"],
@@ -95,7 +95,7 @@ const caseStudies = [
   {
     id: 8,
     title: "SnapPick",
-    category: "AR",
+    category: "App",
     description: "Augmented Reality-Powered Warehouse Management System that revolutionizes logistics with AR-driven navigation and intelligent picking automation.",
     image: "/lovable-uploads/2d410c50-cc88-4056-89c1-a15f0460509f.png",
     tags: ["AR/VR", "Logistics", "Mobile App"],
@@ -107,7 +107,7 @@ const caseStudies = [
   {
     id: 9,
     title: "Calm Quest",
-    category: "Gamification",
+    category: "App",
     description: "A Journey Into Digital Serenity: An immersive mobile wellness application that merges casual gaming with mindfulness and stress relief.",
     image: "/lovable-uploads/7c42af98-a63c-4803-9f4f-5932f2da099e.png",
     tags: ["Gaming", "Wellness", "Mobile App"],
@@ -119,7 +119,7 @@ const caseStudies = [
   {
     id: 10,
     title: "Divine Duelists",
-    category: "Gamification",
+    category: "App",
     description: "Strategy Meets Power in a Tactical Card RPG: A deep, strategic deck-building experience with evolving AI battles and card synergies.",
     image: "/lovable-uploads/6d4bd372-b964-406e-9f75-bbebf64cc458.png",
     tags: ["Gaming", "Strategy", "Card Game"],
@@ -131,7 +131,7 @@ const caseStudies = [
   {
     id: 11,
     title: "Ice Cream Roll",
-    category: "Gamification",
+    category: "App",
     description: "A Delightful Dessert Simulation Game with engaging, visually rich gameplay that appeals to a broad audience from kids to casual players.",
     image: "/lovable-uploads/0a80d8ac-9a2b-447d-9e61-23b6e38e5353.png",
     tags: ["Gaming", "Simulation", "Unity"],
@@ -143,7 +143,7 @@ const caseStudies = [
   {
     id: 12,
     title: "Perfect Organizing",
-    category: "Gamification",
+    category: "App",
     description: "Calming Sorting & Puzzle Game designed for stress relief with simple yet satisfying gameplay and mindful activities.",
     image: "/lovable-uploads/e4002e94-9933-4886-a1d6-63e196bad607.png",
     tags: ["Gaming", "Puzzle", "Relaxation"],
@@ -155,7 +155,7 @@ const caseStudies = [
   {
     id: 13,
     title: "Team2Challenge (T2C)",
-    category: "Sports",
+    category: "App",
     description: "The T2C Platform is a comprehensive digital ecosystem built to simplify how clubs, coaches, parents, and players connect, organize, and grow together.",
     image: "/t2c latest.png",
     tags: ["Community", "Sports", "Gamification"],
@@ -167,7 +167,7 @@ const caseStudies = [
   {
     id: 14,
     title: "VenluShop",
-    category: "E-commerce",
+    category: "Web",
     description: "Anime-Inspired Global Retail: A dynamic Shopify Plus storefront bridging the gap between anime culture and high-performance activewear.",
     image: "/venlushop.jpeg",
     tags: ["Shopify", "E-commerce", "Performance Optimization"],
@@ -179,7 +179,7 @@ const caseStudies = [
   {
     id: 15,
     title: "Lume Reader",
-    category: "Education",
+    category: "App",
     description: "The Distraction-Free Reading App: A production-ready Flutter MVP solving usability gaps with a reader-first UI and offline-first sync.",
     image: "/Lume Reader.png",
     tags: ["Study", "Education", "Flutter", "MVP"],
@@ -191,7 +191,7 @@ const caseStudies = [
   {
     id: 16,
     title: "DANI by Daniel K",
-    category: "E-commerce",
+    category: "Web",
     description: "Luxury Jewelry E-Commerce: A custom-built Shopify Plus storefront with internationalization and conversion-driven UI/UX.",
     image: "/dani.jpeg",
     tags: ["Shopify", "Luxury", "E-commerce", "Internationalization"],
@@ -203,7 +203,7 @@ const caseStudies = [
   {
     id: 17,
     title: "Renée",
-    category: "AI",
+    category: "Web",
     description: "AI-Powered Emotional Support: A 24/7 judgment-free therapeutic companion built with Next.js 15 and Prismic CMS for mental wellness.",
     image: null,
     tags: ["AI", "Health & Wellness", "Next.js 15", "Prismic CMS"],
@@ -215,7 +215,7 @@ const caseStudies = [
   {
     id: 18,
     title: "Rentigo",
-    category: "PropTech",
+    category: "Web",
     description: "Enterprise Property Management: A complete lifecycle PMS with multi-role access, financial automation, and portal syndication.",
     image: null,
     tags: ["Laravel", "PropTech", "Enterprise", "FinTech", "DocuSign"],
@@ -227,7 +227,7 @@ const caseStudies = [
   {
     id: 19,
     title: "Fundreef",
-    category: "AI",
+    category: "Web",
     description: "AI-Powered Fundraising: An intelligent platform matching startups with investors using Gemini AI, Meilisearch, and real-time CRM tools.",
     image: null,
     tags: ["Laravel 10", "AI", "FinTech", "Marketplace", "Meilisearch"],
@@ -239,7 +239,7 @@ const caseStudies = [
   {
     id: 20,
     title: "Freecer.at",
-    category: "E-commerce",
+    category: "Web",
     description: "Premium Luxury E-commerce: A high-performance Shopify storefront with advanced SEO, global reach, and conversion-focused design.",
     image: null,
     tags: ["Shopify", "E-commerce", "MERN Stack", "SEO Optimization"],
@@ -251,7 +251,7 @@ const caseStudies = [
   {
     id: 21,
     title: "EXRE",
-    category: "Agency",
+    category: "Web",
     description: "Professional Agency Platform: A multilingual, high-performance website built with Next.js and Sanity CMS for brand authority and lead generation.",
     image: null,
     tags: ["Next.js", "Sanity CMS", "Agency", "SEO", "Multilingual"],
@@ -263,7 +263,7 @@ const caseStudies = [
   {
     id: 22,
     title: "Avenir",
-    category: "E-commerce",
+    category: "Web",
     description: "Luxury Home Decor E-commerce: A premium Shopify storefront with curated collection designs, performance tuning, and high-conversion UX.",
     image: null,
     tags: ["Shopify", "E-commerce", "Liquid", "Luxury", "UX/UI"],
@@ -274,7 +274,7 @@ const caseStudies = [
   }
 ];
 
-const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports", "PropTech", "Agency"];
+const categories = ["All", "App", "Web", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports", "PropTech", "Agency"];
 const tags = ["React Native", "AI/ML", "AI", "Web App", "Mobile App", "Social Media", "Performance Optimization", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Laravel 10", "Food Delivery", "Real-time", "MVP", "NestJS", "Enterprise", "Collaboration", "Shopify", "E-commerce", "Sports", "Community", "SaaS", "Study", "Luxury", "Internationalization", "Next.js 15", "Next.js", "Prismic CMS", "Sanity CMS", "PropTech", "FinTech", "DocuSign", "Marketplace", "Meilisearch", "MERN Stack", "SEO Optimization", "SEO", "Agency", "Multilingual", "Liquid", "UX/UI"];
 
 const TrailStoriesPage = () => {
@@ -363,91 +363,103 @@ const TrailStoriesPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.7 }}
-        className="py-8 bg-white border-b"
+        className="py-12 bg-gray-50/50 relative overflow-hidden"
       >
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <Filter size={20} className="text-earth-500" />
-              <h3 className="text-lg font-medium">Filter Stories:</h3>
-            </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-6 md:p-8">
+            <div className="flex flex-col gap-8">
+              {/* Category Filter */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="bg-tribe-blue/10 p-2 rounded-lg">
+                    <Filter size={20} className="text-tribe-blue" />
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-earth-900">Industries & Domains</h3>
+                </div>
+                <div className="flex flex-wrap gap-2 md:gap-3">
+                  {categories.map(category => (
+                    <button
+                      key={category}
+                      className={cn(
+                        "px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 transform active:scale-95",
+                        activeCategory === category
+                          ? "bg-tribe-blue text-white shadow-lg shadow-tribe-blue/30 -translate-y-0.5"
+                          : "bg-white text-earth-600 hover:bg-earth-100 hover:shadow-md border border-earth-100"
+                      )}
+                      onClick={() => setActiveCategory(category)}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              </div>
 
-            <div className="flex flex-wrap gap-2">
-              {categories.map(category => (
-                <button
-                  key={category}
-                  className={cn(
-                    "px-3 py-1.5 rounded-full text-sm font-medium transition-colors",
-                    activeCategory === category
-                      ? "bg-tribe-blue text-white"
-                      : "bg-earth-100 text-earth-700 hover:bg-earth-200"
+              {/* Tag Cloud Filter */}
+              <div className="pt-8 border-t border-earth-100/50">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-earth-100 p-2 rounded-lg">
+                      <Layout size={20} className="text-earth-600" />
+                    </div>
+                    <h3 className="text-xl font-display font-bold text-earth-900">Technologies & Tools</h3>
+                  </div>
+                  {activeTags.length > 0 && (
+                    <button
+                      className="text-sm font-semibold text-earth-500 hover:text-tribe-blue transition-colors flex items-center gap-1 group"
+                      onClick={() => setActiveTags([])}
+                    >
+                      Reset Tech Filters
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">×</span>
+                    </button>
                   )}
-                  onClick={() => setActiveCategory(category)}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+                </div>
 
-            <div className="flex items-center gap-3">
-              {/* <label className="flex items-center gap-2 text-sm font-medium cursor-pointer">
-                <input 
-                  type="checkbox" 
-                  className="rounded text-tribe-blue focus:ring-tribe-blue"
-                  checked={featuredOnly}
-                  onChange={() => setFeaturedOnly(!featuredOnly)}
-                />
-                Featured Only
-              </label> */}
-            </div>
-          </div>
+                <div className="flex flex-wrap gap-2">
+                  {tags.map(tag => (
+                    <button
+                      key={tag}
+                      className={cn(
+                        "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 border",
+                        activeTags.includes(tag)
+                          ? "bg-earth-900 text-white border-earth-900 shadow-md scale-105"
+                          : "bg-white text-earth-500 border-earth-100 hover:border-tribe-blue hover:text-tribe-blue"
+                      )}
+                      onClick={() => toggleTag(tag)}
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+              </div>
 
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: activeTags.length > 0 ? "auto" : 0, opacity: activeTags.length > 0 ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden mt-4"
-          >
-            <div className="flex flex-wrap gap-2 pt-4 border-t">
-              <span className="text-sm font-medium text-earth-500">Active Tags:</span>
-              {activeTags.map(tag => (
-                <button
-                  key={tag}
-                  className="px-2 py-1 rounded-full bg-tribe-blue/10 text-tribe-blue text-xs font-medium flex items-center gap-1"
-                  onClick={() => toggleTag(tag)}
-                >
-                  {tag}
-                  <span className="ml-1">×</span>
-                </button>
-              ))}
-              {activeTags.length > 0 && (
-                <button
-                  className="px-2 py-1 text-xs text-earth-500 hover:text-earth-700"
-                  onClick={() => setActiveTags([])}
-                >
-                  Clear All
-                </button>
-              )}
-            </div>
-          </motion.div>
-
-          <div className="mt-4 pt-4 border-t">
-            <h4 className="text-sm font-medium text-earth-500 mb-2">Filter by Tags:</h4>
-            <div className="flex flex-wrap gap-2">
-              {tags.map(tag => (
-                <button
-                  key={tag}
-                  className={cn(
-                    "px-2 py-1 rounded-full text-xs font-medium transition-colors",
-                    activeTags.includes(tag)
-                      ? "bg-tribe-blue/20 text-tribe-blue"
-                      : "bg-earth-100 text-earth-600 hover:bg-earth-200"
-                  )}
-                  onClick={() => toggleTag(tag)}
-                >
-                  {tag}
-                </button>
-              ))}
+              {/* Active Selection Status */}
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{
+                  height: activeTags.length > 0 ? "auto" : 0,
+                  opacity: activeTags.length > 0 ? 1 : 0
+                }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <div className="flex flex-wrap items-center gap-3 pt-6 border-t border-dashed border-earth-200">
+                  <span className="text-sm font-bold text-earth-900">Current Focus:</span>
+                  {activeTags.map(tag => (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-tribe-blue/10 text-tribe-blue text-xs font-bold animate-in fade-in zoom-in duration-300"
+                    >
+                      {tag}
+                      <button
+                        onClick={() => toggleTag(tag)}
+                        className="hover:bg-tribe-blue/20 rounded-full p-0.5"
+                      >
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
