@@ -211,6 +211,18 @@ const caseStudies = [
     textColor: "text-tribe-blue",
     featured: true,
     slug: "renee"
+  },
+  {
+    id: 18,
+    title: "Rentigo",
+    category: "E-commerce",
+    description: "Enterprise Property Management: A complete lifecycle PMS with multi-role access, financial automation, and portal syndication.",
+    image: null,
+    tags: ["Laravel", "PropTech", "Enterprise", "FinTech"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "rentigo"
   }
 ];
 
