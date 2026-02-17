@@ -223,6 +223,18 @@ const caseStudies = [
     textColor: "text-tribe-blue",
     featured: true,
     slug: "rentigo"
+  },
+  {
+    id: 19,
+    title: "Fundreef",
+    category: "AI",
+    description: "AI-Powered Fundraising: An intelligent platform matching startups with investors using Gemini AI, Meilisearch, and real-time CRM tools.",
+    image: null,
+    tags: ["Laravel", "AI", "FinTech", "Marketplace"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "fundreef"
   }
 ];
 
