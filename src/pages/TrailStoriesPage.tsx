@@ -247,6 +247,18 @@ const caseStudies = [
     textColor: "text-tribe-blue",
     featured: true,
     slug: "freecer"
+  },
+  {
+    id: 21,
+    title: "EXRE",
+    category: "Social Media",
+    description: "Professional Agency Platform: A multilingual, high-performance website built with Next.js and Sanity CMS for brand authority and lead generation.",
+    image: null,
+    tags: ["Next.js", "Sanity CMS", "Agency", "SEO"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "exre"
   }
 ];
 
