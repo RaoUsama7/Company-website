@@ -40,6 +40,8 @@ import CaseStudyTeam2Challenge from "./pages/CaseStudyTeam2Challenge";
 import CaseStudyVenlushop from "./pages/CaseStudyVenlushop";
 import CaseStudyLumeReader from "./pages/CaseStudyLumeReader";
 import CaseStudyDani from "./pages/CaseStudyDani";
+import CaseStudyRenee from "./pages/CaseStudyRenee";
+
 
 
 const queryClient = new QueryClient();
@@ -84,6 +86,8 @@ const AppRoutes = () => {
       <Route path="/case-study/venlushop" element={<CaseStudyVenlushop />} />
       <Route path="/case-study/lume-reader" element={<CaseStudyLumeReader />} />
       <Route path="/case-study/dani" element={<CaseStudyDani />} />
+      <Route path="/case-study/renee" element={<CaseStudyRenee />} />
+
 
       <Route path="*" element={<NotFound />} />
     </Routes>

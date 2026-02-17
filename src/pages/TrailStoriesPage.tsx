@@ -199,6 +199,18 @@ const caseStudies = [
     textColor: "text-tribe-blue",
     featured: true,
     slug: "dani"
+  },
+  {
+    id: 17,
+    title: "Renée",
+    category: "AI",
+    description: "AI-Powered Emotional Support: A 24/7 judgment-free therapeutic companion built with Next.js 15 and Prismic CMS for mental wellness.",
+    image: null, // Placeholder since image generation failed
+    tags: ["AI", "Health & Wellness", "Next.js", "CMS"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "renee"
   }
 ];
 
