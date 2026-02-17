@@ -14,7 +14,7 @@ const caseStudies = [
     category: "Social Media",
     description: "From Lagging App to Scalable Product: How TTT Transformed a React Native iOS App Into a Modern, Future-Proof Platform.",
     image: "/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png",
-    tags: ["React Native", "Social Media", "Performance"],
+    tags: ["React Native", "Social Media", "Performance Optimization"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -170,7 +170,7 @@ const caseStudies = [
     category: "E-commerce",
     description: "Anime-Inspired Global Retail: A dynamic Shopify Plus storefront bridging the gap between anime culture and high-performance activewear.",
     image: "/venlushop.jpeg",
-    tags: ["Shopify", "E-commerce", "Performance"],
+    tags: ["Shopify", "E-commerce", "Performance Optimization"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -194,7 +194,7 @@ const caseStudies = [
     category: "E-commerce",
     description: "Luxury Jewelry E-Commerce: A custom-built Shopify Plus storefront with internationalization and conversion-driven UI/UX.",
     image: "/dani.jpeg",
-    tags: ["Shopify", "Luxury", "E-commerce", "SaaS"],
+    tags: ["Shopify", "Luxury", "E-commerce", "Internationalization"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -205,8 +205,8 @@ const caseStudies = [
     title: "Renée",
     category: "AI",
     description: "AI-Powered Emotional Support: A 24/7 judgment-free therapeutic companion built with Next.js 15 and Prismic CMS for mental wellness.",
-    image: null, // Placeholder since image generation failed
-    tags: ["AI", "Health & Wellness", "Next.js", "CMS"],
+    image: null,
+    tags: ["AI", "Health & Wellness", "Next.js 15", "Prismic CMS"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -215,10 +215,10 @@ const caseStudies = [
   {
     id: 18,
     title: "Rentigo",
-    category: "E-commerce",
+    category: "PropTech",
     description: "Enterprise Property Management: A complete lifecycle PMS with multi-role access, financial automation, and portal syndication.",
     image: null,
-    tags: ["Laravel", "PropTech", "Enterprise", "FinTech"],
+    tags: ["Laravel", "PropTech", "Enterprise", "FinTech", "DocuSign"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -230,7 +230,7 @@ const caseStudies = [
     category: "AI",
     description: "AI-Powered Fundraising: An intelligent platform matching startups with investors using Gemini AI, Meilisearch, and real-time CRM tools.",
     image: null,
-    tags: ["Laravel", "AI", "FinTech", "Marketplace"],
+    tags: ["Laravel 10", "AI", "FinTech", "Marketplace", "Meilisearch"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -242,7 +242,7 @@ const caseStudies = [
     category: "E-commerce",
     description: "Premium Luxury E-commerce: A high-performance Shopify storefront with advanced SEO, global reach, and conversion-focused design.",
     image: null,
-    tags: ["Shopify", "E-commerce", "MERN", "SEO"],
+    tags: ["Shopify", "E-commerce", "MERN Stack", "SEO Optimization"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -251,10 +251,10 @@ const caseStudies = [
   {
     id: 21,
     title: "EXRE",
-    category: "Social Media",
+    category: "Agency",
     description: "Professional Agency Platform: A multilingual, high-performance website built with Next.js and Sanity CMS for brand authority and lead generation.",
     image: null,
-    tags: ["Next.js", "Sanity CMS", "Agency", "SEO"],
+    tags: ["Next.js", "Sanity CMS", "Agency", "SEO", "Multilingual"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -266,7 +266,7 @@ const caseStudies = [
     category: "E-commerce",
     description: "Luxury Home Decor E-commerce: A premium Shopify storefront with curated collection designs, performance tuning, and high-conversion UX.",
     image: null,
-    tags: ["Shopify", "E-commerce", "Liquid", "Luxury"],
+    tags: ["Shopify", "E-commerce", "Liquid", "Luxury", "UX/UI"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -274,8 +274,8 @@ const caseStudies = [
   }
 ];
 
-const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports"];
-const tags = ["React Native", "AI/ML", "Web App", "Mobile App", "Social Media", "Performance", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Food Delivery", "Real-time", "MVP", "NestJS", "Enterprise", "Collaboration", "Shopify", "E-commerce", "Sports", "Community", "SaaS", "Study", "Luxury"];
+const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports", "PropTech", "Agency"];
+const tags = ["React Native", "AI/ML", "AI", "Web App", "Mobile App", "Social Media", "Performance Optimization", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Laravel 10", "Food Delivery", "Real-time", "MVP", "NestJS", "Enterprise", "Collaboration", "Shopify", "E-commerce", "Sports", "Community", "SaaS", "Study", "Luxury", "Internationalization", "Next.js 15", "Next.js", "Prismic CMS", "Sanity CMS", "PropTech", "FinTech", "DocuSign", "Marketplace", "Meilisearch", "MERN Stack", "SEO Optimization", "SEO", "Agency", "Multilingual", "Liquid", "UX/UI"];
 
 const TrailStoriesPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
