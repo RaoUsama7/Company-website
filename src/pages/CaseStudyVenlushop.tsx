@@ -1,15 +1,41 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowLeft, CheckCircle, ShoppingBag, Zap, Shield, Globe, Search, BarChart, Settings, Smartphone, Users } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowLeft, CheckCircle, ShoppingBag, Zap, Shield, Globe, Search, BarChart, Settings, Smartphone, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const CaseStudyVenlushop = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const sliderImages = [
+        "/venlu shop/main.png",
+        "/venlu shop/4.png",
+        "/venlu shop/6.png",
+        "/venlu shop/8.png",
+        "/venlu shop/10.png",
+        "/venlu shop/12.png"
+    ];
+
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [currentIndex]);
+
+    const nextSlide = () => {
+        setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
+    };
 
     return (
         <div className="min-h-screen bg-background font-sans">
@@ -49,12 +75,50 @@ const CaseStudyVenlushop = () => {
                             A dynamic e-commerce platform bridging the gap between anime culture and high-performance activewear through a compelling, immersive storefront.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700">
-                            <img
-                                src="/venlu shop/VenluSHop.png"
-                                alt="VenluShop Storefront"
-                                className="w-full h-full object-cover"
-                            />
+                        <div className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10">
+                            <AnimatePresence mode="wait">
+                                <motion.img
+                                    key={currentIndex}
+                                    src={sliderImages[currentIndex]}
+                                    alt={`VenluShop Project Slide ${currentIndex + 1}`}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -20 }}
+                                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                                    className="w-full h-full object-contain"
+                                />
+                            </AnimatePresence>
+
+                            {/* Navigation Arrows */}
+                            <button
+                                onClick={prevSlide}
+                                aria-label="Previous slide"
+                                className="absolute left-4 top-1/2 -translate-y-1/2 bg-earth-900/40 hover:bg-earth-900/60 backdrop-blur-md p-3 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 z-10 border border-white/10"
+                            >
+                                <ChevronLeft className="h-6 w-6" />
+                            </button>
+                            <button
+                                onClick={nextSlide}
+                                aria-label="Next slide"
+                                className="absolute right-4 top-1/2 -translate-y-1/2 bg-earth-900/40 hover:bg-earth-900/60 backdrop-blur-md p-3 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 z-10 border border-white/10"
+                            >
+                                <ChevronRight className="h-6 w-6" />
+                            </button>
+
+                            {/* Indicators */}
+                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                                {sliderImages.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => setCurrentIndex(index)}
+                                        className={`h-1.5 transition-all duration-300 rounded-full ${index === currentIndex ? 'bg-tribe-blue w-8' : 'bg-white/30 w-4 hover:bg-white/50'
+                                            }`}
+                                        aria-label={`Go to slide ${index + 1}`}
+                                    />
+                                ))}
+                            </div>
+
+                            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                         </div>
                     </motion.div>
                 </div>
