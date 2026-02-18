@@ -229,7 +229,7 @@ const caseStudies = [
     title: "Fundreef",
     category: "Web",
     description: "AI-Powered Fundraising: An intelligent platform matching startups with investors using Gemini AI, Meilisearch, and real-time CRM tools.",
-    image: null,
+    image: "/fundreef/Fundreef.png",
     tags: ["Laravel 10", "AI", "FinTech", "Marketplace", "Meilisearch"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",

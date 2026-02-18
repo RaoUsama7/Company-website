@@ -50,12 +50,12 @@ const CaseStudyFundreef = () => {
                             Bridging the gap between startups and investors with intelligent discovery, AI prep tools, and structured deal flow.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-teal-950/50 flex items-center justify-center">
-                            <div className="text-center p-8">
-                                <TrendingUp className="h-16 w-16 text-tribe-blue mx-auto mb-4 opacity-50" />
-                                <p className="text-tribe-blue font-display text-2xl font-bold">Fundreef Platform</p>
-                                <p className="text-gray-400 mt-2">Connecting Ambition with Capital</p>
-                            </div>
+                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-teal-950/50">
+                            <img
+                                src="/fundreef/Fundreef.png"
+                                alt="Fundreef AI Fundraising"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
                 </div>
