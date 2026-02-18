@@ -157,7 +157,7 @@ const caseStudies = [
     title: "Team2Challenge (Mobile)",
     category: "Mobile",
     description: "The T2C Platform is a comprehensive digital ecosystem built to simplify how clubs, coaches, parents, and players connect, organize, and grow together.",
-    image: "/t2c latest.png",
+    image: "/t2c app/main.png",
     tags: ["Community", "Sports", "Gamification", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",

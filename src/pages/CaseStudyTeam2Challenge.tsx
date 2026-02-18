@@ -10,17 +10,16 @@ const CaseStudyTeam2Challenge = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const sliderImages = [
-        "/t2c latest.png",
-        "/t2c/t2c main.png",
-        "/t2c/4.png",
-        "/t2c/6.png",
-        "/t2c/8.png",
-        "/t2c/10.png",
-        "/t2c/12.png",
-        "/t2c/14.png",
-        "/t2c/16.png",
-        "/t2c/18.png",
-        "/t2c/20.png"
+        "/t2c app/main.png",
+        "/t2c app/4.png",
+        "/t2c app/6.png",
+        "/t2c app/8.png",
+        "/t2c app/10.png",
+        "/t2c app/12.png",
+        "/t2c app/14.png",
+        "/t2c app/16.png",
+        "/t2c app/18.png",
+        "/t2c app/20.png"
     ];
 
     useEffect(() => {
