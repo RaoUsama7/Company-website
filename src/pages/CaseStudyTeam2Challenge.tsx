@@ -22,6 +22,13 @@ const CaseStudyTeam2Challenge = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [currentIndex]);
+
     const nextSlide = () => {
         setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
     };
