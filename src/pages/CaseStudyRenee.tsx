@@ -50,18 +50,12 @@ const CaseStudyRenee = () => {
                             Providing 24/7 judgment-free emotional support through a sophisticated AI-driven platform.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-indigo-950/50 flex items-center justify-center">
-                            <div className="text-center p-8">
-                                <Cpu className="h-16 w-16 text-tribe-blue mx-auto mb-4 opacity-50" />
-                                <p className="text-tribe-blue font-display text-2xl font-bold">Renée AI Platform</p>
-                                <p className="text-gray-400 mt-2">Emotional Wellness Redefined</p>
-                            </div>
-                            {/* Image Placeholder - User can replace with actual image */}
-                            {/* <img
-                src="/renee-feature.png"
-                alt="Renée AI Companion"
-                className="w-full h-full object-cover"
-              /> */}
+                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-indigo-950/50">
+                            <img
+                                src="/rene/reene.png"
+                                alt="Renée AI Companion"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
                 </div>
