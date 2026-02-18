@@ -50,12 +50,12 @@ const CaseStudyAvenir = () => {
                             Transforming a curated vision of furniture and lifestyle into a high-performance, conversion-driven Shopify ecosystem.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-stone-800/50 flex items-center justify-center">
-                            <div className="text-center p-8">
-                                <ShoppingBag className="h-16 w-16 text-tribe-blue mx-auto mb-4 opacity-50" />
-                                <p className="text-tribe-blue font-display text-2xl font-bold">Avenir.pk Storefront</p>
-                                <p className="text-stone-400 mt-2">Where Design Meets Commerce</p>
-                            </div>
+                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-stone-800/50">
+                            <img
+                                src="/avenenir/Avenir.png"
+                                alt="Avenir.pk Storefront"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
                 </div>

@@ -50,12 +50,12 @@ const CaseStudyExre = () => {
                             A professional, multilingual agency platform built for scalability, performance, and seamless content management.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800/50 flex items-center justify-center">
-                            <div className="text-center p-8">
-                                <Monitor className="h-16 w-16 text-tribe-blue mx-auto mb-4 opacity-50" />
-                                <p className="text-tribe-blue font-display text-2xl font-bold">EXRE Digital Presence</p>
-                                <p className="text-gray-400 mt-2">Professionalism Meets Technical Excellence</p>
-                            </div>
+                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800/50">
+                            <img
+                                src="/exre/EXRE.png"
+                                alt="EXRE Digital Presence"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
                 </div>
