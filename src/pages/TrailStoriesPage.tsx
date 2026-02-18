@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Filter, Layout } from 'lucide-react';
+import { ArrowRight, Filter, Layout, Code2, Zap, Sparkles, ChevronDown, ChevronUp, Settings2 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const caseStudies = [
@@ -288,13 +288,35 @@ const caseStudies = [
 
 const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports", "PropTech", "Agency"];
 const platforms = ["All", "Mobile", "Web", "Game"];
-const tags = ["React Native", "AI/ML", "AI", "Web App", "Mobile App", "Social Media", "Performance Optimization", "Gaming", "Education", "Language Learning", "Storytelling", "AR/VR", "Logistics", "Wellness", "Strategy", "Card Game", "Social Platform", "Literary", "Simulation", "Unity", "Puzzle", "Relaxation", "Health", "Firebase", "Flutter", "Laravel", "Laravel 10", "Food Delivery", "Real-time", "MVP", "NestJS", "Enterprise", "Collaboration", "Shopify", "E-commerce", "Sports", "Community", "SaaS", "Study", "Luxury", "Internationalization", "Next.js 15", "Next.js", "Prismic CMS", "Sanity CMS", "PropTech", "FinTech", "DocuSign", "Marketplace", "Meilisearch", "MERN Stack", "SEO Optimization", "SEO", "Agency", "Multilingual", "Liquid", "UX/UI"];
+
+const techTags = [
+  "React Native", "Flutter", "Next.js 15", "Next.js", "Laravel 10", "Laravel",
+  "NestJS", "Unity", "MERN Stack", "React.js", "Liquid", "AI/ML", "AI", "AR/VR",
+  "Web App", "Mobile App"
+];
+
+const ecosystemTags = [
+  "Shopify", "Sanity CMS", "Prismic CMS", "Firebase", "Stripe", "Meilisearch",
+  "DocuSign", "SEO Optimization", "SEO", "Performance Optimization", "UX/UI",
+  "Real-time", "MVP", "SaaS", "E-commerce", "Marketplace", "Enterprise",
+  "Collaboration", "Internationalization", "Multilingual"
+];
+
+const domainTags = [
+  "Social Media", "Social Platform", "Community", "Education", "Study",
+  "Language Learning", "Gaming", "Strategy", "Card Game", "Simulation",
+  "Puzzle", "Relaxation", "Storytelling", "Logistics", "Food Delivery",
+  "Sports", "Health", "Wellness", "PropTech", "FinTech", "Luxury", "Literary", "Agency"
+];
+
+const allTags = [...techTags, ...ecosystemTags, ...domainTags];
 
 const TrailStoriesPage = () => {
   const [activePlatform, setActivePlatform] = useState("All");
   const [activeCategory, setActiveCategory] = useState("All");
   const [activeTags, setActiveTags] = useState([]);
   const [featuredOnly, setFeaturedOnly] = useState(false);
+  const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
 
   // Scroll to top on component mount
   useEffect(() => {
@@ -437,43 +459,126 @@ const TrailStoriesPage = () => {
                 </div>
               </div>
 
-              {/* Tag Cloud Filter */}
-              <div className="pt-8 border-t border-earth-100/50">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-earth-100 p-2 rounded-lg">
-                      <Layout size={20} className="text-earth-600" />
-                    </div>
-                    <h3 className="text-xl font-display font-bold text-earth-900">Technologies & Tools</h3>
-                  </div>
-                  {activeTags.length > 0 && (
-                    <button
-                      className="text-sm font-semibold text-earth-500 hover:text-tribe-blue transition-colors flex items-center gap-1 group"
-                      onClick={() => setActiveTags([])}
-                    >
-                      Reset Tech Filters
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">×</span>
-                    </button>
+              {/* Advanced Filters Toggle */}
+              <div className="pt-4 flex justify-center">
+                <button
+                  onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
+                  className={cn(
+                    "flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 border shadow-sm hover:shadow-md",
+                    showAdvancedFilters
+                      ? "bg-earth-900 text-white border-earth-900"
+                      : "bg-white text-earth-700 border-earth-100 hover:border-tribe-blue"
                   )}
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {tags.map(tag => (
-                    <button
-                      key={tag}
-                      className={cn(
-                        "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 border",
-                        activeTags.includes(tag)
-                          ? "bg-earth-900 text-white border-earth-900 shadow-md scale-105"
-                          : "bg-white text-earth-500 border-earth-100 hover:border-tribe-blue hover:text-tribe-blue"
-                      )}
-                      onClick={() => toggleTag(tag)}
-                    >
-                      {tag}
-                    </button>
-                  ))}
-                </div>
+                >
+                  <Settings2 size={16} className={showAdvancedFilters ? "animate-spin-slow" : ""} />
+                  {showAdvancedFilters ? "Hide Advanced Filters" : "Show Advanced Engineering Filters"}
+                  {showAdvancedFilters ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                </button>
               </div>
+
+              <AnimatePresence>
+                {showAdvancedFilters && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="overflow-hidden space-y-10"
+                  >
+                    {/* Tech Stack Section */}
+                    <div className="pt-8 border-t border-earth-100/50">
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-3">
+                          <div className="bg-earth-100 p-2 rounded-lg">
+                            <Code2 size={20} className="text-earth-600" />
+                          </div>
+                          <h3 className="text-xl font-display font-bold text-earth-900">Tech Stack</h3>
+                        </div>
+                        {activeTags.length > 0 && (
+                          <button
+                            className="text-sm font-semibold text-earth-500 hover:text-tribe-blue transition-colors flex items-center gap-1 group"
+                            onClick={() => setActiveTags([])}
+                          >
+                            Reset All Filters
+                            <span className="opacity-0 group-hover:opacity-100 transition-opacity">×</span>
+                          </button>
+                        )}
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {techTags.map(tag => (
+                          <button
+                            key={tag}
+                            className={cn(
+                              "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 border",
+                              activeTags.includes(tag)
+                                ? "bg-earth-900 text-white border-earth-900 shadow-md scale-105"
+                                : "bg-white text-earth-500 border-earth-100 hover:border-tribe-blue hover:text-tribe-blue"
+                            )}
+                            onClick={() => toggleTag(tag)}
+                          >
+                            {tag}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Ecosystem Section */}
+                    <div className="pt-8 border-t border-earth-100/50">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="bg-earth-100 p-2 rounded-lg">
+                          <Zap size={20} className="text-earth-600" />
+                        </div>
+                        <h3 className="text-xl font-display font-bold text-earth-900">Partner Ecosystem</h3>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {ecosystemTags.map(tag => (
+                          <button
+                            key={tag}
+                            className={cn(
+                              "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 border",
+                              activeTags.includes(tag)
+                                ? "bg-earth-900 text-white border-earth-900 shadow-md scale-105"
+                                : "bg-white text-earth-500 border-earth-100 hover:border-tribe-blue hover:text-tribe-blue"
+                            )}
+                            onClick={() => toggleTag(tag)}
+                          >
+                            {tag}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Domains Section */}
+                    <div className="pt-8 border-t border-earth-100/50">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="bg-earth-100 p-2 rounded-lg">
+                          <Sparkles size={20} className="text-earth-600" />
+                        </div>
+                        <h3 className="text-xl font-display font-bold text-earth-900">Specialized Domains</h3>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {domainTags.map(tag => (
+                          <button
+                            key={tag}
+                            className={cn(
+                              "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 border",
+                              activeTags.includes(tag)
+                                ? "bg-earth-900 text-white border-earth-900 shadow-md scale-105"
+                                : "bg-white text-earth-500 border-earth-100 hover:border-tribe-blue hover:text-tribe-blue"
+                            )}
+                            onClick={() => toggleTag(tag)}
+                          >
+                            {tag}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Active Selection Status */}
               <motion.div
