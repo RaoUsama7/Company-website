@@ -11,11 +11,16 @@ const CaseStudyTeam2Challenge = () => {
 
     const sliderImages = [
         "/t2c latest.png",
-        "/tec/t2c main.png",
-        "/tec/1 (1).png",
-        "/tec/1 (2).png",
-        "/tec/1 (3).png",
-        "/tec/1 (4).png"
+        "/t2c/t2c main.png",
+        "/t2c/4.png",
+        "/t2c/6.png",
+        "/t2c/8.png",
+        "/t2c/10.png",
+        "/t2c/12.png",
+        "/t2c/14.png",
+        "/t2c/16.png",
+        "/t2c/18.png",
+        "/t2c/20.png"
     ];
 
     useEffect(() => {
