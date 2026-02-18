@@ -15,11 +15,11 @@ const CaseStudyDivineDuelists = () => {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -29,7 +29,7 @@ const CaseStudyDivineDuelists = () => {
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Case Studies
             </Link>
-            
+
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
                 Gaming
@@ -41,19 +41,19 @@ const CaseStudyDivineDuelists = () => {
                 Card Game
               </span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
               <span className="text-tribe-blue">Divine Duelists:</span> Strategy Meets Power
             </h1>
-            
+
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Category: Strategy, RPG, Card Game | Platform: Android & iOS | Engine: Unity
             </p>
-            
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/lovable-uploads/6d4bd372-b964-406e-9f75-bbebf64cc458.png" 
-                alt="Divine Duelists Card Game" 
+              <img
+                src="/lovable-uploads/6d4bd372-b964-406e-9f75-bbebf64cc458.png"
+                alt="Divine Duelists Card Game"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -97,7 +97,7 @@ const CaseStudyDivineDuelists = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Game Design Philosophy</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 Divine Duelists was designed from the ground up to challenge the conventions of mobile card games. Instead of relying on pay-to-win mechanics or simple match-3 gameplay, we created a strategic experience that rewards skill, planning, and deck-building mastery.
               </p>
@@ -114,40 +114,40 @@ const CaseStudyDivineDuelists = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Key Features & Mechanics</h2>
-              
+
               <div className="grid md:grid-cols-2 gap-6 mb-12">
                 {[
-                  { 
+                  {
                     title: "Deck Building System",
                     desc: "Choose from 200+ unique cards across 5 different factions with distinct playstyles",
                     icon: "🃏",
                     color: "bg-indigo-50"
                   },
-                  { 
+                  {
                     title: "Tactical Grid Combat",
                     desc: "Position-based battles where placement and timing determine victory",
                     icon: "⚔️",
                     color: "bg-red-50"
                   },
-                  { 
+                  {
                     title: "Evolving AI Opponents",
                     desc: "Machine learning AI that adapts to popular strategies and counter-plays",
                     icon: "🤖",
                     color: "bg-purple-50"
                   },
-                  { 
+                  {
                     title: "Campaign Mode",
                     desc: "20-hour story campaign with boss battles and unlockable cards",
                     icon: "📖",
                     color: "bg-green-50"
                   },
-                  { 
+                  {
                     title: "Ranked Multiplayer",
                     desc: "Competitive ladder system with monthly seasons and exclusive rewards",
                     icon: "🏆",
                     color: "bg-yellow-50"
                   },
-                  { 
+                  {
                     title: "Card Synergy System",
                     desc: "Complex interactions between cards create emergent strategies",
                     icon: "🔮",
@@ -165,7 +165,7 @@ const CaseStudyDivineDuelists = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Technical Achievement</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 Building a competitive card game requires robust networking, real-time synchronization, and sophisticated AI systems. Divine Duelists showcases our expertise in creating scalable multiplayer experiences with Unity.
               </p>
@@ -206,7 +206,7 @@ const CaseStudyDivineDuelists = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Game Balance & Meta Evolution</h2>
-              
+
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <div className="bg-orange-50 p-6 rounded-xl">
                   <h3 className="text-xl font-semibold text-orange-800 mb-4">Data-Driven Balance</h3>
@@ -217,7 +217,7 @@ const CaseStudyDivineDuelists = () => {
                     <li>• Monthly balance patches</li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-teal-50 p-6 rounded-xl">
                   <h3 className="text-xl font-semibold text-teal-800 mb-4">Evolving Meta</h3>
                   <ul className="space-y-2 text-teal-700 text-sm">
@@ -266,7 +266,7 @@ const CaseStudyDivineDuelists = () => {
       {/* CTA Section */}
       <section className="py-16 bg-earth-100">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
@@ -291,7 +291,7 @@ const CaseStudyDivineDuelists = () => {
           </motion.div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

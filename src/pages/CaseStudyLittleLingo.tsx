@@ -15,11 +15,11 @@ const CaseStudyLittleLingo = () => {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -29,7 +29,7 @@ const CaseStudyLittleLingo = () => {
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Case Studies
             </Link>
-            
+
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
                 Education
@@ -41,19 +41,19 @@ const CaseStudyLittleLingo = () => {
                 Mobile App
               </span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
               <span className="text-tribe-blue">Little Lingo:</span> Language Learning That Grows With Kids
             </h1>
-            
+
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               How TTT Revamped a Buggy Codebase into a Vibrant, Multilingual EdTech Platform
             </p>
-            
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/lovable-uploads/ede72a27-07fd-482a-8246-02db292f3af7.png" 
-                alt="Little Lingo App" 
+              <img
+                src="/lovable-uploads/ede72a27-07fd-482a-8246-02db292f3af7.png"
+                alt="Little Lingo App"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -97,7 +97,7 @@ const CaseStudyLittleLingo = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">❗️ Problem Statement</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 The client approached us with an exciting vision—a playful, multilingual vocabulary learning app for children. But the codebase was incomplete, unstable, and feature-incomplete.
               </p>
@@ -118,7 +118,7 @@ const CaseStudyLittleLingo = () => {
               </p>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Our Comprehensive Solution</h2>
-              
+
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <div className="bg-earth-50 p-6 rounded-xl">
                   <h3 className="text-xl font-semibold text-earth-900 mb-4">Phase 1: Stabilization</h3>
@@ -129,7 +129,7 @@ const CaseStudyLittleLingo = () => {
                     <li>• Crash prevention measures</li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-earth-50 p-6 rounded-xl">
                   <h3 className="text-xl font-semibold text-earth-900 mb-4">Phase 2: Feature Development</h3>
                   <ul className="space-y-2 text-earth-700">
@@ -142,35 +142,35 @@ const CaseStudyLittleLingo = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Key Features Delivered</h2>
-              
+
               <div className="grid md:grid-cols-2 gap-6 mb-12">
                 {[
-                  { 
+                  {
                     title: "Interactive Flashcard System",
                     desc: "Colorful, engaging flashcards with swipe gestures and audio pronunciation",
                     icon: "🎴"
                   },
-                  { 
+                  {
                     title: "30+ Language Support",
                     desc: "Native audio recordings and culturally appropriate imagery for each language",
                     icon: "🌍"
                   },
-                  { 
+                  {
                     title: "Parental Dashboard",
                     desc: "Complete oversight of learning progress, time limits, and content access",
                     icon: "👨‍👩‍👧‍👦"
                   },
-                  { 
+                  {
                     title: "Progress Analytics",
                     desc: "Detailed learning analytics with visual progress reports for parents",
                     icon: "📊"
                   },
-                  { 
+                  {
                     title: "Offline Mode",
                     desc: "Download flashcard decks for learning without internet connection",
                     icon: "📱"
                   },
-                  { 
+                  {
                     title: "Gamification",
                     desc: "Rewards, streaks, and achievements to motivate young learners",
                     icon: "🎮"
@@ -187,7 +187,7 @@ const CaseStudyLittleLingo = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Technical Implementation</h2>
-              
+
               <div className="bg-earth-50 p-8 rounded-xl mb-12">
                 <div className="grid md:grid-cols-3 gap-8">
                   <div>
@@ -260,7 +260,7 @@ const CaseStudyLittleLingo = () => {
       {/* CTA Section */}
       <section className="py-16 bg-earth-100">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
@@ -287,7 +287,7 @@ const CaseStudyLittleLingo = () => {
           </motion.div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

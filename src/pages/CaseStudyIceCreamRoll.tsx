@@ -15,11 +15,11 @@ const CaseStudyIceCreamRoll = () => {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -29,7 +29,7 @@ const CaseStudyIceCreamRoll = () => {
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Case Studies
             </Link>
-            
+
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
                 Gamification
@@ -41,19 +41,19 @@ const CaseStudyIceCreamRoll = () => {
                 Unity
               </span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
               <span className="text-tribe-blue">Ice Cream Roll:</span> A Delightful Dessert Simulation Game
             </h1>
-            
+
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Creating an Engaging, Visually Rich Dessert Simulation for Broad Audience Appeal
             </p>
-            
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/lovable-uploads/0a80d8ac-9a2b-447d-9e61-23b6e38e5353.png" 
-                alt="Ice Cream Roll Game" 
+              <img
+                src="/lovable-uploads/0a80d8ac-9a2b-447d-9e61-23b6e38e5353.png"
+                alt="Ice Cream Roll Game"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -97,7 +97,7 @@ const CaseStudyIceCreamRoll = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">🧩 Problem Statement</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 The client approached us with a clear vision: to create a highly engaging, visually rich dessert simulation game that appeals to a broad audience—from kids to casual players. They needed a scalable and creative mobile game where users could design desserts, experiment with ingredients, and enjoy hands-on play mechanics while ensuring the app is monetization-ready, performant, and engaging from day one.
               </p>
@@ -113,35 +113,35 @@ const CaseStudyIceCreamRoll = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Our Solution</h2>
-              
+
               <div className="grid md:grid-cols-2 gap-6 mb-12">
                 {[
-                  { 
+                  {
                     title: "Intuitive Dessert Creation",
                     desc: "Drag-and-drop interface for ice cream rolling, frosting, and decoration with realistic physics",
                     icon: "🍦"
                   },
-                  { 
+                  {
                     title: "Visual Excellence",
                     desc: "High-quality 3D graphics optimized for performance across all mobile devices",
                     icon: "✨"
                   },
-                  { 
+                  {
                     title: "Progressive Difficulty",
                     desc: "Unlockable ingredients, tools, and challenges that keep players engaged long-term",
                     icon: "🎯"
                   },
-                  { 
+                  {
                     title: "Monetization Integration",
                     desc: "Unity Ads and IAP seamlessly integrated without disrupting gameplay flow",
                     icon: "💰"
                   },
-                  { 
+                  {
                     title: "Multi-Device Optimization",
                     desc: "Scalable graphics and performance settings for smooth play on any device",
                     icon: "📱"
                   },
-                  { 
+                  {
                     title: "Engaging Mechanics",
                     desc: "Satisfying tactile interactions with realistic ice cream physics and visual feedback",
                     icon: "🎮"
@@ -158,7 +158,7 @@ const CaseStudyIceCreamRoll = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Technical Implementation</h2>
-              
+
               <div className="bg-earth-50 p-8 rounded-xl mb-12">
                 <div className="grid md:grid-cols-3 gap-8">
                   <div>
@@ -231,7 +231,7 @@ const CaseStudyIceCreamRoll = () => {
       {/* CTA Section */}
       <section className="py-16 bg-earth-100">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
@@ -258,7 +258,7 @@ const CaseStudyIceCreamRoll = () => {
           </motion.div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

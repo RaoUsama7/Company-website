@@ -15,11 +15,11 @@ const CaseStudyPerfectOrganizing = () => {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -29,7 +29,7 @@ const CaseStudyPerfectOrganizing = () => {
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Case Studies
             </Link>
-            
+
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
                 Gamification
@@ -41,19 +41,19 @@ const CaseStudyPerfectOrganizing = () => {
                 Relaxation
               </span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
               <span className="text-tribe-blue">Perfect Organizing:</span> Calming Sorting & Puzzle Game
             </h1>
-            
+
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               A Stress-Relieving Mobile Game Centered on Organizing, Sorting, and Mindful Activities
             </p>
-            
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/lovable-uploads/e4002e94-9933-4886-a1d6-63e196bad607.png" 
-                alt="Perfect Organizing Game" 
+              <img
+                src="/lovable-uploads/e4002e94-9933-4886-a1d6-63e196bad607.png"
+                alt="Perfect Organizing Game"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -97,7 +97,7 @@ const CaseStudyPerfectOrganizing = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">🧩 Problem Statement</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 The client wanted to create a stress-relieving mobile game centered on organizing, sorting, and arranging tasks that could engage users with simple yet satisfying gameplay. The goal was to design a scalable game that appeals to a wide demographic seeking calming, mindful activities on their devices. The app had to deliver a smooth, intuitive experience that grows progressively challenging while maintaining a relaxing atmosphere.
               </p>
@@ -114,35 +114,35 @@ const CaseStudyPerfectOrganizing = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Our Solution</h2>
-              
+
               <div className="grid md:grid-cols-2 gap-6 mb-12">
                 {[
-                  { 
+                  {
                     title: "Diverse Sorting Games",
                     desc: "Multiple organizing challenges: color sorting, shape matching, item categorization, and spatial puzzles",
                     icon: "🎯"
                   },
-                  { 
+                  {
                     title: "Intuitive Controls",
                     desc: "Smooth drag-and-drop, tap-to-select, and swipe gestures optimized for satisfying interaction",
                     icon: "👆"
                   },
-                  { 
+                  {
                     title: "Progressive Difficulty",
                     desc: "Carefully balanced challenge progression that maintains relaxation while increasing complexity",
                     icon: "📈"
                   },
-                  { 
+                  {
                     title: "Calming Design",
                     desc: "Soft color palettes, gentle animations, and soothing sound effects for stress relief",
                     icon: "🌸"
                   },
-                  { 
+                  {
                     title: "Mindful Monetization",
                     desc: "Non-intrusive ads and optional purchases that don't break the peaceful gameplay flow",
                     icon: "💎"
                   },
-                  { 
+                  {
                     title: "Performance Optimization",
                     desc: "Lightweight engine ensuring smooth performance across all device specifications",
                     icon: "⚡"
@@ -159,7 +159,7 @@ const CaseStudyPerfectOrganizing = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Technical Implementation</h2>
-              
+
               <div className="bg-earth-50 p-8 rounded-xl mb-12">
                 <div className="grid md:grid-cols-3 gap-8">
                   <div>
@@ -232,7 +232,7 @@ const CaseStudyPerfectOrganizing = () => {
       {/* CTA Section */}
       <section className="py-16 bg-earth-100">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
@@ -259,7 +259,7 @@ const CaseStudyPerfectOrganizing = () => {
           </motion.div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

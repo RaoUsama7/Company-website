@@ -15,11 +15,11 @@ const CaseStudyLittleDreams = () => {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -29,7 +29,7 @@ const CaseStudyLittleDreams = () => {
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Case Studies
             </Link>
-            
+
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
                 AI/ML
@@ -41,19 +41,19 @@ const CaseStudyLittleDreams = () => {
                 Storytelling
               </span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
               <span className="text-tribe-blue">Little Dreams:</span> AI-Powered Bedtime Magic
             </h1>
-            
+
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               How TTT Engineered a Personalized Storytelling App That Scales Imagination and Revenue
             </p>
-            
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/lovable-uploads/f6b70bdc-127d-42e9-979e-4de34287c471.png" 
-                alt="Little Dreams App" 
+              <img
+                src="/lovable-uploads/f6b70bdc-127d-42e9-979e-4de34287c471.png"
+                alt="Little Dreams App"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -97,7 +97,7 @@ const CaseStudyLittleDreams = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">🧩 Problem Statement</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 The founders of Little Dreams had a powerful idea: <strong>Use AI to create personalized bedtime stories that adapt to a child's age and interests.</strong>
               </p>
@@ -119,39 +119,39 @@ const CaseStudyLittleDreams = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Our Solution</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 We built Little Dreams as a comprehensive platform that seamlessly integrates AI storytelling with user management and monetization:
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-12">
                 {[
-                  { 
+                  {
                     title: "AI Story Engine",
                     desc: "ChatGPT integration with custom prompts for age-appropriate, personalized bedtime stories",
                     icon: "🤖"
                   },
-                  { 
+                  {
                     title: "Token System",
                     desc: "Flexible coin-based economy allowing parents to purchase story credits",
                     icon: "🪙"
                   },
-                  { 
+                  {
                     title: "Parental Dashboard",
                     desc: "Complete control over child profiles, story preferences, and spending limits",
                     icon: "👨‍👩‍👧‍👦"
                   },
-                  { 
+                  {
                     title: "Story Library",
                     desc: "Personal collection of generated stories with favorites and sharing options",
                     icon: "📚"
                   },
-                  { 
+                  {
                     title: "Payment Integration",
                     desc: "Secure Stripe integration for subscriptions and one-time purchases",
                     icon: "💳"
                   },
-                  { 
+                  {
                     title: "Child-Safe Design",
                     desc: "Colorful, intuitive interface designed specifically for young users",
                     icon: "🎨"
@@ -168,7 +168,7 @@ const CaseStudyLittleDreams = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Technical Architecture</h2>
-              
+
               <div className="bg-earth-50 p-8 rounded-xl mb-12">
                 <div className="grid md:grid-cols-3 gap-8">
                   <div>
@@ -241,7 +241,7 @@ const CaseStudyLittleDreams = () => {
       {/* CTA Section */}
       <section className="py-16 bg-earth-100">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
@@ -268,7 +268,7 @@ const CaseStudyLittleDreams = () => {
           </motion.div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

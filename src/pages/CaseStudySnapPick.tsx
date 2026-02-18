@@ -15,11 +15,11 @@ const CaseStudySnapPick = () => {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -29,7 +29,7 @@ const CaseStudySnapPick = () => {
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Case Studies
             </Link>
-            
+
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
                 AR/VR
@@ -41,19 +41,19 @@ const CaseStudySnapPick = () => {
                 Mobile App
               </span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
               <span className="text-tribe-blue">SnapPick:</span> Augmented Reality-Powered Warehouse Management
             </h1>
-            
+
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Internal Innovation Project: Revolutionizing Logistics with AR-Driven Navigation and Intelligent Picking Automation
             </p>
-            
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/lovable-uploads/2d410c50-cc88-4056-89c1-a15f0460509f.png" 
-                alt="SnapPick AR Warehouse App" 
+              <img
+                src="/lovable-uploads/2d410c50-cc88-4056-89c1-a15f0460509f.png"
+                alt="SnapPick AR Warehouse App"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -106,7 +106,7 @@ const CaseStudySnapPick = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">🧩 Problem Statement</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 In modern warehouses, manual picking and order fulfillment processes often result in inefficiencies, high error rates, and increased operational costs. Traditional warehouse management systems are not optimized for real-time guidance or intelligent decision-making.
               </p>
@@ -128,7 +128,7 @@ const CaseStudySnapPick = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">🚀 Solution Overview</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 SnapPick is a first-of-its-kind warehouse management platform that integrates AR-driven navigation, real-time role-based workflows, and intelligent picking automation to drastically improve warehouse throughput and accuracy.
               </p>
@@ -139,32 +139,32 @@ const CaseStudySnapPick = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mb-12">
                 {[
-                  { 
+                  {
                     title: "AR-Powered Navigation",
                     desc: "Real-time augmented reality overlays guide workers to exact item locations with optimal routing",
                     icon: "🔍"
                   },
-                  { 
+                  {
                     title: "Intelligent Task Management",
                     desc: "AI algorithms prioritize orders and optimize picking sequences for maximum efficiency",
                     icon: "🧠"
                   },
-                  { 
+                  {
                     title: "Role-Based Workflows",
                     desc: "Customized interfaces for managers, pickers, packers, and quality control staff",
                     icon: "👥"
                   },
-                  { 
+                  {
                     title: "Real-Time Monitoring",
                     desc: "Live dashboard with performance metrics, bottleneck identification, and productivity analytics",
                     icon: "📊"
                   },
-                  { 
+                  {
                     title: "Barcode & QR Integration",
                     desc: "Seamless scanning workflow with automatic verification and error prevention",
                     icon: "📱"
                   },
-                  { 
+                  {
                     title: "Cross-Platform Admin",
                     desc: "Web-based management portal for configuration, reporting, and system administration",
                     icon: "💻"
@@ -181,7 +181,7 @@ const CaseStudySnapPick = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Technical Architecture</h2>
-              
+
               <div className="bg-earth-50 p-8 rounded-xl mb-12">
                 <div className="grid md:grid-cols-3 gap-8">
                   <div>
@@ -254,7 +254,7 @@ const CaseStudySnapPick = () => {
       {/* CTA Section */}
       <section className="py-16 bg-earth-100">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
@@ -279,7 +279,7 @@ const CaseStudySnapPick = () => {
           </motion.div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

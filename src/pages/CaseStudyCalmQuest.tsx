@@ -15,11 +15,11 @@ const CaseStudyCalmQuest = () => {
   return (
     <div className="min-h-screen bg-background font-sans">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -29,7 +29,7 @@ const CaseStudyCalmQuest = () => {
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Case Studies
             </Link>
-            
+
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
                 Gaming
@@ -41,19 +41,19 @@ const CaseStudyCalmQuest = () => {
                 Mobile App
               </span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
               <span className="text-tribe-blue">Calm Quest:</span> A Journey Into Digital Serenity
             </h1>
-            
+
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Category: Health & Wellness, Casual Gaming | Platform: Android & iOS | Engine: Unity
             </p>
-            
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/lovable-uploads/7c42af98-a63c-4803-9f4f-5932f2da099e.png" 
-                alt="Calm Quest Relaxation Game" 
+              <img
+                src="/lovable-uploads/7c42af98-a63c-4803-9f4f-5932f2da099e.png"
+                alt="Calm Quest Relaxation Game"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -97,7 +97,7 @@ const CaseStudyCalmQuest = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">🧠 Problem Statement</h2>
-              
+
               <p className="text-earth-700 mb-6 text-lg leading-relaxed">
                 In an increasingly overstimulated digital landscape, mobile users rarely find apps that help them slow down. Most casual games elevate engagement through intensity—leaving stress relief behind.
               </p>
@@ -118,40 +118,40 @@ const CaseStudyCalmQuest = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Featured Mini-Games</h2>
-              
+
               <div className="grid md:grid-cols-2 gap-6 mb-12">
                 {[
-                  { 
+                  {
                     title: "Pop-It Paradise",
                     desc: "Digital fidget toy with satisfying bubble-popping mechanics and customizable patterns",
                     icon: "🫧",
                     color: "bg-blue-50"
                   },
-                  { 
+                  {
                     title: "Zen Garden",
                     desc: "Rake patterns in sand, place stones, and create peaceful landscapes with meditative interactions",
                     icon: "🪨",
                     color: "bg-amber-50"
                   },
-                  { 
+                  {
                     title: "Veggie Slice",
                     desc: "Satisfying vegetable chopping with realistic sound effects and visual feedback",
                     icon: "🥕",
                     color: "bg-green-50"
                   },
-                  { 
+                  {
                     title: "Cloud Watching",
                     desc: "Peaceful sky observation with shape-finding and gentle weather transitions",
                     icon: "☁️",
                     color: "bg-sky-50"
                   },
-                  { 
+                  {
                     title: "Color Flow",
                     desc: "Hypnotic color mixing and gradient creation with fluid dynamics simulation",
                     icon: "🎨",
                     color: "bg-purple-50"
                   },
-                  { 
+                  {
                     title: "Breathing Circle",
                     desc: "Guided breathing exercises with visual cues and customizable patterns",
                     icon: "💨",
@@ -169,7 +169,7 @@ const CaseStudyCalmQuest = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Technical Implementation</h2>
-              
+
               <div className="bg-earth-50 p-8 rounded-xl mb-12">
                 <div className="grid md:grid-cols-3 gap-8">
                   <div>
@@ -206,7 +206,7 @@ const CaseStudyCalmQuest = () => {
               </div>
 
               <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">User Experience Design</h2>
-              
+
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <div className="bg-rose-50 p-6 rounded-xl">
                   <h3 className="text-xl font-semibold text-rose-800 mb-4">Mindful Onboarding</h3>
@@ -217,7 +217,7 @@ const CaseStudyCalmQuest = () => {
                     <li>• Optional mindfulness tips and guidance</li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-indigo-50 p-6 rounded-xl">
                   <h3 className="text-xl font-semibold text-indigo-800 mb-4">Progress & Rewards</h3>
                   <ul className="space-y-2 text-indigo-700 text-sm">
@@ -266,7 +266,7 @@ const CaseStudyCalmQuest = () => {
       {/* CTA Section */}
       <section className="py-16 bg-earth-100">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.7 }}
@@ -291,7 +291,7 @@ const CaseStudyCalmQuest = () => {
           </motion.div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );
