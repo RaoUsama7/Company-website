@@ -9,6 +9,66 @@ import { Link } from 'react-router-dom';
 
 const caseStudies = [
   {
+    id: 101,
+    title: "Team2Challenge (Design)",
+    category: "Design",
+    description: "Designing a sport-centric community platform: A masterclass in UI/UX for engagement, focusing on seamless user flows and vibrant visual identity.",
+    image: "/t2c app/main.png",
+    tags: ["UI/UX Design", "Brand Identity", "User Research", "Design System"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "team2challenge-design"
+  },
+  {
+    id: 102,
+    title: "Harmoniq (Design)",
+    category: "Design",
+    description: "Visual identity and product design for a social platform. Creating a harmonious balance between functionality and aesthetic appeal.",
+    image: "/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png",
+    tags: ["UI/UX Design", "Product Design", "Social Platform"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "harmoniq-design"
+  },
+  {
+    id: 103,
+    title: "Nexiun (Design)",
+    category: "Design",
+    description: "Modernizing digital experiences: A high-fidelity design project focusing on futuristic aesthetics and intuitive data visualization.",
+    image: "/lovable-uploads/826e8063-6d14-4d5a-a08b-97b1b84ecfa5.png",
+    tags: ["UI/UX Design", "Data Visualization", "Future-Proof"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "nexiun-design"
+  },
+  {
+    id: 104,
+    title: "Split-Trip (Design)",
+    category: "Design",
+    description: "Travel made social: A comprehensive design study for sharing trips, focusing on group dynamics and expense sharing interfaces.",
+    image: "/lovable-uploads/de7f9c54-101f-40ce-b377-98d047b1e913.png",
+    tags: ["UI/UX Design", "Mobile App", "Travel", "FinTech"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "split-trip-design"
+  },
+  {
+    id: 105,
+    title: "TalkieTotz (Design)",
+    category: "Design",
+    description: "Educational design for the next generation: Creating a playful yet structured interface for bilingual family learning.",
+    image: "/lovable-uploads/826c450a-5486-4505-a9cd-ab9a1726fb62.png",
+    tags: ["UI/UX Design", "Education", "Family-First"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "talkietotz-design"
+  },
+  {
     id: 1,
     title: "Harmoniq",
     category: "Mobile",
@@ -286,13 +346,13 @@ const caseStudies = [
   }
 ];
 
-const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports", "PropTech", "Agency"];
-const platforms = ["All", "Mobile", "Web", "Game"];
+const categories = ["All", "Social Media", "AI", "Education", "Health & Wellness", "Food & Beverage", "E-commerce", "Gamification", "AR", "Sports", "PropTech", "Agency", "Design"];
+const platforms = ["All", "Mobile", "Web", "Game", "Design"];
 
 const techTags = [
   "React Native", "Flutter", "Next.js 15", "Next.js", "Laravel 10", "Laravel",
   "NestJS", "Unity", "MERN Stack", "React.js", "Liquid", "AI/ML", "AI", "AR/VR",
-  "Web App", "Mobile App"
+  "Web App", "Mobile App", "UI/UX Design", "Product Design"
 ];
 
 const ecosystemTags = [
@@ -306,7 +366,7 @@ const domainTags = [
   "Social Media", "Social Platform", "Community", "Education", "Study",
   "Language Learning", "Gaming", "Strategy", "Card Game", "Simulation",
   "Puzzle", "Relaxation", "Storytelling", "Logistics", "Food Delivery",
-  "Sports", "Health", "Wellness", "PropTech", "FinTech", "Luxury", "Literary", "Agency"
+  "Sports", "Health", "Wellness", "PropTech", "FinTech", "Luxury", "Literary", "Agency", "Design"
 ];
 
 const allTags = [...techTags, ...ecosystemTags, ...domainTags];

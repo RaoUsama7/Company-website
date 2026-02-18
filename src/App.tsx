@@ -47,6 +47,11 @@ import CaseStudyFreecer from "./pages/CaseStudyFreecer";
 import CaseStudyExre from "./pages/CaseStudyExre";
 import CaseStudyAvenir from "./pages/CaseStudyAvenir";
 import CaseStudyT2CWeb from "./pages/CaseStudyT2CWeb";
+import CaseStudyT2CDesign from "./pages/CaseStudyT2CDesign";
+import CaseStudyHarmoniqDesign from "./pages/CaseStudyHarmoniqDesign";
+import CaseStudyNexiunDesign from "./pages/CaseStudyNexiunDesign";
+import CaseStudySplitTripDesign from "./pages/CaseStudySplitTripDesign";
+import CaseStudyTalkieTotzDesign from "./pages/CaseStudyTalkieTotzDesign";
 
 
 
@@ -98,6 +103,11 @@ const AppRoutes = () => {
       <Route path="/case-study/lume-reader" element={<CaseStudyLumeReader />} />
       <Route path="/case-study/dani" element={<CaseStudyDani />} />
       <Route path="/case-study/renee" element={<CaseStudyRenee />} />
+      <Route path="/case-study/team2challenge-design" element={<CaseStudyT2CDesign />} />
+      <Route path="/case-study/harmoniq-design" element={<CaseStudyHarmoniqDesign />} />
+      <Route path="/case-study/nexiun-design" element={<CaseStudyNexiunDesign />} />
+      <Route path="/case-study/split-trip-design" element={<CaseStudySplitTripDesign />} />
+      <Route path="/case-study/talkietotz-design" element={<CaseStudyTalkieTotzDesign />} />
       <Route path="/case-study/rentigo" element={<CaseStudyRentigo />} />
       <Route path="/case-study/fundreef" element={<CaseStudyFundreef />} />
       <Route path="/case-study/freecer" element={<CaseStudyFreecer />} />
