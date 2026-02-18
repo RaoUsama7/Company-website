@@ -50,12 +50,12 @@ const CaseStudyRentigo = () => {
                             A unified platform managing the complete property lifecycle — from listing to tenancy and financial reconciliation.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-blue-950/50 flex items-center justify-center">
-                            <div className="text-center p-8">
-                                <Building2 className="h-16 w-16 text-tribe-blue mx-auto mb-4 opacity-50" />
-                                <p className="text-tribe-blue font-display text-2xl font-bold">Rentigo PMS</p>
-                                <p className="text-gray-400 mt-2">Scalable Real Estate Infrastructure</p>
-                            </div>
+                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-blue-950/50">
+                            <img
+                                src="/rentigo/rentigo.png"
+                                alt="Rentigo Property Management"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
                 </div>

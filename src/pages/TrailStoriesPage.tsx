@@ -217,7 +217,7 @@ const caseStudies = [
     title: "Rentigo",
     category: "Web",
     description: "Enterprise Property Management: A complete lifecycle PMS with multi-role access, financial automation, and portal syndication.",
-    image: null,
+    image: "/rentigo/rentigo.png",
     tags: ["Laravel", "PropTech", "Enterprise", "FinTech", "DocuSign"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
