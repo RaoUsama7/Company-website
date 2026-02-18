@@ -50,12 +50,12 @@ const CaseStudyFreecer = () => {
                             A high-performance, luxury-branded shopping experience optimized for conversion, SEO, and global scale.
                         </p>
 
-                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800/50 flex items-center justify-center">
-                            <div className="text-center p-8">
-                                <ShoppingCart className="h-16 w-16 text-tribe-blue mx-auto mb-4 opacity-50" />
-                                <p className="text-tribe-blue font-display text-2xl font-bold">Freecer.at Storefront</p>
-                                <p className="text-gray-400 mt-2">Premium Retail Experience</p>
-                            </div>
+                        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800/50">
+                            <img
+                                src="/freecer/_Freecer.png"
+                                alt="Freecer.at Storefront"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </motion.div>
                 </div>

@@ -51,7 +51,7 @@ const CaseStudyDani = () => {
 
                         <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700">
                             <img
-                                src="/dani.jpeg"
+                                src="/danbydk/danibydk.png"
                                 alt="DANI by Daniel K Storefront"
                                 className="w-full h-full object-cover"
                             />
