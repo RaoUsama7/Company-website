@@ -105,7 +105,7 @@ const caseStudies = [
     title: "Team2Challenge (Web)",
     category: "Web",
     description: "The T2C Web Dashboard provides the administrative spine for the entire ecosystem, empowering club owners with deep analytical insights and complex management tools.",
-    image: "/t2c latest.png",
+    image: "/t2c web/main.png",
     tags: ["Next.js", "SaaS", "Dashboard"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",

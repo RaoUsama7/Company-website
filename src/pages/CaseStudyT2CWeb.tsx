@@ -10,17 +10,16 @@ const CaseStudyT2CWeb = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const sliderImages = [
-        "/t2c latest.png",
-        "/t2c/t2c main.png",
-        "/t2c/4.png",
-        "/t2c/6.png",
-        "/t2c/8.png",
-        "/t2c/10.png",
-        "/t2c/12.png",
-        "/t2c/14.png",
-        "/t2c/16.png",
-        "/t2c/18.png",
-        "/t2c/20.png"
+        "/t2c web/main.png",
+        "/t2c web/4.png",
+        "/t2c web/6.png",
+        "/t2c web/8.png",
+        "/t2c web/10.png",
+        "/t2c web/12.png",
+        "/t2c web/14.png",
+        "/t2c web/16.png",
+        "/t2c web/18.png",
+        "/t2c web/20.png"
     ];
 
     useEffect(() => {
