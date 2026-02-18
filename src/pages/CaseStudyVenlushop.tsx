@@ -51,7 +51,7 @@ const CaseStudyVenlushop = () => {
 
                         <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700">
                             <img
-                                src="/venlushop.jpeg"
+                                src="/venlu shop/VenluSHop.png"
                                 alt="VenluShop Storefront"
                                 className="w-full h-full object-cover"
                             />

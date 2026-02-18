@@ -51,7 +51,7 @@ const CaseStudyLumeReader = () => {
 
                         <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-earth-700">
                             <img
-                                src="/Lume Reader.png"
+                                src="/lume reader/Lume Reader.png"
                                 alt="Lume Reader Interface"
                                 className="w-full h-full object-cover"
                             />

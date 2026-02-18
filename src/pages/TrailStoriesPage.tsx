@@ -165,11 +165,23 @@ const caseStudies = [
     slug: "team2challenge"
   },
   {
+    id: 17,
+    title: "Team2Challenge (Web)",
+    category: "Web",
+    description: "The T2C Web Dashboard provides the administrative spine for the entire ecosystem, empowering club owners with deep analytical insights and complex management tools.",
+    image: "/t2c latest.png",
+    tags: ["Next.js", "SaaS", "Dashboard", "Real-time"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "team2challenge-web"
+  },
+  {
     id: 14,
     title: "VenluShop",
     category: "Web",
     description: "Anime-Inspired Global Retail: A dynamic Shopify Plus storefront bridging the gap between anime culture and high-performance activewear.",
-    image: "/venlushop.jpeg",
+    image: "/venlu shop/VenluSHop.png",
     tags: ["Shopify", "E-commerce", "Performance Optimization"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
@@ -181,7 +193,7 @@ const caseStudies = [
     title: "Lume Reader",
     category: "Mobile",
     description: "The Distraction-Free Reading App: A production-ready Flutter MVP solving usability gaps with a reader-first UI and offline-first sync.",
-    image: "/Lume Reader.png",
+    image: "/lume reader/Lume Reader.png",
     tags: ["Study", "Education", "Flutter", "MVP"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
