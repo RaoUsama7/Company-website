@@ -25,7 +25,7 @@ const caseStudies = [
     title: "Harmoniq (Design)",
     category: "Design",
     description: "Visual identity and product design for a social platform. Creating a harmonious balance between functionality and aesthetic appeal.",
-    image: "/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png",
+    image: "/harmoniq design/14.png",
     tags: ["UI/UX Design", "Product Design", "Social Platform"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",

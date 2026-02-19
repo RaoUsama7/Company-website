@@ -10,8 +10,9 @@ const CaseStudyHarmoniqDesign = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const sliderImages = [
-        "/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png",
-        "/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png", // Multi-image slider if available
+        "/harmoniq design/14.png",
+        "/harmoniq design/15.png",
+        "/harmoniq design/16.png",
     ];
 
     useEffect(() => {
