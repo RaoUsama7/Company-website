@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const caseStudies = [
@@ -371,12 +371,148 @@ const domainTags = [
 
 const allTags = [...techTags, ...ecosystemTags, ...domainTags];
 
+const CaseStudyCard = ({ study, index }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ delay: index * 0.05, duration: 0.5, ease: "easeOut" }}
+      whileHover={{
+        y: -8,
+        transition: { duration: 0.3 }
+      }}
+      className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 group cursor-pointer relative"
+    >
+      <Link to={`/case-study/${study.slug}`}>
+        {/* Image Container */}
+        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-earth-100 to-earth-50 flex items-center justify-center">
+          {/* Featured Badge */}
+          {study.featured && (
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
+              transition={{ delay: index * 0.05 + 0.3, type: "spring", stiffness: 200 }}
+              className="absolute top-3 right-3 z-10 px-3 py-1 bg-tribe-blue text-white text-xs font-bold rounded-full shadow-lg flex items-center gap-1"
+            >
+              <Sparkles className="h-3 w-3" />
+              Featured
+            </motion.div>
+          )}
+
+          {/* Image */}
+          {study.image ? (
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.5 }}
+              src={study.image}
+              alt={study.title}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="text-earth-300 font-display font-bold text-lg opacity-50">
+              {study.title}
+            </div>
+          )}
+
+          {/* Hover Overlay */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileHover={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0 bg-gradient-to-t from-earth-900/90 via-earth-900/50 to-transparent flex items-end justify-center pb-4"
+          >
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileHover={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="text-white text-sm font-semibold flex items-center gap-2"
+            >
+              View Project <ArrowRight className="h-4 w-4" />
+            </motion.div>
+          </motion.div>
+
+          {/* Decorative Corner */}
+          <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-tribe-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
+
+        {/* Content */}
+        <div className="p-6 relative">
+          {/* Category Badge */}
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            animate={isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+            transition={{ delay: index * 0.05 + 0.2 }}
+            className="flex items-center gap-2 mb-3"
+          >
+            <span className={`px-3 py-1 rounded-full ${study.color} ${study.textColor} text-xs font-medium`}>
+              {study.category}
+            </span>
+          </motion.div>
+
+          {/* Title */}
+          <h3 className="text-xl font-display font-semibold mb-2 group-hover:text-tribe-blue transition-colors line-clamp-2">
+            {study.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-earth-600 text-sm mb-4 line-clamp-3 leading-relaxed">
+            {study.description}
+          </p>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {study.tags.slice(0, 3).map((tag, idx) => (
+              <motion.span
+                key={tag}
+                initial={{ scale: 0 }}
+                animate={isInView ? { scale: 1 } : { scale: 0 }}
+                transition={{ delay: index * 0.05 + 0.3 + idx * 0.05 }}
+                whileHover={{ scale: 1.1 }}
+                className="px-2 py-1 bg-earth-100 text-earth-600 rounded-full text-xs font-medium"
+              >
+                {tag}
+              </motion.span>
+            ))}
+            {study.tags.length > 3 && (
+              <span className="px-2 py-1 bg-earth-100 text-earth-600 rounded-full text-xs font-medium">
+                +{study.tags.length - 3}
+              </span>
+            )}
+          </div>
+
+          {/* CTA */}
+          <div className="inline-flex items-center text-tribe-blue font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
+            <span>View Case Study</span>
+            <motion.div
+              animate={{ x: [0, 5, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ArrowRight className="h-4 w-4" />
+            </motion.div>
+          </div>
+
+          {/* Decorative Bottom Corner */}
+          <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-tribe-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
+      </Link>
+    </motion.div>
+  );
+};
+
 const TrailStoriesPage = () => {
-  const [activePlatform, setActivePlatform] = useState("All");
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [activeTags, setActiveTags] = useState([]);
-  const [featuredOnly, setFeaturedOnly] = useState(false);
-  const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
+  const [activePlatform, setActivePlatform] = useState<string>("All");
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeTags, setActiveTags] = useState<string[]>([]);
+  const [featuredOnly, setFeaturedOnly] = useState<boolean>(false);
+  const [showAdvancedFilters, setShowAdvancedFilters] = useState<boolean>(false);
+
+  const { scrollYProgress } = useScroll();
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.95]);
 
   // Scroll to top on component mount
   useEffect(() => {
@@ -412,7 +548,7 @@ const TrailStoriesPage = () => {
     })
     .sort((a, b) => a.title.localeCompare(b.title));
 
-  const toggleTag = (tag: string) => {
+  const toggleTag = (tag) => {
     if (activeTags.includes(tag)) {
       setActiveTags(activeTags.filter(t => t !== tag));
     } else {
@@ -421,14 +557,34 @@ const TrailStoriesPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background font-sans">
+    <div className="min-h-screen bg-background font-sans overflow-hidden">
       <Navbar />
+
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 90, 0],
+            opacity: [0.02, 0.04, 0.02]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-1/2 -right-1/2 w-full h-full bg-tribe-blue rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            rotate: [0, -90, 0],
+            opacity: [0.02, 0.03, 0.02]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-earth-900 rounded-full blur-3xl"
+        />
+      </div>
 
       {/* Hero */}
       <motion.section
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        style={{ opacity: heroOpacity, scale: heroScale }}
         className="relative py-20 bg-gradient-to-b from-earth-900 via-earth-800 to-earth-900 text-white overflow-hidden"
       >
         {/* Animated Grid Background */}
@@ -439,6 +595,29 @@ const TrailStoriesPage = () => {
             backgroundSize: '50px 50px'
           }} />
         </div>
+
+        {/* Floating Particles */}
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-tribe-blue rounded-full"
+            initial={{
+              x: Math.random() * 1000,
+              y: Math.random() * 600,
+              opacity: 0
+            }}
+            animate={{
+              y: [null, -100],
+              opacity: [0, 1, 0]
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -458,12 +637,19 @@ const TrailStoriesPage = () => {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6"
             >
-              Real Work. <span className="text-tribe-blue">Real Impact.</span>
+              Real Work. <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6 }}
+                className="text-tribe-blue inline-block"
+              >
+                Real Impact.
+              </motion.span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
               className="text-xl text-gray-300 mb-8"
             >
               We don't just talk about building what matters—we do it. Here's proof:
@@ -474,19 +660,19 @@ const TrailStoriesPage = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+              transition={{ delay: 1, duration: 0.5 }}
               className="flex justify-center gap-8 flex-wrap"
             >
               {[
                 { label: "Projects", value: caseStudies.length },
-                { label: "Categories", value: 4 },
-                { label: "Technologies", value: 15 }
+                { label: "Categories", value: platforms.length - 1 },
+                { label: "Technologies", value: techTags.length }
               ].map((stat, idx) => (
                 <motion.div
                   key={stat.label}
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ delay: 1 + idx * 0.1, type: "spring", stiffness: 200 }}
+                  transition={{ delay: 1.2 + idx * 0.1, type: "spring", stiffness: 200 }}
                   whileHover={{ scale: 1.1, y: -5 }}
                   className="text-center"
                 >
@@ -497,6 +683,9 @@ const TrailStoriesPage = () => {
             </motion.div>
           </div>
         </div>
+
+        {/* Decorative Bottom Wave */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50/50 to-transparent" />
       </motion.section>
 
       {/* Filters */}
@@ -504,74 +693,167 @@ const TrailStoriesPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.7 }}
-        className="py-12 bg-gray-50/50 relative overflow-hidden"
+        className="py-12 bg-gray-50/50 relative overflow-hidden z-10"
       >
+        {/* Decorative Background Elements */}
+        <div className="absolute top-10 left-10 w-72 h-72 bg-tribe-blue/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-earth-100 rounded-full blur-3xl" />
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-6 md:p-8">
-            <div className="flex flex-col gap-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 p-6 md:p-8 relative overflow-hidden"
+          >
+            {/* Animated Border Glow */}
+            <motion.div
+              animate={{
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="absolute inset-0 rounded-3xl bg-gradient-to-r from-tribe-blue/20 via-transparent to-tribe-blue/20 pointer-events-none"
+            />
+
+            <div className="flex flex-col gap-10 relative z-10">
               {/* Platform Toggle - High Level */}
-              <div className="flex flex-col items-center justify-center text-center">
-                <div className="inline-flex p-1.5 bg-earth-100/50 rounded-2xl border border-earth-100 shadow-inner mb-4">
-                  {platforms.map(platform => (
-                    <button
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="flex flex-col items-center justify-center text-center"
+              >
+                <div className="inline-flex p-1.5 bg-earth-100/50 rounded-2xl border border-earth-100 shadow-inner mb-4 relative overflow-hidden">
+                  {/* Active Indicator Background */}
+                  <motion.div
+                    layoutId="activePlatform"
+                    className="absolute inset-0 bg-white rounded-xl shadow-lg"
+                    style={{
+                      left: `${platforms.indexOf(activePlatform) * (100 / platforms.length)}%`,
+                      width: `${100 / platforms.length}%`
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                  {platforms.map((platform, idx) => (
+                    <motion.button
                       key={platform}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.7 + idx * 0.05 }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       className={cn(
-                        "px-10 py-3 rounded-xl text-sm font-bold transition-all duration-400 relative z-10",
+                        "px-10 py-3 rounded-xl text-sm font-bold transition-all duration-300 relative z-10",
                         activePlatform === platform
-                          ? "bg-white text-tribe-blue shadow-lg scale-105 border border-earth-100/50"
+                          ? "text-tribe-blue"
                           : "text-earth-500 hover:text-earth-700"
                       )}
                       onClick={() => setActivePlatform(platform)}
                     >
                       {platform}
-                    </button>
+                    </motion.button>
                   ))}
                 </div>
-                <p className="text-earth-400 text-xs font-medium uppercase tracking-[0.2em]">Select Your Interest Platform</p>
-              </div>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.9 }}
+                  className="text-earth-400 text-xs font-medium uppercase tracking-[0.2em]"
+                >
+                  Select Your Interest Platform
+                </motion.p>
+              </motion.div>
 
               {/* Category Filter */}
-              <div className="pt-8 border-t border-earth-100/50">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="pt-8 border-t border-earth-100/50"
+              >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="bg-tribe-blue/10 p-2 rounded-lg">
+                  <motion.div
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-tribe-blue/10 p-2 rounded-lg"
+                  >
                     <Filter size={20} className="text-tribe-blue" />
-                  </div>
+                  </motion.div>
                   <h3 className="text-xl font-display font-bold text-earth-900">Industries & Domains</h3>
                 </div>
                 <div className="flex flex-wrap gap-2 md:gap-3">
-                  {categories.map(category => (
-                    <button
+                  {categories.map((category, idx) => (
+                    <motion.button
                       key={category}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.9 + idx * 0.03 }}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
                       className={cn(
-                        "px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 transform active:scale-95",
+                        "px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 relative overflow-hidden",
                         activeCategory === category
-                          ? "bg-tribe-blue text-white shadow-lg shadow-tribe-blue/30 -translate-y-0.5"
+                          ? "bg-tribe-blue text-white shadow-lg shadow-tribe-blue/30"
                           : "bg-white text-earth-600 hover:bg-earth-100 hover:shadow-md border border-earth-100"
                       )}
                       onClick={() => setActiveCategory(category)}
                     >
-                      {category}
-                    </button>
+                      {activeCategory === category && (
+                        <motion.div
+                          layoutId="activeCategory"
+                          className="absolute inset-0 bg-tribe-blue"
+                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        />
+                      )}
+                      <span className="relative z-10">{category}</span>
+                    </motion.button>
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Advanced Filters Toggle */}
-              <div className="pt-4 flex justify-center">
-                <button
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+                className="pt-4 flex justify-center"
+              >
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
                   className={cn(
-                    "flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 border shadow-sm hover:shadow-md",
+                    "flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 border shadow-sm hover:shadow-md relative overflow-hidden",
                     showAdvancedFilters
                       ? "bg-earth-900 text-white border-earth-900"
                       : "bg-white text-earth-700 border-earth-100 hover:border-tribe-blue"
                   )}
                 >
-                  <Settings2 size={16} className={showAdvancedFilters ? "animate-spin-slow" : ""} />
-                  {showAdvancedFilters ? "Hide Advanced Filters" : "Show Advanced Engineering Filters"}
-                  {showAdvancedFilters ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </button>
-              </div>
+                  {showAdvancedFilters && (
+                    <motion.div
+                      layoutId="advancedFilterBg"
+                      className="absolute inset-0 bg-earth-900"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  <motion.div
+                    animate={{ rotate: showAdvancedFilters ? 360 : 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative z-10"
+                  >
+                    <Settings2 size={16} />
+                  </motion.div>
+                  <span className="relative z-10">
+                    {showAdvancedFilters ? "Hide Advanced Filters" : "Show Advanced Engineering Filters"}
+                  </span>
+                  <motion.div
+                    animate={{ rotate: showAdvancedFilters ? 180 : 0 }}
+                    className="relative z-10"
+                  >
+                    {showAdvancedFilters ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                  </motion.div>
+                </motion.button>
+              </motion.div>
 
               <AnimatePresence>
                 {showAdvancedFilters && (
@@ -715,97 +997,29 @@ const TrailStoriesPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.7 }}
-        className="py-16 bg-white"
+        className="py-16 bg-white relative overflow-hidden"
       >
-        <div className="container mx-auto px-4">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-0 w-64 h-64 bg-tribe-blue/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-0 w-96 h-96 bg-earth-50 rounded-full blur-3xl" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Results Count */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="mb-8 text-center"
+          >
+            <p className="text-earth-600 text-sm">
+              Showing <span className="font-bold text-tribe-blue">{filteredStudies.length}</span> {filteredStudies.length === 1 ? 'project' : 'projects'}
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredStudies.length > 0 ? (
               filteredStudies.map((study, index) => (
-                <motion.div
-                  key={study.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: index * 0.05, duration: 0.5 }}
-                  whileHover={{
-                    y: -8,
-                    boxShadow: "0 20px 40px -10px rgba(30, 174, 219, 0.3), 0 10px 20px -8px rgba(30, 174, 219, 0.2)",
-                    transition: { duration: 0.3 }
-                  }}
-                  className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 group cursor-pointer relative"
-                >
-                  <Link to={`/case-study/${study.slug}`}>
-                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-earth-100 to-earth-50 flex items-center justify-center">
-                      {study.featured && (
-                        <motion.div
-                          initial={{ scale: 0 }}
-                          whileInView={{ scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: index * 0.05 + 0.3, type: "spring" }}
-                          className="absolute top-3 right-3 z-10 px-3 py-1 bg-tribe-blue text-white text-xs font-bold rounded-full shadow-lg flex items-center gap-1"
-                        >
-                          <Sparkles className="h-3 w-3" />
-                          Featured
-                        </motion.div>
-                      )}
-                      {study.image ? (
-                        <motion.img
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.5 }}
-                          src={study.image}
-                          alt={study.title}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <div className="text-earth-300 font-display font-bold text-lg opacity-50">
-                          {study.title}
-                        </div>
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-earth-900/90 via-earth-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                        <span className="text-white text-sm font-semibold flex items-center gap-2">
-                          View Project <ArrowRight className="h-4 w-4" />
-                        </span>
-                      </div>
-                      <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-tribe-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-
-                    <div className="p-6 relative">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className={`px-3 py-1 rounded-full ${study.color} ${study.textColor} text-xs font-medium`}>
-                          {study.category}
-                        </span>
-                      </div>
-
-                      <h3 className="text-xl font-display font-semibold mb-2 group-hover:text-tribe-blue transition-colors line-clamp-2">
-                        {study.title}
-                      </h3>
-
-                      <p className="text-earth-600 text-sm mb-4 line-clamp-3 leading-relaxed">
-                        {study.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {study.tags.slice(0, 3).map((tag) => (
-                          <span key={tag} className="px-2 py-1 bg-earth-100 text-earth-600 rounded-full text-xs font-medium">
-                            {tag}
-                          </span>
-                        ))}
-                        {study.tags.length > 3 && (
-                          <span className="px-2 py-1 bg-earth-100 text-earth-600 rounded-full text-xs font-medium">
-                            +{study.tags.length - 3}
-                          </span>
-                        )}
-                      </div>
-
-                      <div className="inline-flex items-center text-tribe-blue font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
-                        <span>View Case Study</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </div>
-
-                      <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-tribe-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                  </Link>
-                </motion.div>
+                <CaseStudyCard key={study.id} study={study} index={index} />
               ))
             ) : (
               <motion.div
@@ -814,7 +1028,13 @@ const TrailStoriesPage = () => {
                 transition={{ duration: 0.5 }}
                 className="col-span-full py-12 text-center"
               >
-                <div className="text-5xl mb-4">🔍</div>
+                <motion.div
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="text-5xl mb-4"
+                >
+                  🔍
+                </motion.div>
                 <h3 className="text-xl font-display font-semibold mb-2">No stories match your filters</h3>
                 <p className="text-earth-600 mb-6">Try adjusting your filters to see more results</p>
                 <Button
@@ -828,7 +1048,7 @@ const TrailStoriesPage = () => {
                 >
                   Reset All Filters
                 </Button>
-              </motion.div>
+              </div>
             )}
           </div>
         </div>
