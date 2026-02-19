@@ -468,37 +468,19 @@ const TrailStoriesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed"
+              className="text-xl md:text-2xl text-gray-300 mb-4 md:mb-6 leading-relaxed"
             >
               We don't just talk about building what matters—we do it. Here's proof:
               real projects, real challenges, real solutions.
             </motion.p>
-
-            {/* Stats Counter */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="flex justify-center gap-8 md:gap-12 flex-wrap"
+              className="text-sm md:text-base text-gray-400 max-w-2xl mx-auto"
             >
-              {[
-                { label: "Projects", value: caseStudies.length },
-                { label: "Categories", value: 4 },
-                { label: "Technologies", value: 15 }
-              ].map((stat, idx) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 1 + idx * 0.1, type: "spring", stiffness: 200 }}
-                  whileHover={{ scale: 1.15, y: -8 }}
-                  className="text-center bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300"
-                >
-                  <div className="text-4xl md:text-5xl font-bold text-tribe-blue mb-1">{stat.value}+</div>
-                  <div className="text-sm text-gray-400 font-medium">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
+              Explore the trail of products, platforms and brands we&apos;ve helped launch, scale and rescue.
+            </motion.p>
           </div>
         </div>
       </motion.section>
@@ -747,14 +729,15 @@ const TrailStoriesPage = () => {
                   whileHover={{
                     y: -12,
                     rotateY: 2,
+                    scale: 1.03,
                     transition: { duration: 0.3 }
                   }}
                   className="group cursor-pointer relative"
                 >
                   <Link to={`/case-study/${study.slug}`}>
-                    <div className="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-200/50 h-full flex flex-col relative backdrop-blur-sm hover:shadow-2xl hover:shadow-tribe-blue/10 transition-all duration-500">
+                    <div className="bg-gradient-to-b from-white via-earth-50 to-white rounded-3xl shadow-lg overflow-hidden border border-gray-200/60 h-full flex flex-col relative backdrop-blur-sm hover:shadow-2xl hover:shadow-tribe-blue/15 hover:border-tribe-blue/40 transition-all duration-500">
                       {/* Gradient overlay on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-tribe-blue/0 via-tribe-blue/0 to-tribe-blue/0 group-hover:from-tribe-blue/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-3xl pointer-events-none z-0" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-tribe-blue/0 via-tribe-blue/0 to-tribe-blue/0 group-hover:from-tribe-blue/8 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-3xl pointer-events-none z-0" />
                       
                       {/* Image Container */}
                       <div className="relative h-56 overflow-hidden bg-gradient-to-br from-earth-100 via-earth-50 to-white flex items-center justify-center">
@@ -777,7 +760,7 @@ const TrailStoriesPage = () => {
                         {study.image ? (
                           <motion.div
                             className="relative w-full h-full"
-                            whileHover={{ scale: 1.08 }}
+                            whileHover={{ scale: 1.08, rotate: 0.5 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                           >
                             <img
@@ -812,7 +795,7 @@ const TrailStoriesPage = () => {
                       {/* Content */}
                       <div className="p-6 relative z-10 flex-1 flex flex-col">
                         <div className="flex items-center gap-2 mb-3">
-                          <span className={`px-3 py-1.5 rounded-full ${study.color} ${study.textColor} text-xs font-semibold shadow-sm border border-tribe-blue/10`}>
+                          <span className={`px-3 py-1.5 rounded-full ${study.color} ${study.textColor} text-xs font-semibold shadow-sm border border-tribe-blue/20 bg-gradient-to-r from-tribe-blue/5 to-transparent`}>
                             {study.category}
                           </span>
                         </div>
@@ -830,7 +813,7 @@ const TrailStoriesPage = () => {
                           {study.tags.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
-                              className="px-3 py-1 bg-gradient-to-r from-earth-50 to-white text-earth-700 rounded-lg text-xs font-medium border border-earth-200/50 shadow-sm group-hover:border-tribe-blue/30 group-hover:bg-gradient-to-r group-hover:from-tribe-blue/5 group-hover:to-white transition-all duration-300"
+                              className="px-3 py-1 bg-gradient-to-r from-earth-50 to-white text-earth-700 rounded-lg text-xs font-medium border border-earth-200/50 shadow-sm group-hover:border-tribe-blue/40 group-hover:bg-gradient-to-r group-hover:from-tribe-blue/10 group-hover:to-white transition-all duration-300"
                             >
                               {tag}
                             </span>
