@@ -383,32 +383,34 @@ const TrailStoriesPage = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const filteredStudies = caseStudies.filter(study => {
-    // Filter by platform
-    if (activePlatform !== "All" && study.category !== activePlatform) {
-      return false;
-    }
-
-    // Filter by industry (we reuse tags for industry mapping in some cases, or just specific grouping)
-    if (activeCategory !== "All") {
-      // If we find the category in tags, we filter by that
-      if (!study.tags.includes(activeCategory) && study.category !== activeCategory) {
+  const filteredStudies = caseStudies
+    .filter(study => {
+      // Filter by platform
+      if (activePlatform !== "All" && study.category !== activePlatform) {
         return false;
       }
-    }
 
-    // Filter by tags
-    if (activeTags.length > 0 && !study.tags.some(tag => activeTags.includes(tag))) {
-      return false;
-    }
+      // Filter by industry (we reuse tags for industry mapping in some cases, or just specific grouping)
+      if (activeCategory !== "All") {
+        // If we find the category in tags, we filter by that
+        if (!study.tags.includes(activeCategory) && study.category !== activeCategory) {
+          return false;
+        }
+      }
 
-    // Filter by featured status
-    if (featuredOnly && !study.featured) {
-      return false;
-    }
+      // Filter by tags
+      if (activeTags.length > 0 && !study.tags.some(tag => activeTags.includes(tag))) {
+        return false;
+      }
 
-    return true;
-  });
+      // Filter by featured status
+      if (featuredOnly && !study.featured) {
+        return false;
+      }
+
+      return true;
+    })
+    .sort((a, b) => a.title.localeCompare(b.title));
 
   const toggleTag = (tag) => {
     if (activeTags.includes(tag)) {
