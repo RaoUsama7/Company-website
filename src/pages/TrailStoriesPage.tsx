@@ -429,7 +429,7 @@ const TrailStoriesPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="relative py-20 bg-gradient-to-b from-earth-900 via-earth-800 to-earth-900 text-white overflow-hidden"
+        className="relative py-24 md:py-32 bg-gradient-to-b from-earth-900 via-earth-800 to-earth-900 text-white overflow-hidden"
       >
         {/* Animated Grid Background */}
         <div className="absolute inset-0 opacity-10">
@@ -440,6 +440,10 @@ const TrailStoriesPage = () => {
           }} />
         </div>
 
+        {/* Animated Gradient Orbs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-tribe-blue/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-tribe-blue/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.span
@@ -447,7 +451,7 @@ const TrailStoriesPage = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center gap-2 bg-tribe-blue/20 text-tribe-blue px-4 py-1.5 rounded-full text-sm font-medium mb-4 backdrop-blur-sm border border-tribe-blue/30"
+              className="inline-flex items-center gap-2 bg-tribe-blue/20 text-tribe-blue px-5 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-md border border-tribe-blue/40 shadow-lg shadow-tribe-blue/20"
             >
               <TrendingUp className="h-4 w-4" />
               Trailmarks
@@ -456,15 +460,15 @@ const TrailStoriesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6 leading-tight"
             >
-              Real Work. <span className="text-tribe-blue">Real Impact.</span>
+              Real Work. <span className="text-tribe-blue bg-gradient-to-r from-tribe-blue to-tribe-blue/80 bg-clip-text text-transparent">Real Impact.</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="text-xl text-gray-300 mb-8"
+              className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed"
             >
               We don't just talk about building what matters—we do it. Here's proof:
               real projects, real challenges, real solutions.
@@ -475,7 +479,7 @@ const TrailStoriesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="flex justify-center gap-8 flex-wrap"
+              className="flex justify-center gap-8 md:gap-12 flex-wrap"
             >
               {[
                 { label: "Projects", value: caseStudies.length },
@@ -487,11 +491,11 @@ const TrailStoriesPage = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 1 + idx * 0.1, type: "spring", stiffness: 200 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="text-center"
+                  whileHover={{ scale: 1.15, y: -8 }}
+                  className="text-center bg-white/5 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/10 shadow-lg hover:bg-white/10 transition-all duration-300"
                 >
-                  <div className="text-3xl font-bold text-tribe-blue">{stat.value}+</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+                  <div className="text-4xl md:text-5xl font-bold text-tribe-blue mb-1">{stat.value}+</div>
+                  <div className="text-sm text-gray-400 font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -504,22 +508,25 @@ const TrailStoriesPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.7 }}
-        className="py-12 bg-gray-50/50 relative overflow-hidden"
+        className="py-12 bg-gradient-to-b from-gray-50 via-white to-gray-50/50 relative overflow-hidden"
       >
         <div className="container mx-auto px-4 relative z-10">
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-6 md:p-8">
-            <div className="flex flex-col gap-10">
+          <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 p-6 md:p-10 relative overflow-hidden">
+            {/* Decorative gradient overlay */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-tribe-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-earth-100/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+            <div className="flex flex-col gap-10 relative z-10">
               {/* Platform Toggle - High Level */}
               <div className="flex flex-col items-center justify-center text-center">
-                <div className="inline-flex p-1.5 bg-earth-100/50 rounded-2xl border border-earth-100 shadow-inner mb-4">
+                <div className="inline-flex p-1.5 bg-gradient-to-r from-earth-100/80 to-earth-50/80 rounded-2xl border border-earth-200/50 shadow-lg backdrop-blur-sm mb-4">
                   {platforms.map(platform => (
                     <button
                       key={platform}
                       className={cn(
-                        "px-10 py-3 rounded-xl text-sm font-bold transition-all duration-400 relative z-10",
+                        "px-10 py-3 rounded-xl text-sm font-bold transition-all duration-300 relative z-10",
                         activePlatform === platform
-                          ? "bg-white text-tribe-blue shadow-lg scale-105 border border-earth-100/50"
-                          : "text-earth-500 hover:text-earth-700"
+                          ? "bg-white text-tribe-blue shadow-xl scale-105 border border-tribe-blue/20 transform -translate-y-0.5"
+                          : "text-earth-500 hover:text-earth-700 hover:bg-white/50"
                       )}
                       onClick={() => setActivePlatform(platform)}
                     >
@@ -527,50 +534,54 @@ const TrailStoriesPage = () => {
                     </button>
                   ))}
                 </div>
-                <p className="text-earth-400 text-xs font-medium uppercase tracking-[0.2em]">Select Your Interest Platform</p>
+                <p className="text-earth-400 text-xs font-medium uppercase tracking-[0.2em] mt-2">Select Your Interest Platform</p>
               </div>
 
               {/* Category Filter */}
-              <div className="pt-8 border-t border-earth-100/50">
+              <div className="pt-8 border-t border-earth-200/50">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="bg-tribe-blue/10 p-2 rounded-lg">
+                  <div className="bg-gradient-to-br from-tribe-blue/20 to-tribe-blue/10 p-2.5 rounded-xl shadow-sm border border-tribe-blue/20">
                     <Filter size={20} className="text-tribe-blue" />
                   </div>
                   <h3 className="text-xl font-display font-bold text-earth-900">Industries & Domains</h3>
                 </div>
                 <div className="flex flex-wrap gap-2 md:gap-3">
                   {categories.map(category => (
-                    <button
+                    <motion.button
                       key={category}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                       className={cn(
-                        "px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 transform active:scale-95",
+                        "px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 transform",
                         activeCategory === category
-                          ? "bg-tribe-blue text-white shadow-lg shadow-tribe-blue/30 -translate-y-0.5"
-                          : "bg-white text-earth-600 hover:bg-earth-100 hover:shadow-md border border-earth-100"
+                          ? "bg-gradient-to-r from-tribe-blue to-tribe-blue/90 text-white shadow-xl shadow-tribe-blue/40 -translate-y-1 border border-tribe-blue/30"
+                          : "bg-white text-earth-600 hover:bg-gradient-to-r hover:from-earth-50 hover:to-white hover:shadow-lg border border-earth-200 hover:border-earth-300"
                       )}
                       onClick={() => setActiveCategory(category)}
                     >
                       {category}
-                    </button>
+                    </motion.button>
                   ))}
                 </div>
               </div>
 
               {/* Advanced Filters Toggle */}
               <div className="pt-4 flex justify-center">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
                   className={cn(
-                    "flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 border shadow-sm hover:shadow-md",
+                    "flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 border shadow-lg hover:shadow-xl",
                     showAdvancedFilters
-                      ? "bg-earth-900 text-white border-earth-900"
-                      : "bg-white text-earth-700 border-earth-100 hover:border-tribe-blue"
+                      ? "bg-gradient-to-r from-earth-900 to-earth-800 text-white border-earth-900 shadow-xl"
+                      : "bg-white text-earth-700 border-earth-200 hover:border-tribe-blue hover:bg-gradient-to-r hover:from-white hover:to-earth-50"
                   )}
                 >
                   <Settings2 size={16} className={showAdvancedFilters ? "animate-spin-slow" : ""} />
                   {showAdvancedFilters ? "Hide Advanced Filters" : "Show Advanced Engineering Filters"}
                   {showAdvancedFilters ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </button>
+                </motion.button>
               </div>
 
               <AnimatePresence>
@@ -604,18 +615,20 @@ const TrailStoriesPage = () => {
 
                       <div className="flex flex-wrap gap-2">
                         {techTags.map(tag => (
-                          <button
+                          <motion.button
                             key={tag}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                             className={cn(
                               "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 border",
                               activeTags.includes(tag)
-                                ? "bg-earth-900 text-white border-earth-900 shadow-md scale-105"
-                                : "bg-white text-earth-500 border-earth-100 hover:border-tribe-blue hover:text-tribe-blue"
+                                ? "bg-gradient-to-r from-earth-900 to-earth-800 text-white border-earth-900 shadow-lg scale-105"
+                                : "bg-white text-earth-500 border-earth-200 hover:border-tribe-blue hover:text-tribe-blue hover:bg-tribe-blue/5 hover:shadow-md"
                             )}
                             onClick={() => toggleTag(tag)}
                           >
                             {tag}
-                          </button>
+                          </motion.button>
                         ))}
                       </div>
                     </div>
@@ -631,18 +644,20 @@ const TrailStoriesPage = () => {
 
                       <div className="flex flex-wrap gap-2">
                         {ecosystemTags.map(tag => (
-                          <button
+                          <motion.button
                             key={tag}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                             className={cn(
                               "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 border",
                               activeTags.includes(tag)
-                                ? "bg-earth-900 text-white border-earth-900 shadow-md scale-105"
-                                : "bg-white text-earth-500 border-earth-100 hover:border-tribe-blue hover:text-tribe-blue"
+                                ? "bg-gradient-to-r from-earth-900 to-earth-800 text-white border-earth-900 shadow-lg scale-105"
+                                : "bg-white text-earth-500 border-earth-200 hover:border-tribe-blue hover:text-tribe-blue hover:bg-tribe-blue/5 hover:shadow-md"
                             )}
                             onClick={() => toggleTag(tag)}
                           >
                             {tag}
-                          </button>
+                          </motion.button>
                         ))}
                       </div>
                     </div>
@@ -658,18 +673,20 @@ const TrailStoriesPage = () => {
 
                       <div className="flex flex-wrap gap-2">
                         {domainTags.map(tag => (
-                          <button
+                          <motion.button
                             key={tag}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                             className={cn(
                               "px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 border",
                               activeTags.includes(tag)
-                                ? "bg-earth-900 text-white border-earth-900 shadow-md scale-105"
-                                : "bg-white text-earth-500 border-earth-100 hover:border-tribe-blue hover:text-tribe-blue"
+                                ? "bg-gradient-to-r from-earth-900 to-earth-800 text-white border-earth-900 shadow-lg scale-105"
+                                : "bg-white text-earth-500 border-earth-200 hover:border-tribe-blue hover:text-tribe-blue hover:bg-tribe-blue/5 hover:shadow-md"
                             )}
                             onClick={() => toggleTag(tag)}
                           >
                             {tag}
-                          </button>
+                          </motion.button>
                         ))}
                       </div>
                     </div>
@@ -715,7 +732,7 @@ const TrailStoriesPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.7 }}
-        className="py-16 bg-white"
+        className="py-16 bg-gradient-to-b from-white via-gray-50/30 to-white"
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -728,81 +745,128 @@ const TrailStoriesPage = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ delay: index * 0.05, duration: 0.5 }}
                   whileHover={{
-                    y: -8,
-                    boxShadow: "0 20px 40px -10px rgba(30, 174, 219, 0.3), 0 10px 20px -8px rgba(30, 174, 219, 0.2)",
+                    y: -12,
+                    rotateY: 2,
                     transition: { duration: 0.3 }
                   }}
-                  className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 group cursor-pointer relative"
+                  className="group cursor-pointer relative"
                 >
                   <Link to={`/case-study/${study.slug}`}>
-                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-earth-100 to-earth-50 flex items-center justify-center">
-                      {study.featured && (
-                        <motion.div
-                          initial={{ scale: 0 }}
-                          whileInView={{ scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: index * 0.05 + 0.3, type: "spring" }}
-                          className="absolute top-3 right-3 z-10 px-3 py-1 bg-tribe-blue text-white text-xs font-bold rounded-full shadow-lg flex items-center gap-1"
-                        >
-                          <Sparkles className="h-3 w-3" />
-                          Featured
-                        </motion.div>
-                      )}
-                      {study.image ? (
-                        <motion.img
-                          whileHover={{ scale: 1.1 }}
-                          transition={{ duration: 0.5 }}
-                          src={study.image}
-                          alt={study.title}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <div className="text-earth-300 font-display font-bold text-lg opacity-50">
-                          {study.title}
-                        </div>
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-earth-900/90 via-earth-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                        <span className="text-white text-sm font-semibold flex items-center gap-2">
-                          View Project <ArrowRight className="h-4 w-4" />
-                        </span>
-                      </div>
-                      <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-tribe-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-
-                    <div className="p-6 relative">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className={`px-3 py-1 rounded-full ${study.color} ${study.textColor} text-xs font-medium`}>
-                          {study.category}
-                        </span>
-                      </div>
-
-                      <h3 className="text-xl font-display font-semibold mb-2 group-hover:text-tribe-blue transition-colors line-clamp-2">
-                        {study.title}
-                      </h3>
-
-                      <p className="text-earth-600 text-sm mb-4 line-clamp-3 leading-relaxed">
-                        {study.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {study.tags.slice(0, 3).map((tag) => (
-                          <span key={tag} className="px-2 py-1 bg-earth-100 text-earth-600 rounded-full text-xs font-medium">
-                            {tag}
-                          </span>
-                        ))}
-                        {study.tags.length > 3 && (
-                          <span className="px-2 py-1 bg-earth-100 text-earth-600 rounded-full text-xs font-medium">
-                            +{study.tags.length - 3}
-                          </span>
+                    <div className="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-200/50 h-full flex flex-col relative backdrop-blur-sm hover:shadow-2xl hover:shadow-tribe-blue/10 transition-all duration-500">
+                      {/* Gradient overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-tribe-blue/0 via-tribe-blue/0 to-tribe-blue/0 group-hover:from-tribe-blue/5 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-3xl pointer-events-none z-0" />
+                      
+                      {/* Image Container */}
+                      <div className="relative h-56 overflow-hidden bg-gradient-to-br from-earth-100 via-earth-50 to-white flex items-center justify-center">
+                        {/* Decorative corner accent */}
+                        <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-tribe-blue/10 to-transparent rounded-br-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        
+                        {study.featured && (
+                          <motion.div
+                            initial={{ scale: 0, rotate: -180 }}
+                            whileInView={{ scale: 1, rotate: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.05 + 0.3, type: "spring", stiffness: 200 }}
+                            className="absolute top-4 right-4 z-20 px-4 py-1.5 bg-gradient-to-r from-tribe-blue to-tribe-blue/90 text-white text-xs font-bold rounded-full shadow-xl flex items-center gap-1.5 backdrop-blur-sm border border-white/20"
+                          >
+                            <Sparkles className="h-3.5 w-3.5" />
+                            Featured
+                          </motion.div>
                         )}
+                        
+                        {study.image ? (
+                          <motion.div
+                            className="relative w-full h-full"
+                            whileHover={{ scale: 1.08 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                          >
+                            <img
+                              src={study.image}
+                              alt={study.title}
+                              className="w-full h-full object-cover"
+                            />
+                            {/* Image overlay gradient */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          </motion.div>
+                        ) : (
+                          <div className="text-earth-300 font-display font-bold text-lg opacity-50">
+                            {study.title}
+                          </div>
+                        )}
+                        
+                        {/* Hover overlay with CTA */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-earth-900/95 via-earth-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6 z-10">
+                          <motion.span
+                            initial={{ y: 20, opacity: 0 }}
+                            whileHover={{ y: 0, opacity: 1 }}
+                            className="text-white text-sm font-semibold flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20"
+                          >
+                            View Project <ArrowRight className="h-4 w-4" />
+                          </motion.span>
+                        </div>
+                        
+                        {/* Corner accent lines */}
+                        <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-tribe-blue/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tl-3xl" />
                       </div>
 
-                      <div className="inline-flex items-center text-tribe-blue font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
-                        <span>View Case Study</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </div>
+                      {/* Content */}
+                      <div className="p-6 relative z-10 flex-1 flex flex-col">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className={`px-3 py-1.5 rounded-full ${study.color} ${study.textColor} text-xs font-semibold shadow-sm border border-tribe-blue/10`}>
+                            {study.category}
+                          </span>
+                        </div>
 
-                      <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-tribe-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <h3 className="text-xl font-display font-semibold mb-3 group-hover:text-tribe-blue transition-colors duration-300 line-clamp-2 leading-tight">
+                          {study.title}
+                        </h3>
+
+                        <p className="text-earth-600 text-sm mb-5 line-clamp-3 leading-relaxed flex-1">
+                          {study.description}
+                        </p>
+
+                        {/* Tags */}
+                        <div className="flex flex-wrap gap-2 mb-5">
+                          {study.tags.slice(0, 3).map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-3 py-1 bg-gradient-to-r from-earth-50 to-white text-earth-700 rounded-lg text-xs font-medium border border-earth-200/50 shadow-sm group-hover:border-tribe-blue/30 group-hover:bg-gradient-to-r group-hover:from-tribe-blue/5 group-hover:to-white transition-all duration-300"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                          {study.tags.length > 3 && (
+                            <span className="px-3 py-1 bg-gradient-to-r from-earth-50 to-white text-earth-700 rounded-lg text-xs font-medium border border-earth-200/50 shadow-sm">
+                              +{study.tags.length - 3}
+                            </span>
+                          )}
+                        </div>
+
+                        {/* CTA */}
+                        <div className="inline-flex items-center text-tribe-blue font-semibold text-sm group-hover:gap-3 gap-1 transition-all duration-300 mt-auto">
+                          <span>View Case Study</span>
+                          <motion.div
+                            animate={{ x: 0 }}
+                            whileHover={{ x: 4 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <ArrowRight className="h-4 w-4" />
+                          </motion.div>
+                        </div>
+
+                        {/* Bottom corner accent */}
+                        <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-tribe-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-br-3xl" />
+                      </div>
+                      
+                      {/* Shine effect on hover */}
+                      <motion.div
+                        className="absolute inset-0 pointer-events-none rounded-3xl overflow-hidden"
+                        initial={{ x: '-100%' }}
+                        whileHover={{ x: '100%' }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent w-full h-full" />
+                      </motion.div>
                     </div>
                   </Link>
                 </motion.div>
@@ -839,24 +903,38 @@ const TrailStoriesPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.7 }}
-        className="py-16 bg-earth-100"
+        className="py-20 bg-gradient-to-b from-earth-100 via-white to-earth-50 relative overflow-hidden"
       >
-        <div className="container mx-auto px-4">
-          <div
-            className="bg-white p-8 md:p-12 rounded-xl shadow-sm max-w-4xl mx-auto text-center"
+        {/* Background decoration */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-tribe-blue/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-earth-200/30 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+            className="bg-white/90 backdrop-blur-xl p-8 md:p-12 rounded-3xl shadow-2xl border border-white/40 max-w-4xl mx-auto text-center relative overflow-hidden"
           >
-            <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-              Ready to Create Your Own <span className="text-tribe-blue">Success Story?</span>
-            </h2>
-            <p className="text-earth-600 mb-8 max-w-2xl mx-auto">
-              Let's talk about how we can help you build what matters. Whether you have a clear vision or just an inkling of an idea, we're ready to blaze a trail together.
-            </p>
-            <Link to="/contact">
-              <Button className="bg-tribe-blue hover:bg-tribe-blue/90">
-                Start Your Journey <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-tribe-blue/5 rounded-full blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-earth-100/50 rounded-full blur-2xl" />
+            
+            <div className="relative z-10">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold mb-4 leading-tight">
+                Ready to Create Your Own <span className="text-tribe-blue bg-gradient-to-r from-tribe-blue to-tribe-blue/80 bg-clip-text text-transparent">Success Story?</span>
+              </h2>
+              <p className="text-earth-600 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+                Let's talk about how we can help you build what matters. Whether you have a clear vision or just an inkling of an idea, we're ready to blaze a trail together.
+              </p>
+              <Link to="/contact">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button className="bg-gradient-to-r from-tribe-blue to-tribe-blue/90 hover:from-tribe-blue/90 hover:to-tribe-blue shadow-xl hover:shadow-2xl hover:shadow-tribe-blue/30 transition-all duration-300 px-8 py-6 text-base">
+                    Start Your Journey <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </motion.div>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </motion.section>
 

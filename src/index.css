@@ -194,4 +194,17 @@
   .story-card-overlay {
     @apply absolute inset-0 bg-gradient-to-t from-earth-900 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6;
   }
+
+  @keyframes shine {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-shine {
+    animation: shine 1.5s ease-in-out;
+  }
 }

@@ -53,54 +53,6 @@ const caseStudies = [
     slug: "little-dreams"
   },
   {
-    id: 5,
-    title: "Little Lingo",
-    category: "Mobile",
-    description: "Language Learning That Grows With Kids: How TTT Revamped a Buggy Codebase into a Vibrant, Multilingual EdTech Platform.",
-    image: "/lovable-uploads/ede72a27-07fd-482a-8246-02db292f3af7.png",
-    tags: ["Education", "Language Learning", "Mobile App"],
-    color: "bg-tribe-blue/10",
-    textColor: "text-tribe-blue",
-    icon: "🗣️",
-    slug: "little-lingo"
-  },
-  {
-    id: 6,
-    title: "Calories Counter",
-    category: "Mobile",
-    description: "Your Smart Guide to Food & Fitness: AI-powered calorie tracking with personalized nutrition insights and recipe recommendations.",
-    image: "/lovable-uploads/800ed702-a0aa-4553-877a-29a576fd7a09.png",
-    tags: ["React Native", "AI/ML", "Health", "Firebase"],
-    color: "bg-tribe-blue/10",
-    textColor: "text-tribe-blue",
-    icon: "🥗",
-    slug: "calories-counter"
-  },
-  {
-    id: 7,
-    title: "Latte Delivery",
-    category: "Mobile",
-    description: "End-to-End Food Delivery Ecosystem: Complete multi-app platform with real-time tracking and seamless vendor management.",
-    image: "/lovable-uploads/7ee4e9e3-9210-4950-a3cc-ed8e05e2e10a.png",
-    tags: ["Flutter", "Laravel", "Food Delivery", "Real-time"],
-    color: "bg-tribe-blue/10",
-    textColor: "text-tribe-blue",
-    icon: "🚚",
-    slug: "latte-delivery"
-  },
-  {
-    id: 8,
-    title: "Ice Cream Roll",
-    category: "Game",
-    description: "A Delightful Dessert Simulation Game with engaging, visually rich gameplay that appeals to a broad audience from kids to casual players.",
-    image: "/lovable-uploads/0a80d8ac-9a2b-447d-9e61-23b6e38e5353.png",
-    tags: ["Gaming", "Simulation", "Unity"],
-    color: "bg-tribe-blue/10",
-    textColor: "text-tribe-blue",
-    icon: "🍦",
-    slug: "ice-cream-roll"
-  },
-  {
     id: 9,
     title: "Team2Challenge (Web)",
     category: "Web",
