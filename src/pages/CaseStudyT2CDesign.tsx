@@ -10,9 +10,9 @@ const CaseStudyT2CDesign = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const sliderImages = [
-        "/t2c app/main.png", // Using existing T2C images as reference for design
-        "/t2c web/main.png",
-        "/t2c latest.png"
+        "/t2c design/1.png",
+        "/t2c design/2.png",
+        "/t2c design/3.png"
     ];
 
     useEffect(() => {
@@ -177,6 +177,42 @@ const CaseStudyT2CDesign = () => {
                             <div className="bg-tribe-blue/5 p-8 rounded-2xl border-l-4 border-tribe-blue mb-12">
                                 <h3 className="text-xl font-bold text-tribe-blue mb-4 text-center italic">"Great design isn't just how it looks, but how it empowers the community to grow."</h3>
                             </div>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
+                            >
+                                <img
+                                    src="/t2c design/2.png"
+                                    alt="T2C Design Interaction"
+                                    className="w-full h-auto object-cover"
+                                />
+                                <div className="p-4 bg-earth-50 text-center text-sm text-earth-500 font-medium italic">
+                                    Showcasing the seamless integration of scheduling and social interaction.
+                                </div>
+                            </motion.div>
+
+                            <p className="mb-12">
+                                Our focus was on creating a system that reduces cognitive load while maintaining a high level of feature richness. The result is a platform where users can move between management tasks and social interaction without missing a beat.
+                            </p>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
+                            >
+                                <img
+                                    src="/t2c design/3.png"
+                                    alt="T2C Design System"
+                                    className="w-full h-auto object-cover"
+                                />
+                                <div className="p-4 bg-earth-50 text-center text-sm text-earth-500 font-medium italic">
+                                    A robust design system built for consistency and scale.
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

@@ -10,8 +10,10 @@ const CaseStudyTalkieTotzDesign = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const sliderImages = [
-        "/lovable-uploads/826c450a-5486-4505-a9cd-ab9a1726fb62.png",
-        "/lovable-uploads/826c450a-5486-4505-a9cd-ab9a1726fb62.png", // Multi-image slider if available
+        "/talkitotz design/7.png",
+        "/talkitotz design/8.png",
+        "/talkitotz design/9.png",
+        "/talkitotz design/10.png"
     ];
 
     useEffect(() => {
@@ -176,6 +178,42 @@ const CaseStudyTalkieTotzDesign = () => {
                             <div className="bg-tribe-blue/5 p-8 rounded-2xl border-l-4 border-tribe-blue mb-12">
                                 <h3 className="text-xl font-bold text-tribe-blue mb-4 text-center italic">"We didn't just design an app; we designed a bridge for families to learn together."</h3>
                             </div>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
+                            >
+                                <img
+                                    src="/talkitotz design/9.png"
+                                    alt="TalkieTotz Playful Interface"
+                                    className="w-full h-auto object-cover"
+                                />
+                                <div className="p-4 bg-earth-50 text-center text-sm text-earth-500 font-medium italic">
+                                    Vibrant, high-contrast layouts designed for maximum engagement for young learners.
+                                </div>
+                            </motion.div>
+
+                            <p className="mb-12">
+                                We chose a color palette that is stimulating but not overwhelming, ensuring that the primary educational content always remains the center of attention. Every button, icon, and illustration was crafted to be friendly and approachable.
+                            </p>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
+                            >
+                                <img
+                                    src="/talkitotz design/10.png"
+                                    alt="TalkieTotz Progress Dashboard"
+                                    className="w-full h-auto object-cover"
+                                />
+                                <div className="p-4 bg-earth-50 text-center text-sm text-earth-500 font-medium italic">
+                                    Intelligent progress tracking for parents, made simple and visual.
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

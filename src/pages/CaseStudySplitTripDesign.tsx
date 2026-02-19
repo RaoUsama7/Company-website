@@ -10,8 +10,9 @@ const CaseStudySplitTripDesign = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const sliderImages = [
-        "/lovable-uploads/de7f9c54-101f-40ce-b377-98d047b1e913.png",
-        "/lovable-uploads/de7f9c54-101f-40ce-b377-98d047b1e913.png", // Multi-image slider if available
+        "/splittrip/11.png",
+        "/splittrip/12.png",
+        "/splittrip/13.png"
     ];
 
     useEffect(() => {
@@ -176,6 +177,42 @@ const CaseStudySplitTripDesign = () => {
                             <div className="bg-tribe-blue/5 p-8 rounded-2xl border-l-4 border-tribe-blue mb-12">
                                 <h3 className="text-xl font-bold text-tribe-blue mb-4 text-center italic">"Travel planning should be the start of the fun, not a chore. We designed for the joy of discovery."</h3>
                             </div>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
+                            >
+                                <img
+                                    src="/splittrip/12.png"
+                                    alt="Split-Trip User Interface"
+                                    className="w-full h-auto object-cover"
+                                />
+                                <div className="p-4 bg-earth-50 text-center text-sm text-earth-500 font-medium italic">
+                                    Clean, intuitive expense sharing and itinerary planning.
+                                </div>
+                            </motion.div>
+
+                            <p className="mb-12">
+                                The design language focuses on transparency and ease of use. By combining social interaction with financial tools, we created a collaborative environment that makes travel planning part of the journey itself.
+                            </p>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
+                            >
+                                <img
+                                    src="/splittrip/13.png"
+                                    alt="Split-Trip Expense Management"
+                                    className="w-full h-auto object-cover"
+                                />
+                                <div className="p-4 bg-earth-50 text-center text-sm text-earth-500 font-medium italic">
+                                    Simplifying group finances with elegant, easy-to-read visualizations.
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

@@ -10,8 +10,9 @@ const CaseStudyNexiunDesign = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const sliderImages = [
-        "/lovable-uploads/826e8063-6d14-4d5a-a08b-97b1b84ecfa5.png",
-        "/lovable-uploads/b0f6602c-d2b4-42ef-b2f8-c0b25fb03e8e.png",
+        "/nexiun/4.png",
+        "/nexiun/5.png",
+        "/nexiun/6.png"
     ];
 
     useEffect(() => {
@@ -176,6 +177,42 @@ const CaseStudyNexiunDesign = () => {
                             <div className="bg-tribe-blue/5 p-8 rounded-2xl border-l-4 border-tribe-blue mb-12">
                                 <h3 className="text-xl font-bold text-tribe-blue mb-4 text-center italic">"Complexity is a design challenge, clarity is the solution. Nexiun is the proof."</h3>
                             </div>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-blue-900/30 bg-blue-950/20"
+                            >
+                                <img
+                                    src="/nexiun/5.png"
+                                    alt="Nexiun Dashboard Interface"
+                                    className="w-full h-auto object-cover"
+                                />
+                                <div className="p-4 bg-earth-900/50 text-center text-sm text-gray-400 font-medium italic">
+                                    A futuristic approach to high-density information management.
+                                </div>
+                            </motion.div>
+
+                            <p className="mb-12">
+                                By prioritizing data hierarchy and visual grouping, we ensured that even the most complex datasets remain accessible. The Nexiun design language is built to evolve, providing a solid foundation for future data-driven features.
+                            </p>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-blue-900/30 bg-blue-950/20"
+                            >
+                                <img
+                                    src="/nexiun/6.png"
+                                    alt="Nexiun Analytics View"
+                                    className="w-full h-auto object-cover"
+                                />
+                                <div className="p-4 bg-earth-900/50 text-center text-sm text-gray-400 font-medium italic">
+                                    Integrating real-time analytics with futuristic aesthetics.
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
