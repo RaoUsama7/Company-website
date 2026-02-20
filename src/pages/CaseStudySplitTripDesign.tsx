@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, CheckCircle, Palette, Layout, Eye, Search, Map, Wallet, ChevronLeft, ChevronRight, Compass, Users } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Palette, Layout, Eye, Search, Map, Wallet, ChevronLeft, ChevronRight, Compass, Users, Layers } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -36,19 +36,19 @@ const CaseStudySplitTripDesign = () => {
 
     const designSteps = [
         {
-            title: "Journey Mapping",
-            description: "Designing the intuitive flow of a trip from first spark to final split.",
-            icon: <Map className="h-6 w-6 text-tribe-blue" />
+            title: "Safe Journeys",
+            description: "Designing verified traveler profiles and real-time route maps for a secure road trip experience.",
+            icon: <CheckCircle className="h-6 w-6 text-tribe-blue" />
         },
         {
-            title: "Social Finance UI",
-            description: "Creating a stress-free expense sharing interface that handles complex math with simple visuals.",
-            icon: <Wallet className="h-6 w-6 text-tribe-blue" />
+            title: "Dark-Mode Foundation",
+            description: "Utilizing a high-contrast dark foundation paired with vibrant action colors for high visibility and trust.",
+            icon: <Palette className="h-6 w-6 text-tribe-blue" />
         },
         {
-            title: "Collaborative UX",
-            description: "Building real-time collaboration tools for groups to build itineraries together seamlessly.",
-            icon: <Users className="h-6 w-6 text-tribe-blue" />
+            title: "Atomic Mobility",
+            description: "Building a structured and reusable Figma component system tailored for mobility interfaces.",
+            icon: <Layers className="h-6 w-6 text-tribe-blue" />
         }
     ];
 
@@ -75,19 +75,19 @@ const CaseStudySplitTripDesign = () => {
                                 UI/UX Design
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Travel Tech
+                                Travel Mobility
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                FinTech
+                                Figma
                             </span>
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
-                            <span className="text-tribe-blue">Split-Trip:</span> Travel Better Together
+                            <span className="text-tribe-blue">Split-Trip:</span> Safe & Social Road Trips
                         </h1>
 
                         <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                            A design study on removing the friction from group travel through collaborative planning and integrated financial tracking.
+                            A sleek, user-centered travel app interface designed to make road trips safe, social, and efficient through real-time trip listings and a modern dark-mode experience.
                         </p>
 
                         <div className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10">
@@ -166,12 +166,12 @@ const CaseStudySplitTripDesign = () => {
                         </div>
 
                         <div className="prose prose-lg max-w-none text-earth-700">
-                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Collaboration Without Chaos</h2>
+                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Modern Mobility Experience</h2>
                             <p className="mb-6">
-                                Split-Trip's core design challenge was to make a complex, multi-user scheduling and financial tool feel like a simple chat app. We used a modular card-based UI that allows trip elements to be easily reordered, voted on, and discussed in real-time.
+                                Split-Trip's design language focuses on transparency and ease of navigation. We implemented a dark-mode foundation to provide a modern, premium feel that also reduces glare during night-time navigation, paired with vibrant accent colors to highlight critical actions.
                             </p>
                             <p className="mb-12">
-                                For the financial side, we developed "Auto-Split Visualization"—a clean, color-coded system that makes it instantly clear who owes what, moving away from stressful spreadsheets into intuitive, friendly progress bars and summaries.
+                                The inclusion of verified traveler profiles and detailed route maps directly addresses user concerns about safety and efficiency. Every screen is part of a scalable project built in Figma, ensuring that the interface is as functional as it is visually striking.
                             </p>
 
                             <div className="bg-tribe-blue/5 p-8 rounded-2xl border-l-4 border-tribe-blue mb-12">

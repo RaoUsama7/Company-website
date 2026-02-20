@@ -37,19 +37,19 @@ const CaseStudyTalkieTotzDesign = () => {
 
     const designSteps = [
         {
-            title: "Kid-First Design",
-            description: "Designing oversized, colorful, and tactile interfaces that children can navigate intuitively.",
-            icon: <Baby className="h-6 w-6 text-tribe-blue" />
-        },
-        {
-            title: "Gamified Progress",
-            description: "Implementing reward systems and visual milestones that maintain high engagement throughout the learning journey.",
+            title: "Emotional Warmth",
+            description: "Designing an interface that focuses on emotional connection and intuitive interaction for young learners.",
             icon: <Sparkles className="h-6 w-6 text-tribe-blue" />
         },
         {
-            title: "Parent Intelligence",
-            description: "Architecting a sophisticated secondary dashboard for parents to track progress and manage lessons with ease.",
-            icon: <GraduationCap className="h-6 w-6 text-tribe-blue" />
+            title: "Growth Identity",
+            description: "Implementing a soft green visual identity that symbolizes growth, mirroring the child's learning journey.",
+            icon: <Palette className="h-6 w-6 text-tribe-blue" />
+        },
+        {
+            title: "Structured Design",
+            description: "Using a scalable Figma design system to ensure consistency across all learning modules and interactions.",
+            icon: <Layout className="h-6 w-6 text-tribe-blue" />
         }
     ];
 
@@ -76,19 +76,19 @@ const CaseStudyTalkieTotzDesign = () => {
                                 UI/UX Design
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                EdTech
+                                Early Learning
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Gamification
+                                Figma
                             </span>
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
-                            <span className="text-tribe-blue">TalkieTotz:</span> Designing for Young Minds
+                            <span className="text-tribe-blue">TalkieTotz:</span> Enhancing Early Language Learning
                         </h1>
 
                         <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                            How we created a playful, bilingual learning experience that engages both children and their parents through intentional, parent-approved design.
+                            A modern, child-friendly mobile app interface designed to enhance early language learning through a soft green visual identity that symbolizes growth and development.
                         </p>
 
                         <div className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10">
@@ -167,12 +167,12 @@ const CaseStudyTalkieTotzDesign = () => {
                         </div>
 
                         <div className="prose prose-lg max-w-none text-earth-700">
-                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Psychology-Driven Interaction</h2>
+                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Psychology of Growth</h2>
                             <p className="mb-6">
-                                TalkieTotz required a dual-layered design strategy. The child's interface uses large hit areas, vibrant color clusters for categorization, and friendly mascot interactions to maintain focus. We avoided traditional menu structures in favor of horizontal scenic navigation that mimics a journey.
+                                TalkieTotz required a design strategy that prioritizes emotional warmth and clarity. We chose a soft green visual identity to symbolize growth and development, creating an environment where children feel encouraged and safe to explore language.
                             </p>
                             <p className="mb-12">
-                                For parents, the design shifts to high-clarity data visualization. We built a comprehensive "Growth Map" that allows parents to see exactly where their child is excelling in their bilingual journey, making complex EdTech data easy to understand and celebrate.
+                                Every layout is built with intuitive interaction in mind, ensuring that both children and parents can navigate the platform with ease. Progress-driven feedback is integrated throughout the journey, celebrating every small win in the learning process.
                             </p>
 
                             <div className="bg-tribe-blue/5 p-8 rounded-2xl border-l-4 border-tribe-blue mb-12">

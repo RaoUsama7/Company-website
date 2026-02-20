@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, CheckCircle, Palette, Layout, Eye, Search, BarChart3, Database, ChevronLeft, ChevronRight, Monitor, Cpu } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Palette, Layout, Eye, Search, BarChart3, Database, ChevronLeft, ChevronRight, Monitor, Cpu, Layers } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -36,19 +36,19 @@ const CaseStudyNexiunDesign = () => {
 
     const designSteps = [
         {
-            title: "Data Clarity",
-            description: "Simplifying complex systemic data into digestible, actionable visual insights.",
-            icon: <BarChart3 className="h-6 w-6 text-tribe-blue" />
+            title: "Real-Time Discovery",
+            description: "Designing seamless flows for users to find and connect with matching profiles instantly.",
+            icon: <Search className="h-6 w-6 text-tribe-blue" />
         },
         {
-            title: "Futuristic Canvas",
-            description: "Leveraging a dark-core aesthetic with neon accents for a high-tech, authoritative feel.",
-            icon: <Monitor className="h-6 w-6 text-tribe-blue" />
+            title: "Soft Gradient System",
+            description: "Utilizing a warm, sophisticated color palette to build user trust and emotional resonance.",
+            icon: <Palette className="h-6 w-6 text-tribe-blue" />
         },
         {
-            title: "Systemic Scaling",
-            description: "Building atomic design libraries that allow for rapid prototyping and consistent deployment.",
-            icon: <Cpu className="h-6 w-6 text-tribe-blue" />
+            title: "Scalable UI Kit",
+            description: "Building a comprehensive Figma component library for rapid iteration and consistent styling.",
+            icon: <Layers className="h-6 w-6 text-tribe-blue" />
         }
     ];
 
@@ -75,19 +75,19 @@ const CaseStudyNexiunDesign = () => {
                                 UI/UX Design
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Dashboard Architecture
+                                Social Networking
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Data Viz
+                                AI Interactions
                             </span>
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
-                            <span className="text-tribe-blue">Nexiun:</span> Futuristic Data Visualization
+                            <span className="text-tribe-blue">Nexiun:</span> Meet Lasting Connections
                         </h1>
 
                         <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                            A deep dive into the design of high-fidelity dashboards that turn complex data into powerful, intuitive decision-making tools.
+                            A sleek, user-centered social networking app focused on real-time discovery and AI-driven interactions, designed with a balance of warmth and sophistication.
                         </p>
 
                         <div className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10">
@@ -142,8 +142,8 @@ const CaseStudyNexiunDesign = () => {
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl font-display font-bold mb-4">The Nexiun Canvas</h2>
-                            <p className="text-earth-600 text-lg">Balancing complexity and clarity in a high-density environment.</p>
+                            <h2 className="text-3xl font-display font-bold mb-4">The Nexiun Experience</h2>
+                            <p className="text-earth-600 text-lg">Balancing warmth and sophistication in social connectivity.</p>
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -166,12 +166,12 @@ const CaseStudyNexiunDesign = () => {
                         </div>
 
                         <div className="prose prose-lg max-w-none text-earth-700">
-                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">High-Fidelity Engineering</h2>
+                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">User-Centered Connectivity</h2>
                             <p className="mb-6">
-                                Nexiun required a design system that could handle massive data throughput while remaining visually light and responsive. We developed a proprietary spacing and sizing system that allows for maximum information density without causing cognitive overload.
+                                Nexiun required a design system that could foster authentic connections while maintaining a modern, high-tech edge. We developed a soft gradient color system that creates a welcoming environment, encouraging users to engage and build trust.
                             </p>
                             <p className="mb-12">
-                                The choice of a deep anthracite background with precision-tuned neon accents was more than just aesthetic—it promotes visual focus and reduces eye strain during long-term monitoring sessions. Every chart, table, and data point was custom-designed to be instantly interpretable.
+                                From the initial onboarding screens to complex subscription models and connection requests, every interaction was crafted to be intuitive and rewarding. The use of AI-driven interactions is balanced with a human-centric layout that prioritizes ease of use and discovery.
                             </p>
 
                             <div className="bg-tribe-blue/5 p-8 rounded-2xl border-l-4 border-tribe-blue mb-12">

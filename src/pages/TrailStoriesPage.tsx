@@ -12,9 +12,9 @@ const caseStudies = [
     id: 101,
     title: "Team2Challenge (Design)",
     category: "Design",
-    description: "Designing a sport-centric community platform: A masterclass in UI/UX for engagement, focusing on seamless user flows and vibrant visual identity.",
+    description: "A dynamic sports team management platform designed to streamline match scheduling, team coordination, and player communication.",
     image: "/t2c design/1.png",
-    tags: ["UI/UX Design", "Brand Identity", "User Research", "Design System"],
+    tags: ["UI/UX Design", "Sports Management", "Figma", "Design System"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -24,9 +24,9 @@ const caseStudies = [
     id: 102,
     title: "Harmoniq (Design)",
     category: "Design",
-    description: "Visual identity and product design for a social platform. Creating a harmonious balance between functionality and aesthetic appeal.",
+    description: "A sleek, immersive music app interface that blends streaming with social engagement, featuring a bold dark theme and vibrant accents.",
     image: "/harmoniq design/14.png",
-    tags: ["UI/UX Design", "Product Design", "Social Platform"],
+    tags: ["UI/UX Design", "Mobile-first", "Social Music", "Figma"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -36,9 +36,9 @@ const caseStudies = [
     id: 103,
     title: "Nexiun (Design)",
     category: "Design",
-    description: "Modernizing digital experiences: A high-fidelity design project focusing on futuristic aesthetics and intuitive data visualization.",
+    description: "A sleek, user-centered social networking app focused on real-time discovery and AI-driven interactions, built with a scalable UI system.",
     image: "/nexiun/4.png",
-    tags: ["UI/UX Design", "Data Visualization", "Future-Proof"],
+    tags: ["UI/UX Design", "Social Networking", "AI-Driven", "Figma"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -48,9 +48,9 @@ const caseStudies = [
     id: 104,
     title: "Split-Trip (Design)",
     category: "Design",
-    description: "Travel made social: A comprehensive design study for sharing trips, focusing on group dynamics and expense sharing interfaces.",
+    description: "A sleek, user-centered travel app interface designed to make road trips safe, social, and efficient with real-time trip listings.",
     image: "/splittrip/11.png",
-    tags: ["UI/UX Design", "Mobile App", "Travel", "FinTech"],
+    tags: ["UI/UX Design", "Travel Tech", "Mobility", "Figma"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -60,9 +60,9 @@ const caseStudies = [
     id: 105,
     title: "TalkieTotz (Design)",
     category: "Design",
-    description: "Educational design for the next generation: Creating a playful yet structured interface for bilingual family learning.",
+    description: "A modern, child-friendly mobile app interface designed to enhance early language learning with an emphasis on clarity and warmth.",
     image: "/talkitotz design/7.png",
-    tags: ["UI/UX Design", "Education", "Family-First"],
+    tags: ["UI/UX Design", "Education", "Child-Friendly", "Figma"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
     featured: true,
@@ -738,12 +738,12 @@ const TrailStoriesPage = () => {
                     <div className="bg-gradient-to-b from-white via-earth-50 to-white rounded-3xl shadow-lg overflow-hidden border border-gray-200/60 h-full flex flex-col relative backdrop-blur-sm hover:shadow-2xl hover:shadow-tribe-blue/15 hover:border-tribe-blue/40 transition-all duration-500">
                       {/* Gradient overlay on hover */}
                       <div className="absolute inset-0 bg-gradient-to-br from-tribe-blue/0 via-tribe-blue/0 to-tribe-blue/0 group-hover:from-tribe-blue/8 group-hover:via-transparent group-hover:to-transparent transition-all duration-500 rounded-3xl pointer-events-none z-0" />
-                      
+
                       {/* Image Container */}
                       <div className="relative h-56 overflow-hidden bg-gradient-to-br from-earth-100 via-earth-50 to-white flex items-center justify-center">
                         {/* Decorative corner accent */}
                         <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-tribe-blue/10 to-transparent rounded-br-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        
+
                         {study.featured && (
                           <motion.div
                             initial={{ scale: 0, rotate: -180 }}
@@ -756,7 +756,7 @@ const TrailStoriesPage = () => {
                             Featured
                           </motion.div>
                         )}
-                        
+
                         {study.image ? (
                           <motion.div
                             className="relative w-full h-full"
@@ -776,7 +776,7 @@ const TrailStoriesPage = () => {
                             {study.title}
                           </div>
                         )}
-                        
+
                         {/* Hover overlay with CTA */}
                         <div className="absolute inset-0 bg-gradient-to-t from-earth-900/95 via-earth-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6 z-10">
                           <motion.span
@@ -787,7 +787,7 @@ const TrailStoriesPage = () => {
                             View Project <ArrowRight className="h-4 w-4" />
                           </motion.span>
                         </div>
-                        
+
                         {/* Corner accent lines */}
                         <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-tribe-blue/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tl-3xl" />
                       </div>
@@ -840,7 +840,7 @@ const TrailStoriesPage = () => {
                         {/* Bottom corner accent */}
                         <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-tribe-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-br-3xl" />
                       </div>
-                      
+
                       {/* Shine effect on hover */}
                       <motion.div
                         className="absolute inset-0 pointer-events-none rounded-3xl overflow-hidden"
@@ -891,7 +891,7 @@ const TrailStoriesPage = () => {
         {/* Background decoration */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-tribe-blue/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-earth-200/30 rounded-full blur-3xl" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             whileHover={{ scale: 1.02 }}
@@ -901,7 +901,7 @@ const TrailStoriesPage = () => {
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-tribe-blue/5 rounded-full blur-2xl" />
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-earth-100/50 rounded-full blur-2xl" />
-            
+
             <div className="relative z-10">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold mb-4 leading-tight">
                 Ready to Create Your Own <span className="text-tribe-blue bg-gradient-to-r from-tribe-blue to-tribe-blue/80 bg-clip-text text-transparent">Success Story?</span>

@@ -36,19 +36,19 @@ const CaseStudyHarmoniqDesign = () => {
 
     const designSteps = [
         {
-            title: "Audio-Visual Harmony",
-            description: "Designing interfaces that respond to sound—creating a sensory experience through visual rhythm.",
-            icon: <Music className="h-6 w-6 text-tribe-blue" />
+            title: "Bold Dark Theme",
+            description: "Implementing a deep, immersive dark theme with vibrant accents to enhance visual focus and flow.",
+            icon: <Palette className="h-6 w-6 text-tribe-blue" />
         },
         {
-            title: "Social Architecture",
-            description: "Building community-first layouts that encourage sharing and discovery without clutter.",
-            icon: <Users className="h-6 w-6 text-tribe-blue" />
+            title: "Real-Time Discovery",
+            description: "Designing features for real-time playback and interactive social discovery within the streaming experience.",
+            icon: <Eye className="h-6 w-6 text-tribe-blue" />
         },
         {
-            title: "Micro-Interactions",
-            description: "Implementing haptic-feeling animations that make the digital experience feel tangible.",
-            icon: <MousePointer2 className="h-6 w-6 text-tribe-blue" />
+            title: "Mobile-First Kit",
+            description: "Utilizing a scalable, mobile-first component system in Figma for maximum flexibility and performance.",
+            icon: <Layers className="h-6 w-6 text-tribe-blue" />
         }
     ];
 
@@ -75,19 +75,19 @@ const CaseStudyHarmoniqDesign = () => {
                                 UI/UX Design
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Social Music
+                                Music Streaming
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Product Strategy
+                                Social Discovery
                             </span>
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
-                            <span className="text-tribe-blue">Harmoniq:</span> The Visual Language of Music
+                            <span className="text-tribe-blue">Harmoniq:</span> Elevated Social Music Streaming
                         </h1>
 
                         <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                            How we designed a social music platform that feels as good as it sounds, balancing high-fidelity visuals with deep social utility.
+                            A sleek, immersive music app interface that blends streaming with social engagement, featuring a bold dark theme and vibrant accents.
                         </p>
 
                         <div className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10">

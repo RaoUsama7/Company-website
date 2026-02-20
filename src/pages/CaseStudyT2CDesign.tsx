@@ -75,19 +75,19 @@ const CaseStudyT2CDesign = () => {
                                 UI/UX Design
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Sports Tech
+                                Sports Management
                             </span>
                             <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Design System
+                                Figma Design System
                             </span>
                         </div>
 
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
-                            <span className="text-tribe-blue">T2C:</span> Designing the Future of Sports Communities
+                            <span className="text-tribe-blue">T2C Design:</span> Streamlining Sports Team Coordination
                         </h1>
 
                         <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                            A comprehensive design case study on building a high-performance ecosystem for athletes, coaches, and clubs.
+                            A dynamic sports team management platform designed to streamline match scheduling, team coordination, and player communication through an energetic stadium-inspired visual identity.
                         </p>
 
                         <div className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10">
@@ -166,12 +166,12 @@ const CaseStudyT2CDesign = () => {
                         </div>
 
                         <div className="prose prose-lg max-w-none text-earth-700">
-                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Unified Visual Identity</h2>
+                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Stadium-Inspired Visual Identity</h2>
                             <p className="mb-6">
-                                The T2C design language needed to balance playfulness for younger athletes with serious utility for coaches and parents. We chose a high-contrast palette—deep navy paired with electric blue and neon accents—to create a sense of professional energy.
+                                The T2C design language is built around an energetic stadium-inspired visual identity. We chose a high-performance palette that conveys energy and professional focus, ensuring that athletes, parents, and coaches feel part of a professional community.
                             </p>
                             <p className="mb-12">
-                                Every interaction was designed with "Contextual Logic" in mind. On the coach's side, data is structured for quick scanning during training. On the parent's side, information is summarized and visual, focusing on their child's progress and schedule.
+                                Every part of the structured dashboard system was designed to ensure clarity, speed, and usability across both mobile and web platforms. By streamlining match scheduling and team coordination, we've created a platform that reduces administrative friction and enhances player communication.
                             </p>
 
                             <div className="bg-tribe-blue/5 p-8 rounded-2xl border-l-4 border-tribe-blue mb-12">
