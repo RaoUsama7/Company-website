@@ -250,6 +250,17 @@ const CaseStudyTalkieTotzDesign = () => {
                                     </div>
                                 </div>
                             </div>
+
+                            <div className="mt-16 pt-16 border-t border-earth-100">
+                                <h3 className="text-2xl font-display font-bold mb-6 text-earth-900 text-center">Project Expertise</h3>
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    {["UI/UX Design", "Figma", "Early Learning UX", "Prototyping", "Design Systems", "Mobile App Design", "Information Architecture"].map(skill => (
+                                        <span key={skill} className="px-4 py-2 bg-tribe-blue/5 text-tribe-blue border border-tribe-blue/10 rounded-xl text-xs font-bold">
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

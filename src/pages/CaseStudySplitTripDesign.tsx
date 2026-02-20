@@ -254,6 +254,17 @@ const CaseStudySplitTripDesign = () => {
                                     </ul>
                                 </section>
                             </div>
+
+                            <div className="mt-16 pt-16 border-t border-earth-100">
+                                <h3 className="text-2xl font-display font-bold mb-6 text-earth-900 text-center">Project Expertise</h3>
+                                <div className="flex flex-wrap justify-center gap-3">
+                                    {["UI/UX Design", "Figma", "Travel Mobility Design", "Responsive Layouts", "Information Architecture", "Prototyping"].map(skill => (
+                                        <span key={skill} className="px-5 py-2.5 bg-earth-50 text-earth-900 rounded-2xl text-[13px] font-bold border border-earth-100 shadow-sm hover:shadow-md transition-shadow">
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

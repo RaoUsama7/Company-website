@@ -210,10 +210,21 @@ const CaseStudyHarmoniqDesign = () => {
                                     </ul>
                                 </section>
 
-                                <div className="text-center pt-8">
-                                    <p className="text-earth-500 font-display font-bold text-lg">
+                                <div className="text-center pt-8 border-t border-earth-100">
+                                    <p className="text-earth-500 font-display font-bold text-lg mb-12">
                                         Redesigned interface improved <span className="text-tribe-blue">usability, visual consistency, and user flow clarity</span>.
                                     </p>
+
+                                    <div className="max-w-2xl mx-auto">
+                                        <h3 className="text-xl font-display font-bold mb-6 text-earth-900">Project Expertise</h3>
+                                        <div className="flex flex-wrap justify-center gap-2">
+                                            {["UI/UX Design", "Figma", "High-Fidelity UI", "Prototyping", "Design Systems", "Interaction Design", "Mobile App Design"].map(skill => (
+                                                <span key={skill} className="px-4 py-2 bg-earth-50 text-earth-600 rounded-xl text-xs font-bold border border-earth-100 shadow-sm">
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
