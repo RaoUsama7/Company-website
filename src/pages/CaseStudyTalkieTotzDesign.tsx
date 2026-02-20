@@ -214,6 +214,42 @@ const CaseStudyTalkieTotzDesign = () => {
                                     Intelligent progress tracking for parents, made simple and visual.
                                 </div>
                             </motion.div>
+
+                            <div className="grid md:grid-cols-2 gap-12 mt-16 pt-16 border-t border-earth-100">
+                                <div>
+                                    <h3 className="text-2xl font-display font-bold mb-4 text-earth-900">UI Philosophy</h3>
+                                    <p className="text-earth-700 text-sm mb-6 leading-relaxed">
+                                        The visual direction focused on conversion-oriented layout structures and frictionless user navigation, ensuring every interface decision was aligned with usability and accessibility.
+                                    </p>
+                                    <ul className="space-y-3">
+                                        <li className="flex items-center gap-3 text-sm text-earth-600 font-medium italic">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-tribe-blue" /> "Human-centered design methodology"
+                                        </li>
+                                        <li className="flex items-center gap-3 text-sm text-earth-600 font-medium italic">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-tribe-blue" /> "Performance-oriented layouts"
+                                        </li>
+                                        <li className="flex items-center gap-3 text-sm text-earth-600 font-medium italic">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-tribe-blue" /> "Minimalism with purpose"
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className="p-6 bg-earth-50 rounded-2xl border border-earth-100 shadow-inner">
+                                    <h3 className="text-xl font-display font-bold mb-4 text-earth-900">Agency-Ready Handoff</h3>
+                                    <p className="text-earth-600 text-sm mb-4">
+                                        Reducing development friction through organized developer documentation and named components.
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {[
+                                            "Auto-layout enabled", "Design tokens", "Figma Inspect ready", "Responsive breakdown"
+                                        ].map(item => (
+                                            <span key={item} className="px-3 py-1 bg-white border border-earth-100 rounded-lg text-[10px] font-bold uppercase tracking-wider text-earth-400">
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

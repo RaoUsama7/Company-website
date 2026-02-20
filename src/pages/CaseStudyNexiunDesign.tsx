@@ -166,6 +166,12 @@ const CaseStudyNexiunDesign = () => {
                         </div>
 
                         <div className="prose prose-lg max-w-none text-earth-700">
+                            <div className="mb-12 p-6 bg-earth-50 rounded-2xl border border-earth-100">
+                                <p className="text-earth-900 font-medium italic text-lg leading-relaxed mb-0">
+                                    "Modern, scalable UI/UX design crafted in Figma with a structured design system, responsive layouts, and developer-ready handoff — built to enhance usability and drive product growth."
+                                </p>
+                            </div>
+
                             <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">User-Centered Connectivity</h2>
                             <p className="mb-6">
                                 Nexiun required a design system that could foster authentic connections while maintaining a modern, high-tech edge. We developed a soft gradient color system that creates a welcoming environment, encouraging users to engage and build trust.
@@ -213,6 +219,25 @@ const CaseStudyNexiunDesign = () => {
                                     Integrating real-time analytics with futuristic aesthetics.
                                 </div>
                             </motion.div>
+
+                            <div className="mt-16 pt-16 border-t border-earth-100 flex flex-col md:flex-row gap-12">
+                                <div className="flex-1">
+                                    <h3 className="text-2xl font-display font-bold mb-4 text-earth-900">General Results</h3>
+                                    <p className="text-earth-600 leading-relaxed">
+                                        The redesigned interface significantly improved usability, visual consistency, and user flow clarity. The structured design system also ensured scalability for future feature expansion and faster development cycles. Every interface decision was aligned with usability, accessibility, and business impact.
+                                    </p>
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="text-2xl font-display font-bold mb-4 text-earth-900">Skillset</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {["UI/UX Design", "Social Networking Design", "Figma", "Design Systems", "Interaction Design", "Responsive Layouts", "AI Interface Design"].map(item => (
+                                            <span key={item} className="px-3 py-1 bg-tribe-blue/5 text-tribe-blue border border-tribe-blue/20 rounded-full text-xs font-bold">
+                                                {item}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -213,6 +213,47 @@ const CaseStudySplitTripDesign = () => {
                                     Simplifying group finances with elegant, easy-to-read visualizations.
                                 </div>
                             </motion.div>
+
+                            <div className="grid md:grid-cols-2 gap-12 mt-16 pt-16 border-t border-earth-100">
+                                <section>
+                                    <h3 className="text-2xl font-display font-bold mb-4 text-earth-900">UX Process</h3>
+                                    <div className="space-y-4">
+                                        {[
+                                            { title: "Strategy", text: "Information architecture & user journey mapping for road trip logic." },
+                                            { title: "Wireframing", text: "Usability-focused content placement for complex route data." },
+                                            { title: "Hi-Fi UI", "text": "Pixel-perfect Figma designs with a mobile-first responsive layout." }
+                                        ].map((item, i) => (
+                                            <div key={i} className="flex gap-4">
+                                                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-tribe-blue/10 text-tribe-blue flex items-center justify-center font-bold text-sm">
+                                                    {i + 1}
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-bold text-earth-900">{item.title}</h4>
+                                                    <p className="text-sm text-earth-600">{item.text}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <h3 className="text-2xl font-display font-bold mb-4 text-earth-900">Usability & Accessibility</h3>
+                                    <p className="text-earth-700 text-sm mb-6">
+                                        Designed for high performance and accessibility in varying mobility environments.
+                                    </p>
+                                    <ul className="space-y-3">
+                                        {[
+                                            "Clear interaction feedback", "Logical navigation patterns",
+                                            "Color contrast compliance", "Touch-friendly interaction spacing"
+                                        ].map(item => (
+                                            <li key={item} className="flex items-center gap-2 text-sm text-earth-600">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-tribe-blue" />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </section>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, CheckCircle, Palette, Layout, Eye, Users, MousePointer2, Layers, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Palette, Layout, Eye, Users, MousePointer2, Layers, ChevronLeft, ChevronRight, Search, Compass, PenTool, Zap } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -36,19 +36,24 @@ const CaseStudyT2CDesign = () => {
 
     const designSteps = [
         {
-            title: "Brand Discovery",
-            description: "Defining the visual language of modern sports—energetic, professional, and accessible.",
-            icon: <Palette className="h-6 w-6 text-tribe-blue" />
+            title: "Discovery & Research",
+            description: "Stakeholder alignment and competitive analysis to define key user pain points and goals.",
+            icon: <Search className="h-6 w-6 text-tribe-blue" />
         },
         {
-            title: "User Flow Mapping",
-            description: "Architecting complex interactions between coaches, athletes, and parents to ensure zero friction.",
-            icon: <MousePointer2 className="h-6 w-6 text-tribe-blue" />
+            title: "Experience Strategy",
+            description: "Architecting information architecture and user journey mapping for a scalable product roadmap.",
+            icon: <Compass className="h-6 w-6 text-tribe-blue" />
         },
         {
-            title: "Design System",
-            description: "Building a scalable component library that works seamlessly across mobile and web platforms.",
-            icon: <Layers className="h-6 w-6 text-tribe-blue" />
+            title: "High-Fidelity Design",
+            description: "Pixel-perfect UI in Figma using a scalable component system and responsive design structures.",
+            icon: <PenTool className="h-6 w-6 text-tribe-blue" />
+        },
+        {
+            title: "Prototyping & Validation",
+            description: "Interactive prototypes and micro-interactions for early validation and user testing refinements.",
+            icon: <Zap className="h-6 w-6 text-tribe-blue" />
         }
     ];
 
@@ -213,6 +218,28 @@ const CaseStudyT2CDesign = () => {
                                     A robust design system built for consistency and scale.
                                 </div>
                             </motion.div>
+
+                            <div className="grid md:grid-cols-2 gap-8 mt-16 pt-16 border-t border-earth-100">
+                                <div>
+                                    <h3 className="text-2xl font-display font-bold mb-4 text-earth-900">UI Philosophy</h3>
+                                    <ul className="space-y-2 text-earth-600">
+                                        <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-tribe-blue" /> Minimalism with purpose</li>
+                                        <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-tribe-blue" /> Clear visual hierarchy</li>
+                                        <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-tribe-blue" /> Modern typography & contrast</li>
+                                        <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-tribe-blue" /> Conversion-oriented layout</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 className="text-2xl font-display font-bold mb-4 text-earth-900">Project Expertise</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {["UI/UX Design", "User Experience Strategy", "Figma", "Wireframing", "Prototyping", "Design Systems", "Responsive Design", "Mobile App Design"].map(skill => (
+                                            <span key={skill} className="px-3 py-1 bg-earth-50 text-earth-600 rounded-lg text-xs font-bold border border-earth-100">
+                                                {skill}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
