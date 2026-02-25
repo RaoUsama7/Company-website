@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 const CaseStudyHarmoniqDesign = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
 
     const sliderImages = [
         "/harmoniq design/14.png",
@@ -20,11 +21,13 @@ const CaseStudyHarmoniqDesign = () => {
     }, []);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide();
-        }, 5000);
-        return () => clearInterval(interval);
-    }, [currentIndex]);
+        if (!isHovered) {
+            const interval = setInterval(() => {
+                nextSlide();
+            }, 5000);
+            return () => clearInterval(interval);
+        }
+    }, [currentIndex, isHovered]);
 
     const nextSlide = () => {
         setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
@@ -90,7 +93,11 @@ const CaseStudyHarmoniqDesign = () => {
                             A sleek, immersive music app interface that blends streaming with social engagement, featuring a bold dark theme and vibrant accents.
                         </p>
 
-                        <div className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10">
+                        <div 
+                            className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10"
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                        >
                             <AnimatePresence mode="wait">
                                 <motion.img
                                     key={currentIndex}
@@ -175,7 +182,7 @@ const CaseStudyHarmoniqDesign = () => {
                             </p>
 
                             <div className="bg-tribe-blue/5 p-8 rounded-2xl border-l-4 border-tribe-blue mb-12">
-                                <h3 className="text-xl font-bold text-tribe-blue mb-4 text-center italic">"Design should be felt as much as it's seen—especially when music is involved."</h3>
+                                <h3 className="text-xl font-bold text-tribe-blue mb-4 text-center italic">"Design should be felt as much as it's seen especially when music is involved."</h3>
                             </div>
 
                             <div className="space-y-16 pt-8">

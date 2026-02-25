@@ -168,7 +168,7 @@ const CaseStudyNexiunDesign = () => {
                         <div className="prose prose-lg max-w-none text-earth-700">
                             <div className="mb-12 p-6 bg-earth-50 rounded-2xl border border-earth-100">
                                 <p className="text-earth-900 font-medium italic text-lg leading-relaxed mb-0">
-                                    "Modern, scalable UI/UX design crafted in Figma with a structured design system, responsive layouts, and developer-ready handoff — built to enhance usability and drive product growth."
+                                    "Modern, scalable UI/UX design crafted in Figma with a structured design system, responsive layouts, and developer-ready handoff built to enhance usability and drive product growth."
                                 </p>
                             </div>
 
