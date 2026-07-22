@@ -97,6 +97,9 @@ const SectionShot = ({ src, alt, caption, className = '', variant = 'center' }: 
                     src={src}
                     alt={alt}
                     loading="lazy"
+                    decoding="async"
+                    width={1400}
+                    height={874}
                     className="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.02]"
                 />
                 {/* Sheen sweep on hover */}

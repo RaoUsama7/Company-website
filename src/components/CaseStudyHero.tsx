@@ -195,17 +195,28 @@ const CaseStudyHero = ({
                             className="group relative h-64 md:h-[520px] rounded-3xl overflow-hidden bg-earth-900/40 ring-1 ring-white/10 shadow-2xl shadow-black/50"
                         >
                             <AnimatePresence mode="wait">
-                                <motion.img
+                                <motion.div
                                     key={currentIndex}
-                                    src={images[currentIndex]}
-                                    alt={`${altPrefix} slide ${currentIndex + 1}`}
-                                    onClick={() => setLightboxIndex(currentIndex)}
                                     initial={{ opacity: 0, scale: 1.04 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.99 }}
                                     transition={{ duration: 0.55, ease: EASE }}
-                                    className="w-full h-full object-contain cursor-zoom-in"
-                                />
+                                    className="absolute inset-0"
+                                >
+                                    <picture className="block h-full w-full">
+                                        <source
+                                            srcSet={images[currentIndex].replace(/\.png$/i, '.webp')}
+                                            type="image/webp"
+                                        />
+                                        <img
+                                            src={images[currentIndex]}
+                                            alt={`${altPrefix} slide ${currentIndex + 1}`}
+                                            onClick={() => setLightboxIndex(currentIndex)}
+                                            decoding="async"
+                                            className="w-full h-full object-contain cursor-zoom-in"
+                                        />
+                                    </picture>
+                                </motion.div>
                             </AnimatePresence>
 
                             {images.length > 1 && (

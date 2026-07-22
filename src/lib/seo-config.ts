@@ -10,8 +10,8 @@ export const SITE = {
   description:
     "Tech Trailblazers Tribe builds web, mobile, AI, and game products with soul and strategy for businesses that want to make an impact.",
   // NOTE: the logo filename contains a space; percent-encoded so scrapers accept it.
-  ogImage: "https://techtrailblazerstribe.com/LOGO%203.png",
-  logo: "https://techtrailblazerstribe.com/LOGO%203.png",
+  ogImage: "https://techtrailblazerstribe.com/logo-3.png",
+  logo: "https://techtrailblazerstribe.com/logo-3.png",
   socials: [
     "https://www.facebook.com/Tech.tribee",
     "https://www.linkedin.com/company/t-t-t",
