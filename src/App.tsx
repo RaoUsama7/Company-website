@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import Seo from "@/components/Seo";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ServiceDetails from "./pages/ServiceDetails";
@@ -142,6 +143,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Seo />
         <AppRoutes />
       </BrowserRouter>
     </TooltipProvider>
