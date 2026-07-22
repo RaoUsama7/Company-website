@@ -11,7 +11,10 @@ import { useLocation } from "react-router-dom";
  * The verification <meta> is injected client-side and baked into every route's
  * static HTML by the prerender step, so Google sees it on the homepage.
  */
-const GA_ID = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined;
+// GA4 Measurement IDs are public (they ship in the client bundle), so the real
+// id is the built-in default; VITE_GA_MEASUREMENT_ID can override it (e.g. for
+// a staging property).
+const GA_ID = (import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined) || "G-XK2M0F2PW8";
 const GSC_TOKEN = import.meta.env.VITE_GSC_VERIFICATION as string | undefined;
 
 declare global {
