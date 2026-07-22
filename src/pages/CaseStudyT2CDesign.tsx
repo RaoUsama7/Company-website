@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, CheckCircle, Palette, Layout, Eye, Users, MousePointer2, Layers, ChevronLeft, ChevronRight, Search, Compass, PenTool, Zap } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Palette, Layout, Eye, Users, MousePointer2, Layers, ChevronLeft, ChevronRight, Search, Compass, PenTool, Zap, Globe, ExternalLink } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ImageLightbox from '@/components/ImageLightbox';
+import ZoomableImage from '@/components/ZoomableImage';
 
 const CaseStudyT2CDesign = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
     const sliderImages = [
         "/t2c design/1.png",
@@ -87,13 +90,26 @@ const CaseStudyT2CDesign = () => {
                             </span>
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
-                            <span className="text-tribe-blue">T2C Design:</span> Streamlining Sports Team Coordination
-                        </h1>
+                        <a href="https://www.team2challenge.ch/" target="_blank" rel="noopener noreferrer" className="block w-fit group">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6 group-hover:opacity-90 transition-opacity">
+                                <span className="text-tribe-blue">T2C Design:</span> Streamlining Sports Team Coordination
+                            </h1>
+                        </a>
 
-                        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                        <p className="text-xl text-gray-300 mb-6 leading-relaxed">
                             A dynamic sports team management platform designed to streamline match scheduling, team coordination, and player communication through an energetic stadium-inspired visual identity.
                         </p>
+
+                        <a
+                            href="https://www.team2challenge.ch/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-tribe-blue text-white text-sm font-semibold shadow-lg shadow-tribe-blue/25 hover:bg-tribe-blue/90 hover:-translate-y-0.5 transition-all mb-8"
+                        >
+                            <Globe className="h-4 w-4" />
+                            Visit team2challenge.ch
+                            <ExternalLink className="h-4 w-4" />
+                        </a>
 
                         <div className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10">
                             <AnimatePresence mode="wait">
@@ -105,7 +121,8 @@ const CaseStudyT2CDesign = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                                    className="w-full h-full object-contain"
+                                    onClick={() => setLightboxIndex(currentIndex)}
+                                    className="w-full h-full object-contain cursor-zoom-in"
                                 />
                             </AnimatePresence>
 
@@ -139,6 +156,14 @@ const CaseStudyT2CDesign = () => {
                             </div>
                         </div>
                     </motion.div>
+
+                    <ImageLightbox
+                        images={sliderImages}
+                        index={lightboxIndex}
+                        onClose={() => setLightboxIndex(null)}
+                        onNavigate={setLightboxIndex}
+                        altPrefix="T2C Design"
+                    />
                 </div>
             </section>
 
@@ -189,7 +214,7 @@ const CaseStudyT2CDesign = () => {
                                 viewport={{ once: true }}
                                 className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
                             >
-                                <img
+                                <ZoomableImage
                                     src="/t2c design/2.png"
                                     alt="T2C Design Interaction"
                                     className="w-full h-auto object-cover"
@@ -209,7 +234,7 @@ const CaseStudyT2CDesign = () => {
                                 viewport={{ once: true }}
                                 className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
                             >
-                                <img
+                                <ZoomableImage
                                     src="/t2c design/3.png"
                                     alt="T2C Design System"
                                     className="w-full h-auto object-cover"

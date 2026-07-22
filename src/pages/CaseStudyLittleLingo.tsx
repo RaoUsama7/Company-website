@@ -6,6 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
+import StoreBadges from '@/components/StoreBadges';
 
 const CaseStudyLittleLingo = () => {
   useEffect(() => {
@@ -46,12 +48,18 @@ const CaseStudyLittleLingo = () => {
               <span className="text-tribe-blue">Little Lingo:</span> Language Learning That Grows With Kids
             </h1>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
               How TTT Revamped a Buggy Codebase into a Vibrant, Multilingual EdTech Platform
             </p>
 
+            <StoreBadges
+              appStoreUrl="https://apps.apple.com/us/app/littlelingo-kids-flashcards/id1667625368"
+              playStoreUrl="https://play.google.com/store/apps/details?id=com.mycleverbear&hl=en"
+              className="mb-8"
+            />
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img
+              <ZoomableImage
                 src="/lovable-uploads/ede72a27-07fd-482a-8246-02db292f3af7.png"
                 alt="Little Lingo App"
                 className="w-full h-full object-cover"

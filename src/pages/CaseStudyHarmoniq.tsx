@@ -6,6 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
+import StoreBadges from '@/components/StoreBadges';
 
 const CaseStudyHarmoniq = () => {
   useEffect(() => {
@@ -46,12 +48,17 @@ const CaseStudyHarmoniq = () => {
               <span className="text-tribe-blue">Harmoniq:</span> From Lagging App to Scalable Product
             </h1>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
               How TTT Transformed a React Native iOS App Into a Modern, Future-Proof Platform
             </p>
 
+            <StoreBadges
+              appStoreUrl="https://apps.apple.com/us/app/harmoniq-music/id6468933926"
+              className="mb-8"
+            />
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img
+              <ZoomableImage
                 src="/lovable-uploads/ebc03188-4dc2-480f-a081-b9f1b76e6706.png"
                 alt="Harmoniq App"
                 className="w-full h-full object-cover"

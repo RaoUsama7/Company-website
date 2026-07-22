@@ -6,6 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
+import StoreBadges from '@/components/StoreBadges';
 
 const CaseStudyIceCreamRoll = () => {
   useEffect(() => {
@@ -46,12 +48,18 @@ const CaseStudyIceCreamRoll = () => {
               <span className="text-tribe-blue">Ice Cream Roll:</span> A Delightful Dessert Simulation Game
             </h1>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
               Creating an Engaging, Visually Rich Dessert Simulation for Broad Audience Appeal
             </p>
 
+            <StoreBadges
+              appStoreUrl="https://apps.apple.com/us/app/ice-cream-roll/id1499507396"
+              playStoreUrl="https://play.google.com/store/apps/details?id=com.luckykat.icecreamroll&hl=en"
+              className="mb-8"
+            />
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img
+              <ZoomableImage
                 src="/lovable-uploads/0a80d8ac-9a2b-447d-9e61-23b6e38e5353.png"
                 alt="Ice Cream Roll Game"
                 className="w-full h-full object-cover"

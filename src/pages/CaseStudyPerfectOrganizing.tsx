@@ -6,6 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
+import StoreBadges from '@/components/StoreBadges';
 
 const CaseStudyPerfectOrganizing = () => {
   useEffect(() => {
@@ -46,12 +48,17 @@ const CaseStudyPerfectOrganizing = () => {
               <span className="text-tribe-blue">Perfect Organizing:</span> Calming Sorting & Puzzle Game
             </h1>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
               A Stress-Relieving Mobile Game Centered on Organizing, Sorting, and Mindful Activities
             </p>
 
+            <StoreBadges
+              playStoreUrl="https://play.google.com/store/apps/details?id=com.perfect.organizing.tidy.games&hl=en"
+              className="mb-8"
+            />
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img
+              <ZoomableImage
                 src="/lovable-uploads/e4002e94-9933-4886-a1d6-63e196bad607.png"
                 alt="Perfect Organizing Game"
                 className="w-full h-full object-cover"

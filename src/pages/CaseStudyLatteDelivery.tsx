@@ -6,6 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
+import StoreBadges from '@/components/StoreBadges';
 
 const CaseStudyLatteDelivery = () => {
   useEffect(() => {
@@ -87,10 +89,15 @@ const CaseStudyLatteDelivery = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
                 Latte Delivery <span className="text-tribe-blue">End-to-End Food Delivery Ecosystem</span>
               </h1>
-              <p className="text-xl text-gray-300 mb-8">
-                Complete multi-app platform with real-time tracking and seamless vendor management. 
+              <p className="text-xl text-gray-300 mb-6">
+                Complete multi-app platform with real-time tracking and seamless vendor management.
                 A comprehensive food delivery solution built for scalability.
               </p>
+              <StoreBadges
+                appStoreUrl="https://apps.apple.com/us/app/latte-delivery/id1601789909"
+                playStoreUrl="https://play.google.com/store/apps/details?id=com.lattedelivery.user&hl=en"
+                className="mb-8"
+              />
               <div className="flex flex-wrap gap-3">
                 {["Flutter", "Laravel", "Food Delivery", "Real-time"].map((tag) => (
                   <span key={tag} className="px-3 py-1 bg-tribe-blue/20 text-tribe-blue rounded-full text-sm font-medium">
@@ -107,9 +114,9 @@ const CaseStudyLatteDelivery = () => {
               className="relative"
             >
               <div className="relative">
-                <img 
-                  src="/lovable-uploads/7ee4e9e3-9210-4950-a3cc-ed8e05e2e10a.png" 
-                  alt="Latte Delivery App" 
+                <ZoomableImage
+                  src="/lovable-uploads/7ee4e9e3-9210-4950-a3cc-ed8e05e2e10a.png"
+                  alt="Latte Delivery App"
                   className="w-full max-w-lg mx-auto rounded-xl shadow-2xl"
                 />
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-tribe-blue/20 rounded-full blur-xl"></div>
@@ -255,9 +262,9 @@ const CaseStudyLatteDelivery = () => {
               transition={{ delay: 0.2 }}
               className="text-center"
             >
-              <img 
-                src="/lovable-uploads/7accfe07-85d8-4763-89ab-c8351b629e81.png" 
-                alt="Latte Delivery Project Description" 
+              <ZoomableImage
+                src="/lovable-uploads/7accfe07-85d8-4763-89ab-c8351b629e81.png"
+                alt="Latte Delivery Project Description"
                 className="w-full rounded-xl shadow-lg"
               />
               <p className="mt-4 text-earth-600">Comprehensive project overview and tech stack</p>
@@ -269,9 +276,9 @@ const CaseStudyLatteDelivery = () => {
               transition={{ delay: 0.4 }}
               className="text-center"
             >
-              <img 
-                src="/lovable-uploads/c06b4634-7c65-4912-8d05-c926f52663c0.png" 
-                alt="Latte Delivery Functionalities" 
+              <ZoomableImage
+                src="/lovable-uploads/c06b4634-7c65-4912-8d05-c926f52663c0.png"
+                alt="Latte Delivery Functionalities"
                 className="w-full rounded-xl shadow-lg"
               />
               <p className="mt-4 text-earth-600">Core functionalities and user experience features</p>
@@ -283,9 +290,9 @@ const CaseStudyLatteDelivery = () => {
               transition={{ delay: 0.6 }}
               className="text-center"
             >
-              <img 
-                src="/lovable-uploads/cc0b2a76-59ee-465d-85c4-0eeb808af311.png" 
-                alt="Latte Delivery Frontend Features" 
+              <ZoomableImage
+                src="/lovable-uploads/cc0b2a76-59ee-465d-85c4-0eeb808af311.png"
+                alt="Latte Delivery Frontend Features"
                 className="w-full rounded-xl shadow-lg"
               />
               <p className="mt-4 text-earth-600">Frontend key features and technical architecture</p>

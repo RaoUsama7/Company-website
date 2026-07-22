@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
 
 const CaseStudyCaloriesCounter = () => {
   useEffect(() => {
@@ -96,9 +97,9 @@ const CaseStudyCaloriesCounter = () => {
               className="relative"
             >
               <div className="relative">
-                <img 
-                  src="/lovable-uploads/800ed702-a0aa-4553-877a-29a576fd7a09.png" 
-                  alt="Calories Counter App" 
+                <ZoomableImage
+                  src="/lovable-uploads/800ed702-a0aa-4553-877a-29a576fd7a09.png"
+                  alt="Calories Counter App"
                   className="w-full max-w-lg mx-auto rounded-xl shadow-2xl"
                 />
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-tribe-blue/20 rounded-full blur-xl"></div>
@@ -225,9 +226,9 @@ const CaseStudyCaloriesCounter = () => {
               transition={{ delay: 0.2 }}
               className="text-center"
             >
-              <img 
-                src="/lovable-uploads/1245eeed-2a2a-4e4e-af87-862b9d0e62e8.png" 
-                alt="Calories Counter Features" 
+              <ZoomableImage
+                src="/lovable-uploads/1245eeed-2a2a-4e4e-af87-862b9d0e62e8.png"
+                alt="Calories Counter Features"
                 className="w-full rounded-xl shadow-lg"
               />
               <p className="mt-4 text-earth-600">Advanced tracking with comprehensive technology stack</p>
@@ -239,9 +240,9 @@ const CaseStudyCaloriesCounter = () => {
               transition={{ delay: 0.4 }}
               className="text-center"
             >
-              <img 
-                src="/lovable-uploads/b6595150-283e-4a91-98bc-42373de32af2.png" 
-                alt="Calories Counter User Interface" 
+              <ZoomableImage
+                src="/lovable-uploads/b6595150-283e-4a91-98bc-42373de32af2.png"
+                alt="Calories Counter User Interface"
                 className="w-full rounded-xl shadow-lg"
               />
               <p className="mt-4 text-earth-600">User-friendly interface with seamless authentication flow</p>

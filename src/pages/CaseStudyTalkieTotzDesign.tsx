@@ -5,9 +5,12 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ImageLightbox from '@/components/ImageLightbox';
+import ZoomableImage from '@/components/ZoomableImage';
 
 const CaseStudyTalkieTotzDesign = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
     const sliderImages = [
         "/talkitotz design/7.png",
@@ -101,7 +104,8 @@ const CaseStudyTalkieTotzDesign = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                                    className="w-full h-full object-contain"
+                                    onClick={() => setLightboxIndex(currentIndex)}
+                                    className="w-full h-full object-contain cursor-zoom-in"
                                 />
                             </AnimatePresence>
 
@@ -135,6 +139,14 @@ const CaseStudyTalkieTotzDesign = () => {
                             </div>
                         </div>
                     </motion.div>
+
+                    <ImageLightbox
+                        images={sliderImages}
+                        index={lightboxIndex}
+                        onClose={() => setLightboxIndex(null)}
+                        onNavigate={setLightboxIndex}
+                        altPrefix="TalkieTotz"
+                    />
                 </div>
             </section>
 
@@ -185,7 +197,7 @@ const CaseStudyTalkieTotzDesign = () => {
                                 viewport={{ once: true }}
                                 className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
                             >
-                                <img
+                                <ZoomableImage
                                     src="/talkitotz design/9.png"
                                     alt="TalkieTotz Playful Interface"
                                     className="w-full h-auto object-cover"
@@ -205,7 +217,7 @@ const CaseStudyTalkieTotzDesign = () => {
                                 viewport={{ once: true }}
                                 className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
                             >
-                                <img
+                                <ZoomableImage
                                     src="/talkitotz design/10.png"
                                     alt="TalkieTotz Progress Dashboard"
                                     className="w-full h-auto object-cover"

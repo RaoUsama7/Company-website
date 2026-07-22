@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Filter, Layout, Code2, Zap, Sparkles, ChevronDown, ChevronUp, Settings2, TrendingUp } from 'lucide-react';
+import { ArrowRight, Filter, Layout, Code2, Zap, Sparkles, ChevronDown, ChevronUp, Settings2, TrendingUp, Search, X } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -29,20 +29,8 @@ const caseStudies = [
     tags: ["UI/UX Design", "Mobile-first", "Social Music", "Figma"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "harmoniq-design"
-  },
-  {
-    id: 103,
-    title: "Nexiun (Design)",
-    category: "Design",
-    description: "A sleek, user-centered social networking app focused on real-time discovery and AI-driven interactions, built with a scalable UI system.",
-    image: "/nexiun/4.png",
-    tags: ["UI/UX Design", "Social Networking", "AI-Driven", "Figma"],
-    color: "bg-tribe-blue/10",
-    textColor: "text-tribe-blue",
-    featured: true,
-    slug: "nexiun-design"
   },
   {
     id: 104,
@@ -53,7 +41,7 @@ const caseStudies = [
     tags: ["UI/UX Design", "Travel Tech", "Mobility", "Figma"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "split-trip-design"
   },
   {
@@ -65,7 +53,7 @@ const caseStudies = [
     tags: ["UI/UX Design", "Education", "Child-Friendly", "Figma"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "talkietotz-design"
   },
   {
@@ -89,7 +77,7 @@ const caseStudies = [
     tags: ["React Native", "Education", "MVP", "NestJS", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "talkie-totz"
   },
   {
@@ -101,7 +89,7 @@ const caseStudies = [
     tags: ["React Native", "Social Platform", "Literary", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "lively-pencil"
   },
   {
@@ -113,7 +101,7 @@ const caseStudies = [
     tags: ["AI/ML", "Mobile App", "Storytelling"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "little-dreams"
   },
   {
@@ -125,7 +113,7 @@ const caseStudies = [
     tags: ["Education", "Language Learning", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: false,
+    featured: true,
     slug: "little-lingo"
   },
   {
@@ -137,7 +125,7 @@ const caseStudies = [
     tags: ["React Native", "AI/ML", "Health", "Firebase", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "calories-counter"
   },
   {
@@ -149,7 +137,7 @@ const caseStudies = [
     tags: ["Flutter", "Laravel", "Food Delivery", "Real-time", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "latte-delivery"
   },
   {
@@ -161,7 +149,7 @@ const caseStudies = [
     tags: ["AR/VR", "Logistics", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "snappick"
   },
   {
@@ -173,7 +161,7 @@ const caseStudies = [
     tags: ["Gaming", "Wellness", "Mobile App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "calm-quest"
   },
   {
@@ -197,7 +185,7 @@ const caseStudies = [
     tags: ["Gaming", "Simulation", "Unity"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "ice-cream-roll"
   },
   {
@@ -281,7 +269,7 @@ const caseStudies = [
     tags: ["AI", "Health & Wellness", "Next.js 15", "Prismic CMS", "Web App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "renee"
   },
   {
@@ -293,7 +281,7 @@ const caseStudies = [
     tags: ["Laravel", "PropTech", "Enterprise", "FinTech", "DocuSign", "Web App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "rentigo"
   },
   {
@@ -305,7 +293,7 @@ const caseStudies = [
     tags: ["Laravel 10", "AI", "FinTech", "Marketplace", "Meilisearch", "Web App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "fundreef"
   },
   {
@@ -329,7 +317,7 @@ const caseStudies = [
     tags: ["Next.js", "Sanity CMS", "Agency", "SEO", "Multilingual", "Web App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "exre"
   },
   {
@@ -341,8 +329,80 @@ const caseStudies = [
     tags: ["Shopify", "E-commerce", "Liquid", "Luxury", "UX/UI", "Web App"],
     color: "bg-tribe-blue/10",
     textColor: "text-tribe-blue",
-    featured: true,
+    featured: false,
     slug: "avenir"
+  },
+  {
+    id: 24,
+    title: "Masslos",
+    category: "Web",
+    description: "A role-based digital platform for a made-to-measure shirt business, covering measurements, guided ordering, payments, and factory-ready production PDFs.",
+    image: "/masslos/1.png",
+    tags: ["Laravel", "React", "SaaS", "FashionTech"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "masslos"
+  },
+  {
+    id: 25,
+    title: "PPC Analytics Dashboard",
+    category: "Web",
+    description: "A real-time PPC performance and call-tracking analytics platform with live dashboards, a CPA/profitability engine, and automated Telegram alerting.",
+    image: "/ringba/2.png",
+    tags: ["NestJS", "React", "Analytics", "Real-time", "PostgreSQL"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: false,
+    slug: "ringba-dashboard"
+  },
+  {
+    id: 107,
+    title: "Nexiun",
+    category: "Mobile",
+    description: "An AI-powered social platform merging creativity, real-time interaction, and social commerce — AI-generated profiles, themed stories, Loops, and instant shopping on iOS & Android.",
+    image: "/nexiun-app/main.png",
+    tags: ["React Native", "AI", "Amazon Bedrock", "Social Media", "AWS"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: false,
+    slug: "nexiun-app"
+  },
+  {
+    id: 108,
+    title: "Spotify to Apple Music",
+    category: "Web",
+    description: "A SaaS that migrates songs and playlists from Spotify to Apple Music with ISRC-accurate matching, real-time progress tracking, and secure Stripe-powered accounts.",
+    image: "/spotify-apple/main.png",
+    tags: ["SaaS", "Next.js", "Node.js", "MongoDB", "Stripe"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: false,
+    slug: "spotify-to-apple-music"
+  },
+  {
+    id: 26,
+    title: "Thumbnail AI",
+    category: "Web",
+    description: "An AI-powered SaaS that turns text prompts into on-brand YouTube thumbnails, with Brand DNA, surgical AI editing, and credit-based billing.",
+    image: "/thumbnail-ai/1.png",
+    tags: ["AI", "Next.js", "NestJS", "SaaS", "Stripe"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: true,
+    slug: "thumbnail-ai"
+  },
+  {
+    id: 106,
+    title: "NEOLOHN (Design)",
+    category: "Design",
+    description: "A minimalist, Apple-inspired HR & payroll dashboard where restraint, whitespace, and precise typography turn dense workforce data — employees, shifts, and payroll — into calm, effortless clarity.",
+    image: "/neolohn/1.png",
+    tags: ["UI/UX Design", "Minimalist Design", "HR & Payroll", "Figma"],
+    color: "bg-tribe-blue/10",
+    textColor: "text-tribe-blue",
+    featured: false,
+    slug: "neolohn-design"
   }
 ];
 
@@ -377,6 +437,7 @@ const TrailStoriesPage = () => {
   const [activeTags, setActiveTags] = useState([]);
   const [featuredOnly, setFeaturedOnly] = useState(false);
   const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Scroll to top on component mount
   useEffect(() => {
@@ -385,6 +446,15 @@ const TrailStoriesPage = () => {
 
   const filteredStudies = caseStudies
     .filter(study => {
+      // Filter by search query (name, description, category, tags)
+      if (searchQuery.trim()) {
+        const query = searchQuery.toLowerCase().trim();
+        const haystack = `${study.title} ${study.description} ${study.category} ${study.tags.join(" ")}`.toLowerCase();
+        if (!haystack.includes(query)) {
+          return false;
+        }
+      }
+
       // Filter by platform
       if (activePlatform !== "All" && study.category !== activePlatform) {
         return false;
@@ -410,7 +480,8 @@ const TrailStoriesPage = () => {
 
       return true;
     })
-    .sort((a, b) => a.title.localeCompare(b.title));
+    // Featured projects lead, everything else follows alphabetically.
+    .sort((a, b) => Number(b.featured) - Number(a.featured) || a.title.localeCompare(b.title));
 
   const toggleTag = (tag: string) => {
     if (activeTags.includes(tag)) {
@@ -498,6 +569,37 @@ const TrailStoriesPage = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-tribe-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-earth-100/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             <div className="flex flex-col gap-10 relative z-10">
+              {/* Search */}
+              <div className="w-full max-w-2xl mx-auto">
+                <div className="relative group">
+                  <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-earth-400 group-focus-within:text-tribe-blue transition-colors pointer-events-none" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search projects by name, tech, or keyword..."
+                    aria-label="Search projects"
+                    className="w-full pl-14 pr-12 py-4 rounded-2xl border border-earth-200 bg-white/80 text-earth-900 placeholder:text-earth-400 shadow-lg focus:outline-none focus:ring-2 focus:ring-tribe-blue/40 focus:border-tribe-blue transition-all duration-300"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery("")}
+                      aria-label="Clear search"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 p-1.5 rounded-full text-earth-400 hover:text-earth-700 hover:bg-earth-100 transition-colors"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  )}
+                </div>
+                {searchQuery.trim() && (
+                  <p className="mt-3 text-center text-sm text-earth-500">
+                    {filteredStudies.length} {filteredStudies.length === 1 ? "result" : "results"} for
+                    {" "}
+                    <span className="font-semibold text-earth-700">&ldquo;{searchQuery}&rdquo;</span>
+                  </p>
+                )}
+              </div>
+
               {/* Platform Toggle - High Level */}
               <div className="flex flex-col items-center justify-center text-center">
                 <div className="inline-flex p-1.5 bg-gradient-to-r from-earth-100/80 to-earth-50/80 rounded-2xl border border-earth-200/50 shadow-lg backdrop-blur-sm mb-4">
@@ -868,6 +970,8 @@ const TrailStoriesPage = () => {
                   variant="outline"
                   className="border-tribe-blue text-tribe-blue hover:bg-tribe-blue/10"
                   onClick={() => {
+                    setSearchQuery("");
+                    setActivePlatform("All");
                     setActiveCategory("All");
                     setActiveTags([]);
                     setFeaturedOnly(false);

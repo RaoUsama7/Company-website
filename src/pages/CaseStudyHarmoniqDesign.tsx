@@ -5,9 +5,11 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ImageLightbox from '@/components/ImageLightbox';
 
 const CaseStudyHarmoniqDesign = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
     const [isHovered, setIsHovered] = useState(false);
 
     const sliderImages = [
@@ -107,7 +109,8 @@ const CaseStudyHarmoniqDesign = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                                    className="w-full h-full object-contain"
+                                    onClick={() => setLightboxIndex(currentIndex)}
+                                    className="w-full h-full object-contain cursor-zoom-in"
                                 />
                             </AnimatePresence>
 
@@ -141,6 +144,14 @@ const CaseStudyHarmoniqDesign = () => {
                             </div>
                         </div>
                     </motion.div>
+
+                    <ImageLightbox
+                        images={sliderImages}
+                        index={lightboxIndex}
+                        onClose={() => setLightboxIndex(null)}
+                        onNavigate={setLightboxIndex}
+                        altPrefix="Harmoniq"
+                    />
                 </div>
             </section>
 

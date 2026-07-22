@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
 
 const CaseStudySnapPick = () => {
   useEffect(() => {
@@ -51,7 +52,7 @@ const CaseStudySnapPick = () => {
             </p>
 
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img
+              <ZoomableImage
                 src="/lovable-uploads/2d410c50-cc88-4056-89c1-a15f0460509f.png"
                 alt="SnapPick AR Warehouse App"
                 className="w-full h-full object-cover"

@@ -1,153 +1,82 @@
-
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, CheckCircle, ShoppingCart, Zap, Search, Globe, Layout, BarChart, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { CheckCircle, ShoppingCart, Zap, Search, Globe, Layout, Shield } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import SectionShot from '@/components/SectionShot';
+import SectionKicker from '@/components/SectionKicker';
+import CaseStudyHero from '@/components/CaseStudyHero';
+import ReadingProgress from '@/components/ReadingProgress';
+import Reveal, { revealContainer, revealItem } from '@/components/Reveal';
+
+const SLIDER_IMAGES = [
+    "/freecer/main.png",
+    "/freecer/1.png",
+    "/freecer/3.png",
+    "/freecer/6.png",
+    "/freecer/8.png"
+];
 
 const CaseStudyFreecer = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const sliderImages = [
-        "/freecer/main.png",
-        "/freecer/1.png",
-        "/freecer/3.png",
-        "/freecer/6.png",
-        "/freecer/8.png"
-    ];
-
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide();
-        }, 5000);
-        return () => clearInterval(interval);
-    }, [currentIndex]);
-
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
-    };
-
     return (
         <div className="min-h-screen bg-background font-sans">
+            <ReadingProgress />
             <Navbar />
 
-            {/* Hero Section */}
-            <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7 }}
-                        className="max-w-4xl mx-auto"
-                    >
-                        <Link to="/trail-stories" className="inline-flex items-center text-tribe-blue hover:underline mb-6">
-                            <ArrowLeft className="mr-2 h-4 w-4" />
-                            Back to Case Studies
-                        </Link>
-
-                        <div className="flex flex-wrap gap-2 mb-6">
-                            <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                E-commerce
-                            </span>
-                            <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Shopify
-                            </span>
-                            <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Luxury Branding
-                            </span>
-                        </div>
-
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
-                            <span className="text-tribe-blue">Freecer.at:</span> Next-Gen E-commerce Excellence
-                        </h1>
-
-                        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                            A high-performance, luxury-branded shopping experience optimized for conversion, SEO, and global scale.
-                        </p>
-
-                        <div className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10">
-                            <AnimatePresence mode="wait">
-                                <motion.img
-                                    key={currentIndex}
-                                    src={sliderImages[currentIndex]}
-                                    alt={`Freecer Project Slide ${currentIndex + 1}`}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -20 }}
-                                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                                    className="w-full h-full object-contain"
-                                />
-                            </AnimatePresence>
-
-                            {/* Navigation Arrows */}
-                            <button
-                                onClick={prevSlide}
-                                aria-label="Previous slide"
-                                className="absolute left-4 top-1/2 -translate-y-1/2 bg-earth-900/40 hover:bg-earth-900/60 backdrop-blur-md p-3 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 z-10 border border-white/10"
-                            >
-                                <ChevronLeft className="h-6 w-6" />
-                            </button>
-                            <button
-                                onClick={nextSlide}
-                                aria-label="Next slide"
-                                className="absolute right-4 top-1/2 -translate-y-1/2 bg-earth-900/40 hover:bg-earth-900/60 backdrop-blur-md p-3 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 z-10 border border-white/10"
-                            >
-                                <ChevronRight className="h-6 w-6" />
-                            </button>
-
-                            {/* Indicators */}
-                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                                {sliderImages.map((_, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => setCurrentIndex(index)}
-                                        className={`h-1.5 transition-all duration-300 rounded-full ${index === currentIndex ? 'bg-tribe-blue w-8' : 'bg-white/30 w-4 hover:bg-white/50'
-                                            }`}
-                                        aria-label={`Go to slide ${index + 1}`}
-                                    />
-                                ))}
-                            </div>
-
-                            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+            <CaseStudyHero
+                tags={['E-commerce', 'Shopify', 'Luxury Branding']}
+                titleAccent="Freecer.at:"
+                title="Next-Gen E-commerce Excellence"
+                tagline="A high-performance, luxury-branded shopping experience optimized for conversion, SEO, and global scale."
+                images={SLIDER_IMAGES}
+                altPrefix="Freecer"
+                url="https://www.freecer.at/"
+                urlLabel="Visit freecer.at"
+            />
 
             {/* Content Section */}
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, delay: 0.2 }}
-                            className="prose prose-lg max-w-none"
-                        >
-                            <div className="bg-tribe-blue/5 p-8 rounded-xl mb-12 border-l-4 border-tribe-blue">
-                                <h2 className="text-2xl font-display font-bold mb-4 text-tribe-blue">Project Overview</h2>
-                                <p className="text-earth-700 mb-4">
-                                    FREECER.AT is an advanced e-commerce platform designed to provide a seamless and efficient online shopping experience. It combines robust backend functionality with a user-friendly frontend interface.
-                                </p>
-                                <p className="text-earth-700 mb-0">
-                                    Built to be scalable, secure, and responsive, the platform ensures accessibility across all devices while maintaining a high-impact, luxury aesthetic.
-                                </p>
-                            </div>
+                        <div className="prose prose-lg max-w-none">
+                            <Reveal>
+                                <div className="bg-tribe-blue/5 p-8 rounded-xl mb-12 border-l-4 border-tribe-blue">
+                                    <h2 className="text-2xl font-display font-bold mb-4 text-tribe-blue">Project Overview</h2>
+                                    <p className="text-earth-700 mb-4">
+                                        FREECER.AT is an advanced e-commerce platform designed to provide a seamless and efficient online shopping experience. It combines robust backend functionality with a user-friendly frontend interface.
+                                    </p>
+                                    <p className="text-earth-700 mb-0">
+                                        Built to be scalable, secure, and responsive, the platform ensures accessibility across all devices while maintaining a high-impact, luxury aesthetic.
+                                    </p>
+                                </div>
+                            </Reveal>
 
-                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Key Functionalities</h2>
+                            <SectionShot variant="wide" src="/freecer-content/project-overiew.webp" alt="Freecer.at project overview" caption="Project overview — the Freecer.at storefront at a glance." />
 
-                            <div className="grid md:grid-cols-2 gap-8 mb-12">
-                                <div className="bg-earth-50 p-6 rounded-xl">
+                            <Reveal>
+                                <SectionKicker index="01" />
+                                <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Key Functionalities</h2>
+                            </Reveal>
+
+                            <motion.div
+                                variants={revealContainer}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true, margin: '-80px' }}
+                                className="grid md:grid-cols-2 gap-8 mb-12"
+                            >
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="bg-earth-50 p-6 rounded-xl ring-1 ring-transparent transition-all duration-500 hover:ring-tribe-blue/30 hover:shadow-xl"
+                                >
                                     <h3 className="text-xl font-bold mb-3 flex items-center gap-2 text-earth-900">
                                         <ShoppingCart className="h-5 w-5 text-tribe-blue" />
                                         eCommerce Core
@@ -158,8 +87,13 @@ const CaseStudyFreecer = () => {
                                         <li className="flex items-center gap-2"><CheckCircle className="h-3 w-3 text-tribe-blue" /> Abandoned Cart Recovery (Klaviyo)</li>
                                         <li className="flex items-center gap-2"><CheckCircle className="h-3 w-3 text-tribe-blue" /> Persistent Cart Across Sessions</li>
                                     </ul>
-                                </div>
-                                <div className="bg-earth-50 p-6 rounded-xl">
+                                </motion.div>
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="bg-earth-50 p-6 rounded-xl ring-1 ring-transparent transition-all duration-500 hover:ring-tribe-blue/30 hover:shadow-xl"
+                                >
                                     <h3 className="text-xl font-bold mb-3 flex items-center gap-2 text-earth-900">
                                         <Zap className="h-5 w-5 text-tribe-blue" />
                                         Performance & Vitals
@@ -170,12 +104,32 @@ const CaseStudyFreecer = () => {
                                         <li className="flex items-center gap-2"><CheckCircle className="h-3 w-3 text-tribe-blue" /> Reduced Script Load</li>
                                         <li className="flex items-center gap-2"><CheckCircle className="h-3 w-3 text-tribe-blue" /> Core Web Vitals Excellence</li>
                                     </ul>
-                                </div>
+                                </motion.div>
+                            </motion.div>
+
+                            <div className="not-prose my-12 grid gap-6 md:grid-cols-2 md:gap-8">
+                                <SectionShot variant="pair" src="/freecer-content/functionalies.webp" alt="Freecer.at core functionalities" caption="Core functionalities — cart, checkout, and performance features in action." />
+                                <SectionShot variant="pair" className="md:mt-14" src="/freecer-content/functionalies-2.webp" alt="Freecer.at functionalities continued" caption="More functionalities — storefront flows and conversion touchpoints." />
                             </div>
 
-                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Growth & Global Reach</h2>
-                            <div className="grid md:grid-cols-2 gap-6 mb-12">
-                                <div className="flex gap-4 p-4 rounded-xl hover:bg-earth-50 transition-colors">
+                            <Reveal>
+                                <SectionKicker index="02" />
+                                <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Growth & Global Reach</h2>
+                            </Reveal>
+
+                            <motion.div
+                                variants={revealContainer}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true, margin: '-80px' }}
+                                className="grid md:grid-cols-2 gap-6 mb-12"
+                            >
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="flex gap-4 p-4 rounded-xl ring-1 ring-transparent transition-all duration-500 hover:bg-earth-50 hover:ring-stone-200/80 hover:shadow-lg"
+                                >
                                     <div className="bg-tribe-blue/10 p-3 rounded-lg h-fit">
                                         <Search className="h-6 w-6 text-tribe-blue" />
                                     </div>
@@ -183,8 +137,13 @@ const CaseStudyFreecer = () => {
                                         <h4 className="font-bold text-earth-900">SEO Architecture</h4>
                                         <p className="text-earth-600 text-sm">Structured meta architecture, Schema implementation, and optimized product URLs for maximum visibility.</p>
                                     </div>
-                                </div>
-                                <div className="flex gap-4 p-4 rounded-xl hover:bg-earth-50 transition-colors">
+                                </motion.div>
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="flex gap-4 p-4 rounded-xl ring-1 ring-transparent transition-all duration-500 hover:bg-earth-50 hover:ring-stone-200/80 hover:shadow-lg"
+                                >
                                     <div className="bg-tribe-blue/10 p-3 rounded-lg h-fit">
                                         <Globe className="h-6 w-6 text-tribe-blue" />
                                     </div>
@@ -192,8 +151,13 @@ const CaseStudyFreecer = () => {
                                         <h4 className="font-bold text-earth-900">Internationalization</h4>
                                         <p className="text-earth-600 text-sm">Multi-language support with region-based currency detection and geo-targeted content display.</p>
                                     </div>
-                                </div>
-                                <div className="flex gap-4 p-4 rounded-xl hover:bg-earth-50 transition-colors">
+                                </motion.div>
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="flex gap-4 p-4 rounded-xl ring-1 ring-transparent transition-all duration-500 hover:bg-earth-50 hover:ring-stone-200/80 hover:shadow-lg"
+                                >
                                     <div className="bg-tribe-blue/10 p-3 rounded-lg h-fit">
                                         <Layout className="h-6 w-6 text-tribe-blue" />
                                     </div>
@@ -201,8 +165,13 @@ const CaseStudyFreecer = () => {
                                         <h4 className="font-bold text-earth-900">Luxury Branding</h4>
                                         <p className="text-earth-600 text-sm">Conversion-focused product pages with scroll-based animations and custom Liquid theme enhancements.</p>
                                     </div>
-                                </div>
-                                <div className="flex gap-4 p-4 rounded-xl hover:bg-earth-50 transition-colors">
+                                </motion.div>
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="flex gap-4 p-4 rounded-xl ring-1 ring-transparent transition-all duration-500 hover:bg-earth-50 hover:ring-stone-200/80 hover:shadow-lg"
+                                >
                                     <div className="bg-tribe-blue/10 p-3 rounded-lg h-fit">
                                         <Shield className="h-6 w-6 text-tribe-blue" />
                                     </div>
@@ -210,39 +179,46 @@ const CaseStudyFreecer = () => {
                                         <h4 className="font-bold text-earth-900">Secure Operations</h4>
                                         <p className="text-earth-600 text-sm">Inventory management, dynamic pricing rules, and location-based tax automation for seamless global trade.</p>
                                     </div>
-                                </div>
-                            </div>
+                                </motion.div>
+                            </motion.div>
 
-                            <div className="bg-gray-900 text-white p-8 rounded-xl mb-12 shadow-lg">
-                                <h3 className="text-2xl font-display font-bold mb-6 text-tribe-blue">Technical Stack</h3>
-                                <div className="grid md:grid-cols-2 gap-8">
-                                    <div>
-                                        <h4 className="text-lg font-bold mb-4 text-tribe-blue/80">E-commerce Platform</h4>
-                                        <ul className="space-y-2 text-sm text-gray-300">
-                                            <li>Shopify (Liquid Theme Architecture)</li>
-                                            <li>Shopify Admin API</li>
-                                            <li>Custom CSS & JavaScript Enhancements</li>
-                                            <li>MERN Stack (Hybrid/Migration Context)</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold mb-4 text-tribe-blue/80">Growth & Integrations</h4>
-                                        <ul className="space-y-2 text-sm text-gray-300">
-                                            <li>Klaviyo (Email Marketing)</li>
-                                            <li>Stripe (Payments)</li>
-                                            <li>Meta Pixel (Analytics)</li>
-                                            <li>SEO Structured Markup</li>
-                                            <li>Cloudinary (Image Strategy)</li>
-                                        </ul>
+                            <Reveal>
+                                <div className="bg-gray-900 text-white p-8 rounded-xl mb-12 shadow-lg">
+                                    <h3 className="text-2xl font-display font-bold mb-6 text-tribe-blue">Technical Stack</h3>
+                                    <div className="grid md:grid-cols-2 gap-8">
+                                        <div>
+                                            <h4 className="text-lg font-bold mb-4 text-tribe-blue/80">E-commerce Platform</h4>
+                                            <ul className="space-y-2 text-sm text-gray-300">
+                                                <li>Shopify (Liquid Theme Architecture)</li>
+                                                <li>Shopify Admin API</li>
+                                                <li>Custom CSS & JavaScript Enhancements</li>
+                                                <li>MERN Stack (Hybrid/Migration Context)</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-lg font-bold mb-4 text-tribe-blue/80">Growth & Integrations</h4>
+                                            <ul className="space-y-2 text-sm text-gray-300">
+                                                <li>Klaviyo (Email Marketing)</li>
+                                                <li>Stripe (Payments)</li>
+                                                <li>Meta Pixel (Analytics)</li>
+                                                <li>SEO Structured Markup</li>
+                                                <li>Cloudinary (Image Strategy)</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Reveal>
 
-                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Conclusion</h2>
-                            <p className="text-earth-700 mb-12 text-lg leading-relaxed">
-                                The Freecer.at transformation resulted in a high-speed, luxury storefront that perfectly balances aesthetics with performance. By implementing a custom Shopify architecture with advanced SEO and internationalization features, we provided a scalable foundation for global growth, significantly improving the brand's digital presence and conversion potential.
-                            </p>
-                        </motion.div>
+                            <SectionShot variant="wide" src="/freecer-content/tech-stack.webp" alt="Freecer.at technical stack" caption="Technical stack — the Shopify architecture and integrations powering Freecer.at." />
+
+                            <Reveal>
+                                <SectionKicker index="03" />
+                                <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Conclusion</h2>
+                                <p className="text-earth-700 mb-12 text-lg leading-relaxed">
+                                    The Freecer.at transformation resulted in a high-speed, luxury storefront that perfectly balances aesthetics with performance. By implementing a custom Shopify architecture with advanced SEO and internationalization features, we provided a scalable foundation for global growth, significantly improving the brand's digital presence and conversion potential.
+                                </p>
+                            </Reveal>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -250,31 +226,28 @@ const CaseStudyFreecer = () => {
             {/* CTA Section */}
             <section className="py-16 bg-earth-100">
                 <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8, duration: 0.7 }}
-                        className="bg-white p-8 md:p-12 rounded-xl shadow-sm max-w-4xl mx-auto text-center"
-                    >
-                        <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                            Elevate Your E-commerce Brand
-                        </h2>
-                        <p className="text-earth-600 mb-8 max-w-2xl mx-auto">
-                            From custom Shopify themes to complex MERN storefronts, we build high-converting retail experiences.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link to="/contact">
-                                <Button className="bg-tribe-blue hover:bg-tribe-blue/90">
-                                    Discuss Your Online Store
-                                </Button>
-                            </Link>
-                            <Link to="/trail-stories">
-                                <Button variant="outline" className="border-tribe-blue text-tribe-blue hover:bg-tribe-blue/10">
-                                    View More Success Stories
-                                </Button>
-                            </Link>
+                    <Reveal>
+                        <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm max-w-4xl mx-auto text-center">
+                            <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
+                                Elevate Your E-commerce Brand
+                            </h2>
+                            <p className="text-earth-600 mb-8 max-w-2xl mx-auto">
+                                From custom Shopify themes to complex MERN storefronts, we build high-converting retail experiences.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <Link to="/contact">
+                                    <Button className="bg-tribe-blue hover:bg-tribe-blue/90">
+                                        Discuss Your Online Store
+                                    </Button>
+                                </Link>
+                                <Link to="/trail-stories">
+                                    <Button variant="outline" className="border-tribe-blue text-tribe-blue hover:bg-tribe-blue/10">
+                                        View More Success Stories
+                                    </Button>
+                                </Link>
+                            </div>
                         </div>
-                    </motion.div>
+                    </Reveal>
                 </div>
             </section>
 

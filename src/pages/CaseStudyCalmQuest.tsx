@@ -6,6 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
+import StoreBadges from '@/components/StoreBadges';
 
 const CaseStudyCalmQuest = () => {
   useEffect(() => {
@@ -46,12 +48,17 @@ const CaseStudyCalmQuest = () => {
               <span className="text-tribe-blue">Calm Quest:</span> A Journey Into Digital Serenity
             </h1>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
               Category: Health & Wellness, Casual Gaming | Platform: Android & iOS | Engine: Unity
             </p>
 
+            <StoreBadges
+              appStoreUrl="https://apps.apple.com/us/app/calm-quest-antistress/id6526489443"
+              className="mb-8"
+            />
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img
+              <ZoomableImage
                 src="/lovable-uploads/7c42af98-a63c-4803-9f4f-5932f2da099e.png"
                 alt="Calm Quest Relaxation Game"
                 className="w-full h-full object-cover"

@@ -1,0 +1,4 @@
+# Keep the deploy lean — never ship raw source/staging assets to Vercel.
+# The live site serves the optimized *-content/ webp folders, not these.
+public/new pics
+*.zip

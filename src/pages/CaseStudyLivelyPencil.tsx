@@ -6,6 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
+import StoreBadges from '@/components/StoreBadges';
 
 const CaseStudyLivelyPencil = () => {
   useEffect(() => {
@@ -46,14 +48,19 @@ const CaseStudyLivelyPencil = () => {
               <span className="text-tribe-blue">Lively Pencil:</span> A Frontend Rebuild that Unlocked a Social Platform
             </h1>
             
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed">
               What do you do when an app built to empower creators is held back by its own frontend? You rebuild it—cleanly, scalably, and with confidence.
             </p>
-            
+
+            <StoreBadges
+              playStoreUrl="https://play.google.com/store/apps/details?id=com.forcod.livelypencilapp&hl=en"
+              className="mb-8"
+            />
+
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src="/lovable-uploads/eda53215-87db-46b6-9dc6-e564e4de3a33.png" 
-                alt="Lively Pencil App" 
+              <ZoomableImage
+                src="/lovable-uploads/eda53215-87db-46b6-9dc6-e564e4de3a33.png"
+                alt="Lively Pencil App"
                 className="w-full h-full object-cover"
               />
             </div>

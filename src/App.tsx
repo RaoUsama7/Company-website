@@ -49,9 +49,14 @@ import CaseStudyAvenir from "./pages/CaseStudyAvenir";
 import CaseStudyT2CWeb from "./pages/CaseStudyT2CWeb";
 import CaseStudyT2CDesign from "./pages/CaseStudyT2CDesign";
 import CaseStudyHarmoniqDesign from "./pages/CaseStudyHarmoniqDesign";
-import CaseStudyNexiunDesign from "./pages/CaseStudyNexiunDesign";
 import CaseStudySplitTripDesign from "./pages/CaseStudySplitTripDesign";
 import CaseStudyTalkieTotzDesign from "./pages/CaseStudyTalkieTotzDesign";
+import CaseStudyMasslos from "./pages/CaseStudyMasslos";
+import CaseStudyRingba from "./pages/CaseStudyRingba";
+import CaseStudyThumbnailAI from "./pages/CaseStudyThumbnailAI";
+import CaseStudyNeolohnDesign from "./pages/CaseStudyNeolohnDesign";
+import CaseStudyNexiunApp from "./pages/CaseStudyNexiunApp";
+import CaseStudySpotifyToApple from "./pages/CaseStudySpotifyToApple";
 
 
 
@@ -105,7 +110,6 @@ const AppRoutes = () => {
       <Route path="/case-study/renee" element={<CaseStudyRenee />} />
       <Route path="/case-study/team2challenge-design" element={<CaseStudyT2CDesign />} />
       <Route path="/case-study/harmoniq-design" element={<CaseStudyHarmoniqDesign />} />
-      <Route path="/case-study/nexiun-design" element={<CaseStudyNexiunDesign />} />
       <Route path="/case-study/split-trip-design" element={<CaseStudySplitTripDesign />} />
       <Route path="/case-study/talkietotz-design" element={<CaseStudyTalkieTotzDesign />} />
       <Route path="/case-study/rentigo" element={<CaseStudyRentigo />} />
@@ -114,6 +118,12 @@ const AppRoutes = () => {
       <Route path="/case-study/exre" element={<CaseStudyExre />} />
       <Route path="/case-study/avenir" element={<CaseStudyAvenir />} />
       <Route path="/case-study/team2challenge-web" element={<CaseStudyT2CWeb />} />
+      <Route path="/case-study/masslos" element={<CaseStudyMasslos />} />
+      <Route path="/case-study/ringba-dashboard" element={<CaseStudyRingba />} />
+      <Route path="/case-study/thumbnail-ai" element={<CaseStudyThumbnailAI />} />
+      <Route path="/case-study/neolohn-design" element={<CaseStudyNeolohnDesign />} />
+      <Route path="/case-study/nexiun-app" element={<CaseStudyNexiunApp />} />
+      <Route path="/case-study/spotify-to-apple-music" element={<CaseStudySpotifyToApple />} />
 
 
 

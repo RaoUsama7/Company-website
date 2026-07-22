@@ -1,157 +1,91 @@
-
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, CheckCircle, Monitor, Database, Search, Globe, Mail, Layout, Code2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Database, Search, Globe, Mail, Layout, Code2 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import SectionShot from '@/components/SectionShot';
+import SectionKicker from '@/components/SectionKicker';
+import CaseStudyHero from '@/components/CaseStudyHero';
+import ReadingProgress from '@/components/ReadingProgress';
+import Reveal, { revealContainer, revealItem } from '@/components/Reveal';
+
+const SLIDER_IMAGES = [
+    "/exre/main.png",
+    "/exre/4.png",
+    "/exre/6.png",
+    "/exre/8.png",
+    "/exre/10.png",
+    "/exre/13.png"
+];
 
 const CaseStudyExre = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const sliderImages = [
-        "/exre/main.png",
-        "/exre/4.png",
-        "/exre/6.png",
-        "/exre/8.png",
-        "/exre/10.png",
-        "/exre/13.png"
-    ];
-
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide();
-        }, 5000);
-        return () => clearInterval(interval);
-    }, [currentIndex]);
-
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
-    };
-
     return (
         <div className="min-h-screen bg-background font-sans">
+            <ReadingProgress />
             <Navbar />
 
-            {/* Hero Section */}
-            <section className="py-20 bg-gradient-to-b from-earth-900 to-earth-800 text-white">
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7 }}
-                        className="max-w-4xl mx-auto"
-                    >
-                        <Link to="/trail-stories" className="inline-flex items-center text-tribe-blue hover:underline mb-6">
-                            <ArrowLeft className="mr-2 h-4 w-4" />
-                            Back to Case Studies
-                        </Link>
-
-                        <div className="flex flex-wrap gap-2 mb-6">
-                            <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Agency Website
-                            </span>
-                            <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Sanity CMS
-                            </span>
-                            <span className="px-3 py-1 rounded-full bg-tribe-blue/20 text-tribe-blue text-sm font-medium">
-                                Multilingual
-                            </span>
-                        </div>
-
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
-                            <span className="text-tribe-blue">EXRE:</span> Actual Projects. Measurable Results.
-                        </h1>
-
-                        <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                            A professional, multilingual agency platform built for scalability, performance, and seamless content management.
-                        </p>
-
-                        <div className="relative group h-64 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-earth-900/20 border border-white/10">
-                            <AnimatePresence mode="wait">
-                                <motion.img
-                                    key={currentIndex}
-                                    src={sliderImages[currentIndex]}
-                                    alt={`EXRE Project Slide ${currentIndex + 1}`}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -20 }}
-                                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                                    className="w-full h-full object-contain"
-                                />
-                            </AnimatePresence>
-
-                            {/* Navigation Arrows */}
-                            <button
-                                onClick={prevSlide}
-                                aria-label="Previous slide"
-                                className="absolute left-4 top-1/2 -translate-y-1/2 bg-earth-900/40 hover:bg-earth-900/60 backdrop-blur-md p-3 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 z-10 border border-white/10"
-                            >
-                                <ChevronLeft className="h-6 w-6" />
-                            </button>
-                            <button
-                                onClick={nextSlide}
-                                aria-label="Next slide"
-                                className="absolute right-4 top-1/2 -translate-y-1/2 bg-earth-900/40 hover:bg-earth-900/60 backdrop-blur-md p-3 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 z-10 border border-white/10"
-                            >
-                                <ChevronRight className="h-6 w-6" />
-                            </button>
-
-                            {/* Indicators */}
-                            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                                {sliderImages.map((_, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => setCurrentIndex(index)}
-                                        className={`h-1.5 transition-all duration-300 rounded-full ${index === currentIndex ? 'bg-tribe-blue w-8' : 'bg-white/30 w-4 hover:bg-white/50'
-                                            }`}
-                                        aria-label={`Go to slide ${index + 1}`}
-                                    />
-                                ))}
-                            </div>
-
-                            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+            <CaseStudyHero
+                tags={['Agency Website', 'Sanity CMS', 'Multilingual']}
+                titleAccent="EXRE:"
+                title="Actual Projects. Measurable Results."
+                tagline="A professional, multilingual agency platform built for scalability, performance, and seamless content management."
+                images={SLIDER_IMAGES}
+                altPrefix="EXRE"
+                url="https://exre.org/"
+                urlLabel="Visit exre.org"
+            />
 
             {/* Content Section */}
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, delay: 0.2 }}
-                            className="prose prose-lg max-w-none"
-                        >
-                            <div className="bg-tribe-blue/5 p-8 rounded-xl mb-12 border-l-4 border-tribe-blue">
-                                <h2 className="text-2xl font-display font-bold mb-4 text-tribe-blue">Project Description</h2>
-                                <p className="text-earth-700 mb-4">
-                                    EXRE is a professional agency website built to establish a strong digital presence, communicate services clearly, and present a polished, modern brand identity.
+                        <div className="prose prose-lg max-w-none">
+                            <Reveal>
+                                <div className="bg-tribe-blue/5 p-8 rounded-xl mb-12 border-l-4 border-tribe-blue">
+                                    <h2 className="text-2xl font-display font-bold mb-4 text-tribe-blue">Project Description</h2>
+                                    <p className="text-earth-700 mb-4">
+                                        EXRE is a professional agency website built to establish a strong digital presence, communicate services clearly, and present a polished, modern brand identity.
+                                    </p>
+                                    <p className="text-earth-700 mb-0">
+                                        Executed end-to-end by The Tech Tribe (TTT), we handled everything from branding alignment and UI design to frontend architecture, Sanity CMS integration, and full-scale SEO implementation.
+                                    </p>
+                                </div>
+                            </Reveal>
+
+                            <SectionShot variant="wide" src="/exre-content/project-overview.webp" alt="Exre platform overview" caption="Project overview — the Exre platform at a glance." />
+
+                            <Reveal>
+                                <SectionKicker index="01" />
+                                <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">The Problem Statement</h2>
+                                <p className="text-earth-700 mb-6 text-lg leading-relaxed">
+                                    The client needed a digital platform that could build instant credibility. Key requirements included a content-managed solution for easy updates, clear presentation of diverse services, and an SEO-friendly architecture to drive organic visibility in a competitive market.
                                 </p>
-                                <p className="text-earth-700 mb-0">
-                                    Executed end-to-end by The Tech Tribe (TTT), we handled everything from branding alignment and UI design to frontend architecture, Sanity CMS integration, and full-scale SEO implementation.
-                                </p>
+                            </Reveal>
+
+                            <div className="not-prose my-12 grid gap-6 md:grid-cols-2 md:gap-8">
+                                <SectionShot variant="pair" src="/exre-content/problem-statement.webp" alt="Exre problem statement" caption="The problem we set out to solve." />
+                                <SectionShot variant="pair" className="md:mt-14" src="/exre-content/our-solution.webp" alt="Exre TTT solution" caption="Our solution — how TTT approached it." />
                             </div>
 
-                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">The Problem Statement</h2>
-                            <p className="text-earth-700 mb-6 text-lg leading-relaxed">
-                                The client needed a digital platform that could build instant credibility. Key requirements included a content-managed solution for easy updates, clear presentation of diverse services, and an SEO-friendly architecture to drive organic visibility in a competitive market.
-                            </p>
-
-                            <div className="grid md:grid-cols-2 gap-8 mb-12">
-                                <div className="bg-earth-50 p-6 rounded-xl">
+                            <motion.div
+                                variants={revealContainer}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true, margin: '-80px' }}
+                                className="grid md:grid-cols-2 gap-8 mb-12"
+                            >
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="bg-earth-50 p-6 rounded-xl ring-1 ring-stone-200/80 transition-all duration-500 hover:ring-tribe-blue/30 hover:shadow-xl"
+                                >
                                     <h3 className="text-xl font-bold mb-3 flex items-center gap-2 text-earth-900">
                                         <Layout className="h-5 w-5 text-tribe-blue" />
                                         Branding Needs
@@ -159,8 +93,13 @@ const CaseStudyExre = () => {
                                     <p className="text-earth-700 text-sm">
                                         A modern, professional UI focused on client perspective, providing clarity and establishing authority in their niche.
                                     </p>
-                                </div>
-                                <div className="bg-earth-50 p-6 rounded-xl">
+                                </motion.div>
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="bg-earth-50 p-6 rounded-xl ring-1 ring-stone-200/80 transition-all duration-500 hover:ring-tribe-blue/30 hover:shadow-xl"
+                                >
                                     <h3 className="text-xl font-bold mb-3 flex items-center gap-2 text-earth-900">
                                         <Database className="h-5 w-5 text-tribe-blue" />
                                         Operational Needs
@@ -168,12 +107,26 @@ const CaseStudyExre = () => {
                                     <p className="text-earth-700 text-sm">
                                         A fully integrated, scalable CMS setup allowing the client to manage services and case studies without developer intervention.
                                     </p>
-                                </div>
-                            </div>
+                                </motion.div>
+                            </motion.div>
 
-                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Key Features Implemented</h2>
-                            <div className="grid md:grid-cols-2 gap-6 mb-12">
-                                <div className="flex gap-4 p-4 rounded-xl hover:bg-earth-50 transition-colors">
+                            <Reveal>
+                                <SectionKicker index="02" />
+                                <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">Key Features Implemented</h2>
+                            </Reveal>
+                            <motion.div
+                                variants={revealContainer}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true, margin: '-80px' }}
+                                className="grid md:grid-cols-2 gap-6 mb-12"
+                            >
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="flex gap-4 p-4 rounded-xl ring-1 ring-transparent transition-all duration-500 hover:bg-earth-50 hover:ring-stone-200/80 hover:shadow-lg"
+                                >
                                     <div className="bg-tribe-blue/10 p-3 rounded-lg h-fit">
                                         <Globe className="h-6 w-6 text-tribe-blue" />
                                     </div>
@@ -181,8 +134,13 @@ const CaseStudyExre = () => {
                                         <h4 className="font-bold text-earth-900">Multilingual (EN / DE)</h4>
                                         <p className="text-earth-600 text-sm">Full language switching for English and German, with dynamic content loading entirely via Sanity CMS.</p>
                                     </div>
-                                </div>
-                                <div className="flex gap-4 p-4 rounded-xl hover:bg-earth-50 transition-colors">
+                                </motion.div>
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="flex gap-4 p-4 rounded-xl ring-1 ring-transparent transition-all duration-500 hover:bg-earth-50 hover:ring-stone-200/80 hover:shadow-lg"
+                                >
                                     <div className="bg-tribe-blue/10 p-3 rounded-lg h-fit">
                                         <Code2 className="h-6 w-6 text-tribe-blue" />
                                     </div>
@@ -190,8 +148,13 @@ const CaseStudyExre = () => {
                                         <h4 className="font-bold text-earth-900">Sanity CMS Setup</h4>
                                         <p className="text-earth-600 text-sm">Structured schemas for scalable content growth, enabling easy updates for services and results.</p>
                                     </div>
-                                </div>
-                                <div className="flex gap-4 p-4 rounded-xl hover:bg-earth-50 transition-colors">
+                                </motion.div>
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="flex gap-4 p-4 rounded-xl ring-1 ring-transparent transition-all duration-500 hover:bg-earth-50 hover:ring-stone-200/80 hover:shadow-lg"
+                                >
                                     <div className="bg-tribe-blue/10 p-3 rounded-lg h-fit">
                                         <Search className="h-6 w-6 text-tribe-blue" />
                                     </div>
@@ -199,8 +162,13 @@ const CaseStudyExre = () => {
                                         <h4 className="font-bold text-earth-900">SEO-First Architecture</h4>
                                         <p className="text-earth-600 text-sm">Optimized semantic markup and metadata structure to ensure high visibility and organic performance.</p>
                                     </div>
-                                </div>
-                                <div className="flex gap-4 p-4 rounded-xl hover:bg-earth-50 transition-colors">
+                                </motion.div>
+                                <motion.div
+                                    variants={revealItem}
+                                    whileHover={{ y: -4 }}
+                                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                    className="flex gap-4 p-4 rounded-xl ring-1 ring-transparent transition-all duration-500 hover:bg-earth-50 hover:ring-stone-200/80 hover:shadow-lg"
+                                >
                                     <div className="bg-tribe-blue/10 p-3 rounded-lg h-fit">
                                         <Mail className="h-6 w-6 text-tribe-blue" />
                                     </div>
@@ -208,38 +176,52 @@ const CaseStudyExre = () => {
                                         <h4 className="font-bold text-earth-900">Integrated Lead Flow</h4>
                                         <p className="text-earth-600 text-sm">Custom contact forms connected directly to the inbox, designed with high-impact CTAs.</p>
                                     </div>
-                                </div>
+                                </motion.div>
+                            </motion.div>
+
+                            <div className="not-prose my-12 grid gap-6 md:grid-cols-2 md:gap-8">
+                                <SectionShot variant="pair" src="/exre-content/key-features.webp" alt="Exre key features" caption="Key features implemented across the platform." />
+                                <SectionShot variant="pair" className="md:mt-14" src="/exre-content/key-features-2.webp" alt="Exre more key features" caption="Additional features and refinements." />
                             </div>
 
-                            <div className="bg-slate-900 text-white p-8 rounded-xl mb-12 shadow-lg">
-                                <h3 className="text-2xl font-display font-bold mb-6 text-tribe-blue">Technical Architecture</h3>
-                                <div className="grid md:grid-cols-2 gap-8">
-                                    <div>
-                                        <h4 className="text-lg font-bold mb-4 text-tribe-blue/80">Frontend Solution</h4>
-                                        <ul className="space-y-2 text-sm text-slate-300">
-                                            <li>React.js (Component-based UI)</li>
-                                            <li>Next.js (SSG/ISR for SEO)</li>
-                                            <li>Tailwind CSS Styling</li>
-                                            <li>Dynamic Language Routing</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold mb-4 text-tribe-blue/80">Content & Backend</h4>
-                                        <ul className="space-y-2 text-sm text-slate-300">
-                                            <li>Sanity CMS Integration</li>
-                                            <li>Structured Content Schemas</li>
-                                            <li>Optimized Asset Delivery</li>
-                                            <li>Secure Lead Handling</li>
-                                        </ul>
+                            <Reveal>
+                                <div className="bg-slate-900 text-white p-8 rounded-xl mb-12 shadow-lg">
+                                    <h3 className="text-2xl font-display font-bold mb-6 text-tribe-blue">Technical Architecture</h3>
+                                    <div className="grid md:grid-cols-2 gap-8">
+                                        <div>
+                                            <h4 className="text-lg font-bold mb-4 text-tribe-blue/80">Frontend Solution</h4>
+                                            <ul className="space-y-2 text-sm text-slate-300">
+                                                <li>React.js (Component-based UI)</li>
+                                                <li>Next.js (SSG/ISR for SEO)</li>
+                                                <li>Tailwind CSS Styling</li>
+                                                <li>Dynamic Language Routing</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 className="text-lg font-bold mb-4 text-tribe-blue/80">Content & Backend</h4>
+                                            <ul className="space-y-2 text-sm text-slate-300">
+                                                <li>Sanity CMS Integration</li>
+                                                <li>Structured Content Schemas</li>
+                                                <li>Optimized Asset Delivery</li>
+                                                <li>Secure Lead Handling</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Reveal>
 
-                            <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">The TTT Role</h2>
-                            <p className="text-earth-700 mb-12 text-lg leading-relaxed">
-                                As a full-service partner, we took ownership of the entire lifecycle. This included UI/UX planning from the client’s perspective, custom schema design for Sanity, and ensuring a brand-aligned presentation that reflects EXRE’s expertise in delivering measurable results.
-                            </p>
-                        </motion.div>
+                            <SectionShot variant="left" src="/exre-content/tech-stack.webp" alt="Exre technical architecture" caption="The technical architecture and stack." />
+
+                            <Reveal>
+                                <SectionKicker index="03" />
+                                <h2 className="text-3xl font-display font-bold mb-6 text-earth-900">The TTT Role</h2>
+                                <p className="text-earth-700 mb-12 text-lg leading-relaxed">
+                                    As a full-service partner, we took ownership of the entire lifecycle. This included UI/UX planning from the client’s perspective, custom schema design for Sanity, and ensuring a brand-aligned presentation that reflects EXRE’s expertise in delivering measurable results.
+                                </p>
+                            </Reveal>
+
+                            <SectionShot variant="wide" src="/exre-content/ttt-role.webp" alt="TTT role on Exre" caption="TTT's role — end-to-end delivery." />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -247,31 +229,28 @@ const CaseStudyExre = () => {
             {/* CTA Section */}
             <section className="py-16 bg-earth-100">
                 <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8, duration: 0.7 }}
-                        className="bg-white p-8 md:p-12 rounded-xl shadow-sm max-w-4xl mx-auto text-center"
-                    >
-                        <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                            Ready to Solidify Your Digital Brand?
-                        </h2>
-                        <p className="text-earth-600 mb-8 max-w-2xl mx-auto">
-                            We specialize in building agency and corporate websites that are not just visually strong, but technically solid and future-proof.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link to="/contact">
-                                <Button className="bg-tribe-blue hover:bg-tribe-blue/90">
-                                    Start Your Consultation
-                                </Button>
-                            </Link>
-                            <Link to="/trail-stories">
-                                <Button variant="outline" className="border-tribe-blue text-tribe-blue hover:bg-tribe-blue/10">
-                                    Browse More Work
-                                </Button>
-                            </Link>
+                    <Reveal>
+                        <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm max-w-4xl mx-auto text-center">
+                            <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
+                                Ready to Solidify Your Digital Brand?
+                            </h2>
+                            <p className="text-earth-600 mb-8 max-w-2xl mx-auto">
+                                We specialize in building agency and corporate websites that are not just visually strong, but technically solid and future-proof.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <Link to="/contact">
+                                    <Button className="bg-tribe-blue hover:bg-tribe-blue/90">
+                                        Start Your Consultation
+                                    </Button>
+                                </Link>
+                                <Link to="/trail-stories">
+                                    <Button variant="outline" className="border-tribe-blue text-tribe-blue hover:bg-tribe-blue/10">
+                                        Browse More Work
+                                    </Button>
+                                </Link>
+                            </div>
                         </div>
-                    </motion.div>
+                    </Reveal>
                 </div>
             </section>
 

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -76,9 +77,9 @@ const CaseStudyTalkieTotz = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <motion.div {...fadeInUp}>
-              <img 
-                src="/lovable-uploads/826c450a-5486-4505-a9cd-ab9a1726fb62.png" 
-                alt="TalkieTotz App Main Screen" 
+              <ZoomableImage
+                src="/lovable-uploads/826c450a-5486-4505-a9cd-ab9a1726fb62.png"
+                alt="TalkieTotz App Main Screen"
                 className="w-full rounded-xl shadow-lg"
               />
             </motion.div>
@@ -131,9 +132,9 @@ const CaseStudyTalkieTotz = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
               <motion.div variants={fadeInUp}>
-                <img 
-                  src="/lovable-uploads/e3ce538b-d66e-4cc4-8fcd-7b058e08059f.png" 
-                  alt="TalkieTotz Project Description" 
+                <ZoomableImage
+                  src="/lovable-uploads/e3ce538b-d66e-4cc4-8fcd-7b058e08059f.png"
+                  alt="TalkieTotz Project Description"
                   className="w-full rounded-xl shadow-lg"
                 />
               </motion.div>
@@ -172,17 +173,17 @@ const CaseStudyTalkieTotz = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
               <motion.div variants={fadeInUp}>
-                <img 
-                  src="/lovable-uploads/eb76ace3-d172-4462-9187-979da0351fbe.png" 
-                  alt="Frontend Technologies" 
+                <ZoomableImage
+                  src="/lovable-uploads/eb76ace3-d172-4462-9187-979da0351fbe.png"
+                  alt="Frontend Technologies"
                   className="w-full rounded-xl shadow-lg"
                 />
               </motion.div>
               
               <motion.div variants={fadeInUp}>
-                <img 
-                  src="/lovable-uploads/75b41722-ac7f-44ab-8b93-09e1ea5d90ce.png" 
-                  alt="Backend Technologies" 
+                <ZoomableImage
+                  src="/lovable-uploads/75b41722-ac7f-44ab-8b93-09e1ea5d90ce.png"
+                  alt="Backend Technologies"
                   className="w-full rounded-xl shadow-lg"
                 />
               </motion.div>
@@ -271,17 +272,17 @@ const CaseStudyTalkieTotz = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
               <motion.div variants={fadeInUp}>
-                <img 
-                  src="/lovable-uploads/f6c4c19a-4471-45d0-87d2-ce8729e50c71.png" 
-                  alt="App Core Features" 
+                <ZoomableImage
+                  src="/lovable-uploads/f6c4c19a-4471-45d0-87d2-ce8729e50c71.png"
+                  alt="App Core Features"
                   className="w-full rounded-xl shadow-lg"
                 />
               </motion.div>
               
               <motion.div variants={fadeInUp}>
-                <img 
-                  src="/lovable-uploads/826e8063-6d14-4d5a-a08b-97b1b84ecfa5.png" 
-                  alt="Advanced Features" 
+                <ZoomableImage
+                  src="/lovable-uploads/826e8063-6d14-4d5a-a08b-97b1b84ecfa5.png"
+                  alt="Advanced Features"
                   className="w-full rounded-xl shadow-lg"
                 />
               </motion.div>
@@ -289,17 +290,17 @@ const CaseStudyTalkieTotz = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <motion.div variants={fadeInUp}>
-                <img 
-                  src="/lovable-uploads/b0f6602c-d2b4-42ef-b2f8-c0b25fb03e8e.png" 
-                  alt="User Experience Features" 
+                <ZoomableImage
+                  src="/lovable-uploads/b0f6602c-d2b4-42ef-b2f8-c0b25fb03e8e.png"
+                  alt="User Experience Features"
                   className="w-full rounded-xl shadow-lg"
                 />
               </motion.div>
               
               <motion.div variants={fadeInUp}>
-                <img 
-                  src="/lovable-uploads/de7f9c54-101f-40ce-b377-98d047b1e913.png" 
-                  alt="Learning Features" 
+                <ZoomableImage
+                  src="/lovable-uploads/de7f9c54-101f-40ce-b377-98d047b1e913.png"
+                  alt="Learning Features"
                   className="w-full rounded-xl shadow-lg"
                 />
               </motion.div>
@@ -329,9 +330,9 @@ const CaseStudyTalkieTotz = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
               <motion.div variants={fadeInUp}>
-                <img 
-                  src="/lovable-uploads/b7a35f1d-af72-42ed-b8bd-ad09fe26d31c.png" 
-                  alt="Admin Dashboard Features" 
+                <ZoomableImage
+                  src="/lovable-uploads/b7a35f1d-af72-42ed-b8bd-ad09fe26d31c.png"
+                  alt="Admin Dashboard Features"
                   className="w-full rounded-xl shadow-lg"
                 />
               </motion.div>

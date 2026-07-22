@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ZoomableImage from '@/components/ZoomableImage';
 
 const CaseStudyLittleDreams = () => {
   useEffect(() => {
@@ -51,7 +52,7 @@ const CaseStudyLittleDreams = () => {
             </p>
 
             <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-              <img
+              <ZoomableImage
                 src="/lovable-uploads/f6b70bdc-127d-42e9-979e-4de34287c471.png"
                 alt="Little Dreams App"
                 className="w-full h-full object-cover"

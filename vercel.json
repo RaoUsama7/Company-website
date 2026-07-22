@@ -31,6 +31,10 @@
     { "source": "/case-study/calories-counter", "destination": "/index.html" },
     { "source": "/case-study/latte-delivery", "destination": "/index.html" },
     { "source": "/case-study/talkie-totz", "destination": "/index.html" },
+    { "source": "/case-study/masslos", "destination": "/index.html" },
+    { "source": "/case-study/ringba-dashboard", "destination": "/index.html" },
+    { "source": "/case-study/thumbnail-ai", "destination": "/index.html" },
+    { "source": "/case-study/neolohn-design", "destination": "/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

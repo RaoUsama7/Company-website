@@ -5,9 +5,12 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ImageLightbox from '@/components/ImageLightbox';
+import ZoomableImage from '@/components/ZoomableImage';
 
 const CaseStudySplitTripDesign = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
     const sliderImages = [
         "/splittrip/11.png",
@@ -100,7 +103,8 @@ const CaseStudySplitTripDesign = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                                    className="w-full h-full object-contain"
+                                    onClick={() => setLightboxIndex(currentIndex)}
+                                    className="w-full h-full object-contain cursor-zoom-in"
                                 />
                             </AnimatePresence>
 
@@ -134,6 +138,14 @@ const CaseStudySplitTripDesign = () => {
                             </div>
                         </div>
                     </motion.div>
+
+                    <ImageLightbox
+                        images={sliderImages}
+                        index={lightboxIndex}
+                        onClose={() => setLightboxIndex(null)}
+                        onNavigate={setLightboxIndex}
+                        altPrefix="Split-Trip"
+                    />
                 </div>
             </section>
 
@@ -184,7 +196,7 @@ const CaseStudySplitTripDesign = () => {
                                 viewport={{ once: true }}
                                 className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
                             >
-                                <img
+                                <ZoomableImage
                                     src="/splittrip/12.png"
                                     alt="Split-Trip User Interface"
                                     className="w-full h-auto object-cover"
@@ -204,7 +216,7 @@ const CaseStudySplitTripDesign = () => {
                                 viewport={{ once: true }}
                                 className="rounded-2xl overflow-hidden shadow-xl mb-12 border border-earth-100"
                             >
-                                <img
+                                <ZoomableImage
                                     src="/splittrip/13.png"
                                     alt="Split-Trip Expense Management"
                                     className="w-full h-auto object-cover"

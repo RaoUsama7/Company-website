@@ -1,0 +1,35 @@
+# Ringba Dashboard — Screenshots
+
+Captured 31/31 pages from http://localhost:8080
+
+- OK `01-login.png` — /login
+- OK `02-forgot-password.png` — /forgot-password
+- OK `03-home-dashboard.png` — /
+- OK `04-alerts.png` — /alerts
+- OK `05-realtime-campaigns.png` — /realtime-campaigns
+- OK `06-realtime-campaigns-by-target.png` — /realtime-campaigns-by-target
+- OK `07-realtime-publishers.png` — /realtime-publishers
+- OK `08-realtime-targets.png` — /realtime-targets
+- OK `09-cpa-campaigns.png` — /cpa-campaigns
+- OK `10-cpa-thresholds-settings.png` — /cpa-thresholds-settings
+- OK `11-campaign-comparisons.png` — /campaign-comparisons
+- OK `12-publisher-comparisons.png` — /publisher-comparisons
+- OK `13-revenue-comparison.png` — /revenue-comparison
+- OK `14-phone-calls.png` — /phone-calls
+- OK `15-rejection-breakdown.png` — /rejection-breakdown
+- OK `16-ehg-dashboard.png` — /ehg/dashboard
+- OK `17-ehg-cpa-agent.png` — /ehg/sec/cpa-agent
+- OK `18-ehg-agent-weekly.png` — /ehg/sec/agent-weekly
+- OK `19-ehg-cpa-publisher.png` — /ehg/sec/cpa-publisher
+- OK `20-ehg-cpa-hour.png` — /ehg/sec/cpa-hour
+- OK `21-ehg-cpa-state.png` — /ehg/sec/cpa-state
+- OK `22-ehg-agent-comparison.png` — /ehg/sec/agent-comparison
+- OK `23-internal-profitability.png` — /internal-profitability
+- OK `24-targets.png` — /targets
+- OK `25-ring-tree-targets.png` — /ring-tree-targets
+- OK `26-creative-image.png` — /creative/image
+- OK `27-creative-video.png` — /creative/video
+- OK `28-user-management.png` — /user-management
+- OK `29-feedback.png` — /feedback
+- OK `30-feedback-inbox.png` — /feedback-inbox
+- OK `31-profile.png` — /profile
